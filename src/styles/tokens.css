@@ -1,6 +1,9 @@
 /*
  * Tokens de design copiados do site antigo (legacy/site.html). Não altere os valores sem
  * atualizar docs/DESIGN.md. As fontes vêm de next/font (variáveis --font-*), com os mesmos fallbacks.
+ *
+ * Tema padrão: CLARO (decisão do Lucas, 10/11/2026 — ver docs/DECISIONS.md D-13). O escuro só entra com
+ * html[data-theme="dark"], que a chave do cabeçalho aplica e salva; o sistema não é consultado.
  */
 :root {
   --bg: #eef0ec;
@@ -21,26 +24,6 @@
   --body: var(--font-body), 'Segoe UI', system-ui, sans-serif;
   --mono: var(--font-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
   color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg: #11151b;
-    --surface: #1a2029;
-    --ink: #e9ecf0;
-    --muted: #a0a8b5;
-    --line: #2b333e;
-    --accent: #8fb9e6;
-    --accent-ink: #0e1620;
-    --accent-soft: #1d2d40;
-    --gold: #e4b862;
-    --gold-soft: #3a2f18;
-    --ok: #74c793;
-    --ok-soft: #1b3324;
-    --warn: #f0997a;
-    --warn-soft: #3d2219;
-    color-scheme: dark;
-  }
 }
 
 :root[data-theme='dark'] {

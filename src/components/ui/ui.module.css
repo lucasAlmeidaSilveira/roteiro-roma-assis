@@ -1,0 +1,315 @@
+/* Peças compartilhadas (DESIGN §4.5–4.8; legacy linhas 56–122). */
+.dayhead h2 {
+  font-family: var(--display);
+  font-size: 1.7rem;
+  line-height: 1.15;
+  margin: 0 0 4px;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+.dayhead p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.chipCity {
+  font-weight: 700;
+}
+
+.note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  border-left: 3px solid var(--line);
+  padding-left: 12px;
+  margin: 0;
+}
+
+.cost {
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.costPaid {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.maplink {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Cartão genérico */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.card h3 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.kv div:nth-child(even) {
+  text-align: right;
+  font-weight: 700;
+}
+
+.cardNote {
+  margin-top: 10px;
+}
+
+/* Checklists (caixa alinhada ao título do cartão, como no legado: .check li { margin-left: -18px }) */
+.check,
+.card .check,
+.detailsBody .check {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.check label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.check input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  flex: 0 0 auto;
+  accent-color: var(--ok);
+}
+
+/* Botões */
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 1px solid var(--accent);
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* Campos e status */
+.field {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.input,
+.msg {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  width: 100%;
+}
+
+.msg {
+  min-height: 96px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: var(--ok);
+  min-height: 1.2em;
+  margin: 6px 0 0;
+}
+
+.statusMuted {
+  color: var(--muted);
+}
+
+.statusWarn {
+  color: var(--warn);
+}
+
+/* Conteúdo do documento em <details> */
+.details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 16px;
+}
+
+.details summary {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* `display: flex` esconde o marcador nativo; indicador próprio de abrir/fechar. */
+.details summary::after {
+  content: '▸';
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.details[open] summary::after {
+  content: '▾';
+}
+
+.details[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.detailsBody {
+  padding: 12px 0 14px;
+  display: grid;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.detailsBody p {
+  margin: 0;
+}
+
+.detailsBody ul,
+.detailsBody ol {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.detailsBody h4 {
+  margin: 6px 0 0;
+  font-family: var(--display);
+  font-size: 1.05rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.table th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}

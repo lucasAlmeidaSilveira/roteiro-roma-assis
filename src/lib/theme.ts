@@ -10,12 +10,12 @@ export const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem(${J
   STORAGE_KEYS.theme,
 )});if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`;
 
-/** Tema efetivo: o atributo data-theme, ou a preferência do sistema quando não há escolha salva. */
+/**
+ * Tema efetivo: só o atributo data-theme. Sem escolha salva, o padrão é o CLARO (decisão do Lucas,
+ * docs/DECISIONS.md D-13); o sistema não é consultado.
+ */
 export function isDarkNow(): boolean {
-  const t = document.documentElement.getAttribute('data-theme');
-  if (t === 'dark') return true;
-  if (t === 'light') return false;
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+  return document.documentElement.getAttribute('data-theme') === 'dark';
 }
 
 export function applyTheme(theme: Theme): void {

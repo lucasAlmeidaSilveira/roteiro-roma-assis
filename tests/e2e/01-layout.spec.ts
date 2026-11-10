@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-import { at, days, fase, getDay, go, routes, ui } from './support';
+import { LEGACY, at, days, fase, getDay, go, routes, ui } from './support';
 
 test.describe('Fase 1 · casca do app (cabeçalho, navegação, tema, rodapé)', () => {
   fase(1);
@@ -51,13 +51,19 @@ test.describe('Fase 1 · casca do app (cabeçalho, navegação, tema, rodapé)',
     );
   });
 
-  test('sem escolha salva, segue o tema do sistema', async ({ page }) => {
+  test('sem escolha salva: o site antigo segue o sistema; o app novo abre claro (D-13)', async ({
+    page,
+  }) => {
+    // Decisão do Lucas (10/11/2026): tema padrão claro no app novo, mesmo com o sistema escuro.
     await page.emulateMedia({ colorScheme: 'dark' });
     await go(page, routes.day(14));
     await expect(page.getByRole('switch', { name: ui.theme.aria })).toHaveAttribute(
       'aria-checked',
-      'true',
+      LEGACY ? 'true' : 'false',
     );
+    if (!LEGACY) {
+      await expect(page.getByRole('switch', { name: ui.theme.aria })).toContainText(ui.theme.light);
+    }
   });
 
   test('as seções levam às páginas certas; "Dia a dia" abre o dia de hoje', async ({ page }) => {

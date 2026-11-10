@@ -1,4 +1,4 @@
-/* Base mínima. A Fase 1 (docs/IMPLEMENTATION_PLAN.md) completa o layout a partir de docs/DESIGN.md. */
+/* Base (valores do legacy/site.html, linhas 24–29 e 55/105). Componentes usam CSS Modules. */
 * {
   box-sizing: border-box;
 }
@@ -12,6 +12,16 @@ body {
   line-height: 1.5;
 }
 
+/* Faixa de --surface cobrindo a área do notch do iPhone. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--surface);
+}
+
 a {
   color: var(--accent);
 }
@@ -20,4 +30,25 @@ a {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+main,
+.page {
+  padding-block: 18px 48px;
+  display: grid;
+  gap: 16px;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.82rem;
+  /* 32px do legado + a altura da barra de abas fixa no rodapé (D-14) */
+  padding-bottom: calc(32px + 60px + env(safe-area-inset-bottom, 0px));
 }

@@ -1,9 +1,15 @@
-// Placeholder da Fase 0. A Fase 2 troca esta página pelo redirecionamento para o dia de hoje.
+import { RedirectToToday } from '@/components/home/RedirectToToday';
+import { days } from '@/lib/content';
+
+/**
+ * "/" abre o dia de hoje em Roma (ou o dia 14 fora da viagem) — RF-01.6.
+ * Não usa <main>: o Next 16 mantém a rota anterior escondida no DOM (<Activity>), e o <main> da página
+ * do dia precisa ser o único (contrato dos testes e um só landmark principal por página).
+ */
 export default function Home() {
   return (
-    <main style={{ maxWidth: 680, margin: '0 auto', padding: 16 }}>
-      <h1>Roma e Assis</h1>
-      <p>Em construção: siga docs/IMPLEMENTATION_PLAN.md.</p>
-    </main>
+    <div className="wrap page">
+      <RedirectToToday days={days.map((d) => ({ day: d.day, weekday: d.weekday }))} />
+    </div>
   );
 }

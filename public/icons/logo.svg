@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Roma e Assis</title>
+  <rect width="512" height="512" rx="112" fill="#2c5a86"/>
+  <g>
+    <path d="M136 396V240a120 120 0 0 1 240 0v156" fill="none" stroke="#eef0ec" stroke-width="46" stroke-linejoin="round"/>
+    <path d="M194 236h124" stroke="#e4b862" stroke-width="40" stroke-linecap="round"/>
+    <path d="M256 236v160" stroke="#e4b862" stroke-width="40"/>
+    <rect x="96" y="388" width="320" height="38" rx="19" fill="#eef0ec"/>
+  </g>
+</svg>

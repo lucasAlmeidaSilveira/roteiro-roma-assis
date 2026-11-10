@@ -6,11 +6,11 @@
  * - /api/*: nunca passa pelo cache (intenções são privadas).
  * Ao mudar a lista de rotas, troque VERSION para forçar a atualização.
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = `roteiro-${VERSION}`;
 const DAYS = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
 const ROUTES = ['/', ...DAYS.map((d) => `/dia/${d}`), '/lugares', '/infos', '/intencoes'];
-const EXTRA = ['/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icon.png', '/apple-icon.png'];
+const EXTRA = ['/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icon.png', '/icon.svg', '/favicon.ico', '/apple-icon.png'];
 const NETWORK_TIMEOUT_MS = 3500;
 
 const ASSET_RE = /\/_next\/static\/[^"'()\s\\]+/g;

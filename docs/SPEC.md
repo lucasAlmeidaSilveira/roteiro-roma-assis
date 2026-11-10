@@ -17,7 +17,7 @@ funcional) e aponta para os testes que o verificam. **Os testes de `tests/e2e` p
   mandam pelo Google Forms.
 - **Condições reais:** sol forte, uma mão ocupada, internet ruim ou ausente (roaming), cansaço, pressa.
 - **Princípios:** celular primeiro · legível (fonte Atkinson Hyperlegible) · funciona offline · nada se perde do
-  original · privado (fora dos buscadores; intenções só para o dono) · sem login para o roteiro.
+  original · privado (fora dos buscadores) · sem login para nada (intenções abertas a quem tem o link, D-15).
 
 ## 2. Escopo
 
@@ -36,9 +36,8 @@ interface (a UI é pt-BR), notificações push, analytics.
 | `/dia/qualquer-outra-coisa`                              | "Página não encontrada"                                         | sob demanda                               |
 | `/lugares`                                               | Todos os lugares por dia, com mapa e ingresso oficial           | estática                                  |
 | `/infos`                                                 | Infos práticas + conteúdo do documento                          | estática                                  |
-| `/intencoes`                                             | Intenções recebidas (só o dono)                                 | casca estática + dados via API no cliente |
-| `/api/intencoes`                                         | GET: lê a planilha (exige sessão)                               | dinâmica, `no-store`                      |
-| `/api/sessao`                                            | POST entra / DELETE sai                                         | dinâmica                                  |
+| `/intencoes`                                             | Intenções recebidas (aberta a quem tem o link, D-15)            | casca estática + dados via API no cliente |
+| `/api/intencoes`                                         | GET: lê a planilha (sem sessão)                                 | dinâmica, `no-store`                      |
 | `/manifest.webmanifest`, `/robots.txt`, `/sw.js`, ícones | PWA e privacidade                                               | estáticos                                 |
 
 O site original usava `#dia-14`, `#lugares`… (hash). O app novo usa caminhos; não precisa aceitar hash.
@@ -53,7 +52,8 @@ O site original usava `#dia-14`, `#lugares`… (hash). O app novo usa caminhos; 
    ≤ 430 px) + chave de tema (RF-02).
 3. Navegação de seções: `<nav aria-label="Seções">` com 4 links, nesta ordem: **Dia a dia** (`/`), **Lugares**,
    **Intenções**, **Infos**. O link da seção atual tem `aria-current="page"` ("Dia a dia" fica ativo em `/dia/*`).
-   Visual de "segmented control" (DESIGN §4.3).
+   **Barra de abas fixa no rodapé, padrão de app, com ícone + nome** (decisão do Lucas em 10/11/2026, D-14; o site
+   original tinha um "segmented control" no cabeçalho). DESIGN §4.3.
 4. Navegação de dias: `<nav aria-label="Dias da viagem">` com 10 links (14 a 23), rolagem horizontal com snap,
    sem barra de rolagem visível. Cada chip mostra o dia da semana (pequeno, maiúsculo) e o número (grande).
    - Nome acessível: `"{weekday} {day} de novembro"`, ex.: **"Sáb 14 de novembro"**; no dia de hoje, acrescenta
@@ -75,7 +75,8 @@ O site original usava `#dia-14`, `#lugares`… (hash). O app novo usa caminhos; 
 
 1. Botão `role="switch"` com `aria-label="Tema escuro"` e `aria-checked` = tema escuro ativo; mostra o rótulo
    visível **"Claro"** ou **"Escuro"** + trilho com bolinha (DESIGN §4.2).
-2. Sem escolha salva, segue o sistema (`prefers-color-scheme`) e acompanha mudanças do sistema ao vivo.
+2. Sem escolha salva, o tema é o **claro** (decisão do Lucas em 10/11/2026, `DECISIONS.md` D-13). O sistema
+   (`prefers-color-scheme`) não é consultado — diferente do site original, que seguia o sistema.
 3. Clique alterna, aplica `data-theme="dark|light"` no `<html>` e salva em `localStorage["roteiro-roma-tema"]`.
 4. Sem "flash": o tema salvo é aplicado por script inline no `<head>` antes da pintura (`THEME_INIT_SCRIPT`,
    já pronto em `src/lib/theme.ts`).
@@ -190,35 +191,31 @@ Eyebrow "Para consultar", `<h2>` "Infos práticas". Cartões, nesta ordem:
 A página é uma casca estática; os dados vêm de `GET /api/intencoes` no cliente (ao abrir e ao tocar "Atualizar").
 
 1. Cabeçalho: eyebrow "Para rezar", `<h2>` "Intenções", parágrafo `ui.intentions.lead`.
-2. **Não entrou (401):** troca o parágrafo por "Esta aba é só para o dono do roteiro." e mostra o formulário de
-   acesso: campo com rótulo **"Código de acesso"** (`type="password"`, `autocomplete="current-password"`) e
-   botão **"Entrar"**. Erro: "Código incorreto. Tente de novo." Não mostra intenções nem a mensagem.
-3. **Entrou:** cartão "Intenções recebidas":
+2. **Aberta a quem tem o link** (decisão do Lucas em 10/11/2026, D-15): não há código de acesso nem sessão. As
+   chaves `ui.intentions.ownerOnly/loginLabel/loginButton/loginError/logout` ficam sem uso.
+3. Cartão "Intenções recebidas":
    - título vira `"{n} intenção recebida"` / `"{n} intenções recebidas"`;
    - status: "Carregando…" → `"Atualizado às {HH:MM}. As mais novas no topo."` (hora local, pt-BR);
-   - lista `<ol>` (rolagem própria até 60 vh): texto da intenção (quebras de linha preservadas, quebra palavras
-     longas) + linha cinza `"{nome} · {data/hora}"` com o que existir;
+   - lista `<ol>` (rolagem própria até 60 vh, focável e rotulada): texto da intenção (quebras de linha
+     preservadas, quebra palavras longas) + linha cinza `"{nome} · {data/hora}"` com o que existir;
    - vazio: `ui.intentions.empty`; erros: `notConfigured` (503), `forbidden` (502/403), `error` com `{code}`;
-   - botões **"Atualizar"** e **"Sair"**.
-4. **Mensagem para enviar** (só entrou): `<textarea readonly aria-label="Mensagem para enviar">` com
-   `messageTemplate` preenchido com o link do formulário; botão **"Copiar mensagem"** → status "Mensagem copiada.
-   Cole no WhatsApp." (ou seleciona o texto: "Texto selecionado: toque em Copiar.").
-5. **Onde levar as intenções** (sempre visível): lista `intentions.where`.
-6. Intenções são privadas: nunca entram no HTML estático, no cache do service worker, em logs ou em analytics.
+   - botão **"Atualizar"** (mostra "Carregando…" enquanto busca).
+4. **Mensagem para enviar:** `<textarea readonly aria-label="Mensagem para enviar">` com `messageTemplate`
+   preenchido com o link do formulário; botão **"Copiar mensagem"** → status "Mensagem copiada. Cole no
+   WhatsApp." (ou seleciona o texto: "Texto selecionado: toque em Copiar.").
+5. **Onde levar as intenções:** lista `intentions.where`.
+6. Intenções nunca entram no HTML estático, no cache do service worker, em logs ou em analytics (só saem da API,
+   `no-store`).
 
-### RF-11 · Sessão do dono — testes `07-intencoes`
+### RF-11 · Sessão do dono — removida (D-15)
 
-1. `POST /api/sessao` com JSON `{ "passcode": "..." }`. Compara com `OWNER_PASSCODE` em tempo constante
-   (`crypto.timingSafeEqual` sobre hashes SHA-256). Errado → 401 `{ "error": "invalid" }` após ~400 ms de atraso.
-2. Certo → 204 + cookie `rr_sessao` = JWT HS256 (`jose`, segredo `AUTH_SECRET` ≥ 32 caracteres, `sub: "owner"`,
-   validade 30 dias), `HttpOnly`, `Secure` em produção, `SameSite=Lax`, `Path=/`, `Max-Age` 30 dias.
-3. Só aceita `Content-Type: application/json` e `Origin` igual ao host (proteção CSRF); senão 403.
-4. `DELETE /api/sessao` apaga o cookie (204).
+Existiu na versão 1.0 da SPEC (código `OWNER_PASSCODE`, cookie JWT `rr_sessao`, `/api/sessao`). Retirada a pedido
+do Lucas em 10/11/2026: a aba é aberta a quem tem o link. Não há cookies no app.
 
 ### RF-12 · API de intenções — testes `07-intencoes`
 
-1. `GET /api/intencoes`: sem sessão válida → 401 `{ "error": "unauthorized" }`.
-2. Com sessão: lê `INTENCOES_RANGE` (padrão `A1:Z2000`) da planilha `INTENCOES_SHEET_ID` com a conta de serviço
+1. `GET /api/intencoes`: sem autenticação (D-15).
+2. Lê `INTENCOES_RANGE` (padrão `A1:Z2000`) da planilha `INTENCOES_SHEET_ID` com a conta de serviço
    (`GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY`, escopo `spreadsheets.readonly`, `google-auth-library`),
    interpreta com `parseIntentionRows()` (pronto) → 200 `{ "items": [...], "fetchedAt": "ISO" }`.
 3. Erros: variáveis ausentes → 503 `{ "error": "not_configured" }`; Google 403/404 → 502
@@ -252,7 +249,7 @@ A página é uma casca estática; os dados vêm de `GET /api/intencoes` no clien
    `robots.txt` com `Disallow: /`.
 2. Nenhum dado pessoal no repositório: nomes completos dos hóspedes, código de bilhete, e-mails, telefones,
    localizadores de voucher, intenções reais (o teste `data.test.ts` verifica parte disso).
-3. Sem analytics, sem cookies além da sessão do dono.
+3. Sem analytics, sem cookies.
 
 ### RF-15 · App instalável e offline — testes `08-pwa`
 
@@ -300,15 +297,15 @@ A página é uma casca estática; os dados vêm de `GET /api/intencoes` no clien
 | Popup            | `dialog` com nome = título do conjunto; `button` "Italiano"/"English" com `aria-pressed`; `button` "Ouvir"/"Tocando…", "Copiar"/"Copiado", "Fechar"; `link` de fallback do Tradutor |
 | Lugares          | `section` com `heading` "{weekday} {day} · {title}" contendo `link` para `/dia/{day}`; `listitem` por lugar                                                                         |
 | Infos            | `checkbox` com nome = texto da pendência/decisão                                                                                                                                    |
-| Intenções        | campo rotulado "Código de acesso", `button` "Entrar"/"Atualizar"/"Sair"/"Copiar mensagem", `textbox` da mensagem                                                                    |
+| Intenções        | `button` "Atualizar"/"Copiar mensagem", `textbox` da mensagem, `listitem` por intenção                                                                                              |
 | Não encontrado   | `heading` "Página não encontrada" + `link` "Abrir o dia de hoje" → `/`                                                                                                              |
 
 ## 7. Melhorias deliberadas em relação ao site original
 
 1. Rotas com caminho (`/dia/14`) em vez de hash; páginas estáticas (rápidas e indexáveis por nós, não pelos
    buscadores).
-2. Intenções com backend próprio (conta de serviço do Google + sessão por código) em vez do conector do Claude, que
-   só funcionava dentro do app do Claude.
+2. Intenções com backend próprio (conta de serviço do Google lendo a planilha no servidor) em vez do conector do
+   Claude, que só funcionava dentro do app do Claude. Sem código de acesso (D-15).
 3. Offline completo e instalável na tela inicial.
 4. Fontes self-hosted (não dependem do Google Fonts nem de internet).
 5. Conteúdo do documento dentro do app (RF-13).

@@ -21,8 +21,7 @@ src/
     lugares/page.tsx
     infos/page.tsx
     intencoes/page.tsx         ← casca estática + <IntentionsPanel/> (cliente)
-    api/intencoes/route.ts     ← GET (sessão + Sheets)
-    api/sessao/route.ts        ← POST entra, DELETE sai
+    api/intencoes/route.ts     ← GET (Sheets; sem sessão, D-15)
     manifest.ts, robots.ts
   components/
     shell/      Header.tsx, ThemeSwitch.tsx*, SectionsNav.tsx*, DayChips.tsx*, Footer.tsx, PageHeader.tsx
@@ -147,20 +146,19 @@ const json = (body: unknown, status = 200) =>
 ## 5. Intenções: segurança e configuração
 
 ```
-celular ──GET /api/intencoes (cookie rr_sessao)──▶ Route Handler ──JWT (conta de serviço)──▶ Google Sheets API
-        ◀──────────── JSON {items} (no-store) ────┘                ◀── valores da planilha (só leitura)
+celular ──GET /api/intencoes──▶ Route Handler ──JWT (conta de serviço)──▶ Google Sheets API
+        ◀── JSON {items} (no-store) ─┘             ◀── valores da planilha (só leitura)
 ```
 
+- Sem sessão nem código de acesso (D-15, pedido do Lucas): a aba é aberta a quem tem o link. O único segredo é a
+  chave da conta de serviço, que fica só no servidor.
 - `src/server/env.ts`: lê e valida com Zod **sob demanda** (não no import), para o build e as páginas estáticas
-  funcionarem sem variáveis. Variáveis: `OWNER_PASSCODE`, `AUTH_SECRET` (≥ 32), `GOOGLE_SERVICE_ACCOUNT_EMAIL`,
-  `GOOGLE_PRIVATE_KEY` (trocar `\n` literal por quebra de linha), `INTENCOES_SHEET_ID`, `INTENCOES_RANGE`
-  (opcional), `INTENCOES_FIXTURE` (só testes; ignorado se `VERCEL === "1"`).
-- `src/server/session.ts`: `createSessionToken()`, `readSession(token)`, nome do cookie `rr_sessao`, opções do cookie.
+  funcionarem sem variáveis. Variáveis: `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY` (trocar `\n` literal
+  por quebra de linha), `INTENCOES_SHEET_ID`, `INTENCOES_RANGE` (opcional), `INTENCOES_FIXTURE` (só testes;
+  ignorado se `VERCEL === "1"`).
 - `src/server/sheets.ts`: `new JWT({ email, key, scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'] })`
   → `client.request({ url: https://sheets.googleapis.com/v4/spreadsheets/{id}/values/{range} })`. Mapear 403/404 →
   `forbidden`.
-- Senha: comparar `sha256(input)` e `sha256(OWNER_PASSCODE)` com `crypto.timingSafeEqual`; atraso ~400 ms no erro.
-- CSRF: POST/DELETE só com `Content-Type: application/json` e `Origin` do próprio host.
 - Nunca registrar intenções em log; nunca cachear `/api/*` (o `sw.js` já ignora).
 
 ## 6. PWA e offline

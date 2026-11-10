@@ -18,8 +18,11 @@ npm run check      # lint + tipos + testes + paridade de conteúdo
 npm run dev        # http://localhost:3000
 ```
 
-Construção com o Claude Code: siga **`docs/PROMPTS.md`** (Prompt 0 e depois `/fase 1` … `/fase 9`).
-Publicação: **`docs/DEPLOY.md`**.
+Estado: **fases 0–9 prontas** (ver `docs/PROGRESS.md`); falta a Fase 10, a publicação, que é feita com o Lucas
+seguindo **`docs/DEPLOY.md`**. Para mudar o roteiro depois: `docs/PROMPTS.md`, "Mudanças de conteúdo".
+
+Tema padrão claro (a chave no cabeçalho liga o escuro e a escolha fica salva) — decisão D-13 em
+`docs/DECISIONS.md`.
 
 ## Documentos
 
@@ -43,7 +46,7 @@ Publicação: **`docs/DEPLOY.md`**.
 | `npm run check`           | lint, typecheck, testes unitários, paridade de conteúdo                            |
 | `npm run test:e2e`        | testes de aceitação no build de produção (fases habilitadas em `tests/fases.json`) |
 | `npm run test:e2e:legacy` | os mesmos testes no site original                                                  |
-| `npm run check:all`       | tudo acima + build                                                                 |
+| `npm run check:all`       | `check` + build + `test:e2e` (obrigatório antes de um commit de fase)              |
 | `npm run parity`          | prova que `src/data` contém tudo do site e do documento originais                  |
 | `npm run checklist`       | regenera `docs/ACCEPTANCE_CHECKLIST.md`                                            |
 
@@ -54,5 +57,6 @@ Vitest · Playwright + axe · Vercel. Fontes OFL self-hosted (`src/fonts/LICENSE
 
 ## Privacidade
 
-Fora dos buscadores (`noindex`). Intenções só para o dono (código de acesso), lidas da planilha por uma conta de
-serviço somente leitura; nunca vão para cache, log ou para o repositório. Segredos só em variáveis de ambiente.
+Fora dos buscadores (`noindex`). Intenções lidas da planilha por uma conta de serviço somente leitura e abertas a
+quem tem o link do site (decisão D-15, sem código de acesso); nunca vão para cache, log ou para o repositório.
+Segredos só em variáveis de ambiente.

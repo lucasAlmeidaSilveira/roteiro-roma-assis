@@ -26,8 +26,9 @@ compromissos da Convenção em azul, ingressos em dourado, alertas em terracota.
 | `--ok` / `--ok-soft`     | `#2e7448` / `#e2f1e6` | `#74c793` / `#1b3324` | caixas "Feito", status de sucesso                    |
 | `--warn` / `--warn-soft` | `#9c3b1d` / `#fbe9e2` | `#f0997a` / `#3d2219` | alertas e erros                                      |
 
-Escuro vale com `html[data-theme="dark"]` **ou** sistema escuro sem `data-theme="light"`. Nunca use cor fora dos
-tokens (as sombras usam `rgba(0,0,0,…)` como no legado).
+Escuro vale **só** com `html[data-theme="dark"]` (a chave do cabeçalho aplica e salva). O padrão é o claro; o
+sistema não é consultado (decisão D-13 — o legado seguia `prefers-color-scheme`). Nunca use cor fora dos tokens
+(as sombras usam `rgba(0,0,0,…)` como no legado).
 
 ## 3. Tipografia
 
@@ -57,11 +58,14 @@ Eyebrows: .78 rem, maiúsculas, tracking .08em, `--muted`, 700.
   `--line`; bolinha 20 px `--surface` com sombra `0 1px 3px rgba(0,0,0,.3)`, `left: 2px`. Ligado: trilho e borda
   `--accent`, bolinha `left: 20px` com `--accent-ink`. Transição .18 s só sem `prefers-reduced-motion`.
 
-### 4.3 Seções (segmented control)
+### 4.3 Seções (barra de abas no rodapé — D-14)
 
-- Contêiner: flex, gap 4 px, fundo `--bg`, raio 10 px, padding 4 px, `margin-bottom: 10px`.
-- Link: flex 1, centralizado, `--muted`, 700, .86 rem, padding 8 px 4 px, raio 7 px, altura mínima 40 px.
-- Ativo (`aria-current="page"`): fundo `--surface`, `--ink`, sombra `0 1px 2px rgba(0,0,0,.12)`.
+- Barra: `position: fixed; inset: auto 0 0`, fundo `--surface`, borda superior `--line`,
+  `padding-bottom: env(safe-area-inset-bottom)`; dentro, `.wrap` com os 4 links em flex (gap 4 px).
+- Aba: flex 1, coluna (ícone 24 px + nome), altura mínima 56 px, `--muted`, 700, .72 rem, raio 10 px.
+- Ativa (`aria-current="page"`): texto e ícone em `--accent`, preenchimento do ícone `--accent-soft`.
+- O rodapé de texto ganha `padding-bottom` extra (60 px + área segura) para não ficar sob a barra.
+- (O legado tinha um segmented control no cabeçalho: fundo `--bg`, raio 10 px, ativa com fundo `--surface`.)
 
 ### 4.4 Chips de dias
 

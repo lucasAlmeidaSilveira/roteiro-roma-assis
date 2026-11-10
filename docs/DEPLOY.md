@@ -4,7 +4,7 @@ Tempo total: ~40 minutos. Você precisa de: conta no GitHub, conta na Vercel (en
 gratuito para uso pessoal), a conta Google dona do formulário de intenções, e o computador com Node 24 e o
 projeto funcionando (`npm run check` verde).
 
-> Nunca cole segredos (código de acesso, chave do Google) no chat do Claude nem no código. Eles vão só na Vercel
+> Nunca cole segredos (a chave do Google) no chat do Claude nem no código. Eles vão só na Vercel
 > (e, se quiser rodar as intenções no seu computador, no arquivo `.env.local`, que o git ignora).
 
 ## 1. GitHub (repositório privado)
@@ -65,8 +65,6 @@ Vercel → seu projeto → **Settings → Environment Variables**. Cadastre (amb
 
 | Nome                           | Valor                                                                                                                               |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `OWNER_PASSCODE`               | o código que você vai digitar no celular para ver as intenções (use algo longo, ex.: 4 palavras)                                    |
-| `AUTH_SECRET`                  | 32+ caracteres aleatórios. Gere no terminal: `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`       |
 | `GOOGLE_SERVICE_ACCOUNT_EMAIL` | o `client_email` do JSON                                                                                                            |
 | `GOOGLE_PRIVATE_KEY`           | o `private_key` do JSON, inteiro, do `-----BEGIN PRIVATE KEY-----` ao `-----END PRIVATE KEY-----\n`, com os `\n` do jeito que estão |
 | `INTENCOES_SHEET_ID`           | `13s8YEO8NqSDPatk8zntatW9cW3YEZZZFeJmG5pqFaCY`                                                                                      |
@@ -81,7 +79,7 @@ Depois: **Deployments** → no último deploy, **⋯ → Redeploy** (variáveis 
 2. **Compartilhar → Adicionar à Tela de Início** (abre em tela cheia, como app).
 3. Confira: dia de hoje abre sozinho; tema claro/escuro; "Feito"; popup **Idiomas** (Italiano/English) — para
    ouvir, **desligue o modo silencioso** (botão de Ação do iPhone 15) e aumente o volume.
-4. **Intenções:** digite o código (`OWNER_PASSCODE`) → as respostas do formulário aparecem, mais novas no topo.
+4. **Intenções:** as respostas do formulário aparecem, mais novas no topo (a aba é aberta a quem tem o link, D-15).
    Toque em "Atualizar" depois de enviar uma resposta de teste pelo formulário.
 5. **Offline:** com internet, abra o app uma vez e espere alguns segundos; ligue o **modo avião**; abra os dias,
    Lugares e Infos — tudo deve abrir. (As intenções precisam de internet.)
@@ -98,8 +96,6 @@ Copie `.env.example` para `.env.local`, preencha os mesmos valores e rode `npm r
 | Intenções: "A leitura da planilha ainda não foi configurada…" | variável faltando ou sem redeploy                               | conferir o passo 4 e fazer Redeploy                                       |
 | Intenções: "O servidor não tem acesso à planilha…"            | planilha não compartilhada com a conta de serviço ou ID errado  | refazer o passo 3.7; conferir `INTENCOES_SHEET_ID`                        |
 | Intenções: "código: upstream"                                 | chave colada errada (quebras de linha) ou Sheets API desativada | colar o `private_key` inteiro de novo; conferir o passo 3.3               |
-| "Código incorreto"                                            | `OWNER_PASSCODE` diferente do digitado                          | conferir maiúsculas/espaços; redeploy após mudar                          |
-| A planilha foi lida, mas está vazia                           | o formulário grava em outra planilha                            | no Forms: Respostas → Ver no Planilhas; usar o ID dessa planilha          |
 | Deploy falhou na Vercel                                       | erro de build                                                   | abrir o log do deploy; rodar `npm run check:all` no computador e corrigir |
 | Áudio mudo no iPhone                                          | modo silencioso                                                 | desligar o silencioso; senão, usar o link "Ouvir no Google Tradutor"      |
 

@@ -30,9 +30,9 @@ p();
 p('## Casca (RF-01, RF-02)');
 for (const s of [
   'Cabeçalho fixo com "Roma e Assis", data (some no celular estreito) e chave Claro/Escuro',
-  'Seções: Dia a dia · Lugares · Intenções · Infos (ativa destacada)',
+  'Seções na barra de abas do rodapé (ícone + nome): Dia a dia · Lugares · Intenções · Infos (ativa em azul)',
   '10 chips de dias (14 a 23), dia aberto em azul, hoje com borda, rolagem horizontal',
-  'Tema: segue o sistema; escolha salva; sem flash ao recarregar',
+  'Tema: padrão claro (D-13); escolha salva; sem flash ao recarregar',
   '"/" abre o dia de hoje em Roma (ou 14 antes da viagem)',
   'Rodapé com o aviso de horários e do "Feito" salvo no aparelho',
 ])
@@ -102,11 +102,11 @@ box(`Fontes consultadas (${doc.sources.items.length})`);
 p();
 p('## Intenções (RF-10 a RF-12)');
 for (const s of [
-  'Visitante: aviso "só para o dono", campo "Código de acesso" e "Onde levar"',
-  'Dono: lista das intenções (mais novas no topo), contagem, "Atualizado às…", Atualizar, Sair',
+  'Aberta a quem tem o link (D-15): sem código de acesso',
+  'Lista das intenções (mais novas no topo), contagem, "Atualizado às…", Atualizar',
   'Mensagem para enviar com o link do formulário + Copiar mensagem',
   `Onde levar: ${intentions.where.length} lugares`,
-  'Erros claros: não configurado / sem acesso à planilha / código',
+  'Erros claros: não configurado / sem acesso à planilha / código do erro',
 ])
   box(s);
 p();

@@ -105,13 +105,12 @@ passando com a fase habilitada em `tests/fases.json`, `docs/PROGRESS.md` atualiz
 
 **RF:** RF-10, RF-11, RF-12. **Testes:** `07-intencoes`.
 
-1. `src/server/env.ts`, `session.ts` (jose), `sheets.ts` (google-auth-library), `intentions-source.ts` (fixture ou
-   Google), todos com `import 'server-only'`.
-2. `app/api/sessao/route.ts` (POST/DELETE) e `app/api/intencoes/route.ts` (GET), com `no-store`.
-3. `IntentionsPanel` (cliente): busca a API, estados (carregando / login / lista / vazio / erros), "Atualizar",
-   "Sair"; `LoginForm`; `MessageCard` (copiar com fallback); "Onde levar" sempre visível.
-4. Testes unitários do servidor: sessão (token válido, expirado, adulterado), comparação de senha, mapeamento de
-   erros do Google (mock de `fetch`/cliente).
+1. `src/server/env.ts`, `sheets.ts` (google-auth-library), `intentions-source.ts` (fixture ou Google), todos com
+   `import 'server-only'`. (A sessão por código, `session.ts` + `/api/sessao`, foi retirada: D-15.)
+2. `app/api/intencoes/route.ts` (GET), com `no-store`.
+3. `IntentionsPanel` (cliente): busca a API, estados (carregando / lista / vazio / erros), "Atualizar";
+   `MessageCard` (copiar com fallback); "Onde levar".
+4. Testes unitários do servidor: variáveis de ambiente, mapeamento de erros do Google (fetcher simulado).
 
 **Pronto quando:** `07-intencoes` passa e `docs/DEPLOY.md` §3 está claro para o Lucas.
 
@@ -143,4 +142,4 @@ passando com a fase habilitada em `tests/fases.json`, `docs/PROGRESS.md` atualiz
 
 Siga `docs/DEPLOY.md`: GitHub (repositório privado), Vercel, variáveis, conta de serviço do Google, teste no
 iPhone (tema, popup e áudio com o modo silencioso desligado, offline em modo avião, instalar na tela inicial,
-intenções com o código).
+intenções aparecendo).

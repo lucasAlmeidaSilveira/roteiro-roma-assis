@@ -69,3 +69,25 @@ Migrar para o 10 quando os plugins do `eslint-config-next` declararem suporte.
 
 `.nvmrc` e `engines` em 24.x (Vercel usa a mesma versão). TypeScript 5.x como no scaffold oficial (o 7 já saiu,
 mas o Next 16.4 ainda gera projetos com o 5).
+
+## D-13 · Tema padrão claro (não segue o sistema)
+
+Pedido do Lucas em 10/11/2026: "o tema padrão deve ser o claro". Sem escolha salva, o app abre claro; o escuro só
+entra pela chave do cabeçalho (salva em `roteiro-roma-tema`). O bloco `@media (prefers-color-scheme: dark)` dos
+tokens foi removido e `isDarkNow()` lê só `data-theme`. **Divergência deliberada** do site original (RF-02.2 e
+o teste "sem escolha salva" de `01-layout` passaram a distinguir legado × app novo).
+
+## D-14 · Seções numa barra de abas fixa no rodapé (padrão de app)
+
+Pedido do Lucas em 10/11/2026: "coloque as abas no padrão de app, que fica no rodapé da página … com nome e
+imagem". `SectionsNav` saiu do cabeçalho e virou uma barra fixa embaixo (`position: fixed`, `--surface`, borda
+`--line`, área segura do iPhone), com ícone SVG inline + rótulo de `ui.nav`; a ativa fica em `--accent`. O
+cabeçalho fixo mantém marca, tema e os chips dos dias. O `<nav aria-label="Seções">` e a ordem dos 4 links não
+mudaram (contrato dos testes). **Divergência deliberada** do site original (segmented control no topo).
+
+## D-15 · Aba Intenções aberta, sem código de acesso
+
+Pedido do Lucas em 10/11/2026: "não precisa ter esse código de acesso não, pode deixar liberado". Removidos
+`/api/sessao`, `src/server/session.ts`, `LoginForm`, `OWNER_PASSCODE` e `AUTH_SECRET`; `GET /api/intencoes`
+responde a qualquer um. Consequência assumida: quem tiver o link do site lê as intenções (com os nomes de quem
+escreveu); o site continua fora dos buscadores. A dependência `jose` ficou sem uso e foi removida.

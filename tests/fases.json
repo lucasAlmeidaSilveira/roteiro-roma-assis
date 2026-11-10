@@ -1,4 +1,4 @@
 {
   "comentario": "Fases do docs/IMPLEMENTATION_PLAN.md já implementadas. Ao terminar uma fase, acrescente o número aqui e faça os testes dela passarem. Não remova números.",
-  "habilitadas": []
+  "habilitadas": [1, 2, 3, 4, 5, 6, 7, 8, 9]
 }

@@ -1,0 +1,26 @@
+{
+  "olympic": {
+    "name": "Grand Hotel Olympic",
+    "address": "Via Properzio 2/a, Prati, Roma",
+    "mapQuery": "Grand Hotel Olympic, Via Properzio 2a, Roma",
+    "when": "check-in 14h · check-out até 10h de 20/11"
+  },
+  "locanda": {
+    "name": "Locanda Giustini",
+    "address": "Via Enrico Berlinguer 5, Santa Maria degli Angeli (Assis)",
+    "mapQuery": "Locanda Giustini, Via Enrico Berlinguer 5, Santa Maria degli Angeli",
+    "when": "check-in 15h30 · check-out até 10h30 de 22/11 · avisar 24h antes"
+  },
+  "extra": {
+    "name": "Hotel extra (a reservar)",
+    "address": "Região de Tiburtina, Roma",
+    "mapQuery": null,
+    "when": "1 noite, 2 adultos · check-out no dia 23"
+  },
+  "aero": {
+    "name": "Aeroporto de Fiumicino",
+    "address": "Noite no terminal até o voo das 5h55",
+    "mapQuery": "Aeroporto di Fiumicino",
+    "when": "check-in abre ~2h55"
+  }
+}

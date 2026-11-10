@@ -1,0 +1,66 @@
+{
+  "title": "Programação Oficial da Convenção Shalom 45 anos",
+  "days": [
+    {
+      "date": "2026-11-15",
+      "heading": "15 de novembro (Domingo) – Credenciamento e Abertura",
+      "place": "Centro de São Lourenço",
+      "schedule": [
+        "09h às 18h – Credenciamento dos participantes.",
+        "Ao longo do dia, serão celebradas Missas em diversos horários e idiomas no Centro de São Lourenço."
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "heading": "16 de novembro (Segunda-feira) – Basílica São João de Latrão",
+      "theme": "Cristo é a nossa Paz",
+      "schedule": ["13h – Acolhida.", "17h – Santa Missa."]
+    },
+    {
+      "date": "2026-11-17",
+      "heading": "17 de novembro (Terça-feira) – Basílica São Paulo Fora dos Muros",
+      "theme": "Dia Missionário — \"Como o Pai me enviou, assim também eu vos envio.\" (Jo 20,21)",
+      "schedule": ["13h – Acolhida.", "17h – Santa Missa."]
+    },
+    {
+      "date": "2026-11-18",
+      "heading": "18 de novembro (Quarta-feira) – Basílica São Paulo Fora dos Muros",
+      "theme": "Fidelidade ao Evangelho, o caminho da paz.",
+      "schedule": ["13h – Acolhida.", "17h – Santa Missa."]
+    },
+    {
+      "date": "2026-11-19",
+      "heading": "19 de novembro (Quinta-feira) – Sala Paulo VI",
+      "theme": "\"Paz a Vós\"",
+      "schedule": [
+        "08h – Credenciamento.",
+        "Encontro com o Papa.",
+        "18h – Missa em ação de graças."
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "heading": "20 de novembro (Sexta-feira) – Peregrinação em Assis",
+      "theme": "Senhor, fazei-me instrumento da vossa paz.",
+      "schedule": [
+        "Manhã – Translado de Roma para Assis por conta própria.",
+        "13h às 17h – Peregrinação livre e programação opcional na Catedral de São Rufino, Basílica de Santa Clara e Igreja da Espoliação, onde repousa o corpo de São Carlo Acutis.",
+        "17h às 21h30 – Procissão das Velas e Vigília Jovem."
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "heading": "21 de novembro (Sábado) – Encerramento e Envio",
+      "theme": "Cristo Rei da Paz.",
+      "schedule": ["13h – Acolhida.", "15h – Missa de Envio.", "16h30 – Bênção de envio."]
+    }
+  ],
+  "guests": [
+    "Papa Leão",
+    "Cardeal Baldassare Reina – Vigário Geral de Roma.",
+    "Cardeal Kevin Farrell – Camerlengo e Prefeito do Dicastério para os Leigos, a Família e a Vida.",
+    "Dom Rino Fisichella – Pró-Prefeito do Dicastério para a Evangelização.",
+    "Moysés Azevedo",
+    "Emmir Nogueira."
+  ]
+}

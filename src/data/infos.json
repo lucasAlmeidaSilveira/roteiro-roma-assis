@@ -1,0 +1,55 @@
+{
+  "eyebrow": "Para consultar",
+  "title": "Infos práticas",
+  "todoTitle": "Antes de viajar",
+  "stays": {
+    "title": "Hospedagens",
+    "items": [
+      {
+        "title": "14→20/11 · Grand Hotel Olympic",
+        "text": "Via Properzio 2/a, Prati. Check-in 14h, check-out 10h. Taxa no local: €135 para os 3.",
+        "stay": "olympic"
+      },
+      {
+        "title": "20→22/11 · Locanda Giustini",
+        "text": "Via Enrico Berlinguer 5, Santa Maria degli Angeli. Check-in 15h30, check-out 10h30. Taxa: €18. Todos com passaporte no check-in.",
+        "stay": "locanda"
+      },
+      { "title": "22→23/11 · Hotel extra", "text": "A reservar, região de Tiburtina, 2 adultos." },
+      { "title": "23→24/11 · Aeroporto", "text": "Noite em Fiumicino; voo às 5h55." }
+    ]
+  },
+  "transport": {
+    "title": "Transporte em Roma",
+    "rows": [
+      { "label": "Bilhete BIT (100 min; metrô uma vez)", "value": "€1,50" },
+      { "label": "Teto diário no cartão contactless", "value": "€8,50" },
+      { "label": "Ônibus Terravision aeroporto ↔ Termini (1ª opção)", "value": "a partir de €4" },
+      { "label": "FL1 aeroporto ↔ Ostiense/Tiburtina", "value": "€8" },
+      { "label": "Leonardo Express aeroporto ↔ Termini", "value": "€14" },
+      { "label": "Trem Roma ↔ Assis (cada trecho)", "value": "€10–17" }
+    ],
+    "note": "O BIT pode ter subido para €2. Os bilhetes urbanos não valem nos trens do aeroporto nem para Assis."
+  },
+  "budget": {
+    "title": "Orçamento por pessoa",
+    "rows": [
+      { "label": "Total estimado (sem passagem e diárias já pagas)", "value": "€379–537" },
+      { "label": "Comida (10 dias)", "value": "€180–250" },
+      { "label": "Transporte e aeroporto", "value": "€47–65" },
+      { "label": "Ingressos", "value": "€43–73" },
+      { "label": "Trem Roma ↔ Assis", "value": "€24–34" },
+      { "label": "Taxas de turismo", "value": "~€57" },
+      { "label": "Hotel extra (metade)", "value": "€25–55" }
+    ]
+  },
+  "reminders": {
+    "title": "Lembretes",
+    "items": [
+      "Ombros e joelhos cobertos em São Pedro, nas basílicas e nos Museus do Vaticano.",
+      "Passaporte sempre junto: credenciamentos, Coliseu e check-in.",
+      "Greve geral em 20/11 e ferroviária até 20h de 21/11.",
+      "Emergência na Europa: **112**."
+    ]
+  }
+}

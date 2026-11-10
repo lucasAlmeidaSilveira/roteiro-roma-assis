@@ -1,0 +1,10 @@
+{
+  "comentario": "Dados FICTÍCIOS para testes (INTENCOES_FIXTURE=1). Nunca coloque intenções reais aqui.",
+  "values": [
+    ["Carimbo de data/hora", "Sua intenção ", "Seu nome"],
+    ["01/11/2026 09:00:00", "Pela paz no mundo", "Maria"],
+    ["02/11/2026 10:30:00", "Pela saúde da família\nem especial dos avós"],
+    ["02/11/2026 11:00:00", "", "Linha vazia"],
+    ["03/11/2026 18:45:00", "Em ação de graças", "João"]
+  ]
+}

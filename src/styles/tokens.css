@@ -1,0 +1,62 @@
+/*
+ * Tokens de design copiados do site antigo (legacy/site.html). Não altere os valores sem
+ * atualizar docs/DESIGN.md. As fontes vêm de next/font (variáveis --font-*), com os mesmos fallbacks.
+ */
+:root {
+  --bg: #eef0ec;
+  --surface: #ffffff;
+  --ink: #1c2230;
+  --muted: #5a6271;
+  --line: #d9ddd5;
+  --accent: #2c5a86;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3ecf6;
+  --gold: #8a5d0c;
+  --gold-soft: #f5ead2;
+  --ok: #2e7448;
+  --ok-soft: #e2f1e6;
+  --warn: #9c3b1d;
+  --warn-soft: #fbe9e2;
+  --display: var(--font-display), 'Avenir Next', 'Segoe UI', sans-serif;
+  --body: var(--font-body), 'Segoe UI', system-ui, sans-serif;
+  --mono: var(--font-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #11151b;
+    --surface: #1a2029;
+    --ink: #e9ecf0;
+    --muted: #a0a8b5;
+    --line: #2b333e;
+    --accent: #8fb9e6;
+    --accent-ink: #0e1620;
+    --accent-soft: #1d2d40;
+    --gold: #e4b862;
+    --gold-soft: #3a2f18;
+    --ok: #74c793;
+    --ok-soft: #1b3324;
+    --warn: #f0997a;
+    --warn-soft: #3d2219;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #11151b;
+  --surface: #1a2029;
+  --ink: #e9ecf0;
+  --muted: #a0a8b5;
+  --line: #2b333e;
+  --accent: #8fb9e6;
+  --accent-ink: #0e1620;
+  --accent-soft: #1d2d40;
+  --gold: #e4b862;
+  --gold-soft: #3a2f18;
+  --ok: #74c793;
+  --ok-soft: #1b3324;
+  --warn: #f0997a;
+  --warn-soft: #3d2219;
+  color-scheme: dark;
+}

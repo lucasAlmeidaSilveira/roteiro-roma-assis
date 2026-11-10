@@ -1,0 +1,12 @@
+{
+  "formUrl": "https://forms.gle/sV283WgoF1aWfMau7",
+  "messageTemplate": "Vou para Roma e Assis de 14 a 24 de novembro, para a Convenção Shalom. Se quiser que eu leve uma intenção sua para rezar nos lugares santos, escreva aqui: {formUrl}",
+  "where": [
+    "Sáb 14: Capela Sistina",
+    "Dom 15: missa em São Pedro e Divina Misericórdia",
+    "Seg 16: Scala Santa e Santa Croce",
+    "Ter 17: Tre Fontane e túmulo de São Paulo",
+    "Sex 20 e sáb 21: Assis, Porciúncula e Procissão das Velas",
+    "Dom 22: Santa Cecília e São Filipe Neri"
+  ]
+}

@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint, tipos, unitários, paridade, build e e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint, typecheck, unitários e paridade de conteúdo
+        run: npm run check
+
+      - name: Formatação
+        run: npm run format:check
+
+      - name: Navegador do Playwright
+        run: npx playwright install --with-deps chromium
+
+      # Prova de paridade durante a migração. Depois de mudar conteúdo de propósito
+      # (scripts/parity-exceptions.json), remova este passo: o site antigo deixa de ser a referência.
+      - name: Aceitação no site original (prova de paridade)
+        run: npm run test:e2e:legacy
+
+      - name: Aceitação no app (build de produção, fases habilitadas)
+        run: npm run test:e2e
+
+      - name: Relatório do Playwright
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

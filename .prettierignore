@@ -1,0 +1,12 @@
+.next
+node_modules
+package-lock.json
+legacy
+playwright-report
+test-results
+coverage
+public/sw.js
+AGENTS.md
+docs/ACCEPTANCE_CHECKLIST.md
+src/fonts
+public/icons

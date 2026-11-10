@@ -1,0 +1,1050 @@
+<title>Roma e Assis 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: guia de bolso — cabeçalho fixo com os dias, linha do tempo de cartões, 1 coluna no celular */
+:root{
+  --bg:#eef0ec; --surface:#ffffff; --ink:#1c2230; --muted:#5a6271; --line:#d9ddd5;
+  --accent:#2c5a86; --accent-ink:#ffffff; --accent-soft:#e3ecf6;
+  --gold:#8a5d0c; --gold-soft:#f5ead2; --ok:#2e7448; --ok-soft:#e2f1e6; --warn:#9c3b1d; --warn-soft:#fbe9e2;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11151b; --surface:#1a2029; --ink:#e9ecf0; --muted:#a0a8b5; --line:#2b333e;
+  --accent:#8fb9e6; --accent-ink:#0e1620; --accent-soft:#1d2d40;
+  --gold:#e4b862; --gold-soft:#3a2f18; --ok:#74c793; --ok-soft:#1b3324; --warn:#f0997a; --warn-soft:#3d2219; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11151b; --surface:#1a2029; --ink:#e9ecf0; --muted:#a0a8b5; --line:#2b333e;
+  --accent:#8fb9e6; --accent-ink:#0e1620; --accent-soft:#1d2d40;
+  --gold:#e4b862; --gold-soft:#3a2f18; --ok:#74c793; --ok-soft:#1b3324; --warn:#f0997a; --warn-soft:#3d2219; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:12px 8px}
+.brand h1{font-family:var(--display);font-size:1.3rem;margin:0;letter-spacing:-.01em}
+.brand small{color:var(--muted);font-size:.85rem;white-space:nowrap}
+.brand{align-items:center}
+.brand-r{display:flex;align-items:center;gap:12px}
+.theme{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:4px 0;min-height:40px;cursor:pointer;color:var(--ink);font:inherit;font-size:.85rem;font-weight:700}
+.theme .track{position:relative;width:44px;height:26px;border-radius:999px;background:var(--line);border:1px solid var(--line)}
+.theme .knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.theme[aria-checked="true"] .track{background:var(--accent);border-color:var(--accent)}
+.theme[aria-checked="true"] .knob{left:20px;background:var(--accent-ink)}
+@media (prefers-reduced-motion:no-preference){.theme .knob{transition:left .18s ease}.theme .track{transition:background .18s}}
+@media (max-width:430px){.brand small{display:none}}
+.brand h1{white-space:nowrap}
+.views{display:flex;gap:4px;background:var(--bg);border-radius:10px;padding:4px;margin-bottom:10px}
+.views a{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:700;font-size:.92rem;padding:8px 6px;border-radius:7px;min-height:40px;display:flex;align-items:center;justify-content:center}
+.views a[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;scroll-snap-type:x proximity}
+.days::-webkit-scrollbar{display:none}
+.days a{flex:0 0 auto;scroll-snap-align:start;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:6px 10px;min-width:58px;text-align:center;line-height:1.15;background:var(--surface)}
+.days a b{display:block;font-family:var(--display);font-size:1.15rem}
+.days a span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.days a[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.days a[aria-current="true"] span{color:var(--accent-ink)}
+.days a.today:not([aria-current="true"]){border-color:var(--accent);border-width:2px}
+main{padding-block:18px 48px;display:grid;gap:16px}
+.dayhead h2{font-family:var(--display);font-size:1.7rem;line-height:1.15;margin:0 0 4px;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.dayhead p{margin:6px 0 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;padding:3px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+.chip.city{font-weight:700}
+.alert{background:var(--warn-soft);color:var(--ink);border:1px solid var(--warn);border-radius:12px;padding:12px 14px;font-size:.95rem}
+.alert strong{color:var(--warn)}
+.now{background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;padding:12px 14px;display:grid;gap:4px}
+.now .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent)}
+.now .what{font-weight:700;font-size:1.05rem}
+.now .sub{color:var(--muted);font-size:.9rem}
+ol.timeline{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.item .time{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.92rem;color:var(--muted);padding-top:2px;line-height:1.3}
+.item .place{font-weight:700;font-size:1.06rem;line-height:1.3;margin:0}
+.item .do{margin:3px 0 0;font-size:.95rem}
+.item .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:9px}
+.item.event{background:var(--accent-soft);border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.badge{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:6px;background:var(--accent);color:var(--accent-ink)}
+.cost{font-size:.82rem;padding:2px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.cost.paid{background:var(--gold-soft);border-color:var(--gold);color:var(--ink);font-weight:700}
+.maplink{font-size:.85rem;font-weight:700;text-decoration:none;padding:4px 10px;border-radius:8px;border:1px solid var(--accent);min-height:32px;display:inline-flex;align-items:center}
+.done{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--muted);cursor:pointer;min-height:32px}
+.done input{width:20px;height:20px;accent-color:var(--ok);cursor:pointer}
+.item.is-done{opacity:.55}
+.item.is-done .place{text-decoration:line-through}
+.item.is-now{outline:3px solid var(--accent);outline-offset:1px}
+.note{font-size:.92rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px;margin:0}
+.sleep{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:.95rem}
+.sleep b{display:block}
+section.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+section.card h3{font-family:var(--display);font-size:1.15rem;margin:0 0 8px}
+section.card ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;font-variant-numeric:tabular-nums}
+.kv div:nth-child(even){text-align:right;font-weight:700}
+.places h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}
+.places ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.places li{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding-block:6px}
+.places li:last-child{border-bottom:0}
+.places li > a{font-size:.85rem;white-space:nowrap;font-weight:700;text-decoration:none}
+.places .pl{display:flex;flex-direction:column;gap:4px;min-width:0}
+.places .tk{display:flex;flex-direction:column;gap:2px}
+.places .tklink{align-self:flex-start;font-size:.85rem;font-weight:700;text-decoration:none;padding:4px 10px;border-radius:8px;background:var(--gold-soft);border:1px solid var(--gold);color:var(--ink);min-height:32px;display:inline-flex;align-items:center}
+.places .tk small{color:var(--muted);font-size:.8rem}
+.check li{list-style:none;margin-left:-18px}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:var(--ok)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.85rem;color:var(--muted);align-items:center}
+footer{color:var(--muted);font-size:.82rem;padding-bottom:32px}
+.views a{font-size:.86rem;padding:8px 4px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{font:inherit;font-weight:700;font-size:.92rem;text-decoration:none;border-radius:10px;min-height:44px;padding:0 14px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;border:1px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.steps{margin:0;padding-left:20px;display:grid;gap:8px}
+.field{display:grid;gap:4px;margin-top:10px}
+.field label{font-size:.85rem;font-weight:700;color:var(--muted)}
+.field input,.msg{font:inherit;font-size:.95rem;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.msg{min-height:96px;resize:vertical;line-height:1.45}
+.status{font-size:.85rem;color:var(--ok);min-height:1.2em;margin:6px 0 0}
+.ilist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px;max-height:60vh;overflow-y:auto}
+.ilist li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg)}
+.itxt{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.imeta{margin:4px 0 0;font-size:.8rem;color:var(--muted)}
+.status .btn{min-height:36px;margin-left:6px}
+.itbtn{font:inherit;font-size:.85rem;font-weight:700;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:32px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.itbtn .flag{display:inline-flex;width:14px;height:10px;border-radius:2px;overflow:hidden;flex:0 0 auto}
+.itbtn .flag i{flex:1}
+.modal{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;justify-content:center;background:rgba(10,14,20,.55);padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) 0 env(safe-area-inset-left,0px)}
+.modal[hidden]{display:none}
+.langsw{display:flex;gap:4px;background:var(--bg);border-radius:10px;padding:4px;margin:8px 0 2px}
+.langsw button{flex:1;font:inherit;font-weight:700;font-size:.92rem;border:0;border-radius:7px;min-height:40px;background:transparent;color:var(--muted);cursor:pointer}
+.langsw button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.itbtn .langtag{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.04em}
+.sheet{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:88vh;overflow-y:auto;border-radius:16px 16px 0 0;padding:16px max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));box-shadow:0 -6px 30px rgba(0,0,0,.25)}
+@media (min-width:600px){.modal{align-items:center}.sheet{border-radius:16px;max-height:80vh}}
+.sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px}
+.sheet-head h3{font-family:var(--display);font-size:1.25rem;margin:0;line-height:1.2}
+.sheet-head p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.xbtn{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;min-width:44px;min-height:44px;cursor:pointer}
+.phr{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.phr li{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:start}
+.phr .it{font-weight:700;font-size:1.08rem;line-height:1.3}
+.phr .pr{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
+.phr .pt{font-size:.9rem;color:var(--muted)}
+.phr .acts{grid-row:1 / span 3;grid-column:2;display:flex;flex-direction:column;gap:6px}
+.phr button{font:inherit;font-size:.8rem;font-weight:700;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:8px;min-height:36px;padding:0 10px;cursor:pointer}
+.phr.basic li{background:var(--bg)}
+.phr .gt{grid-column:1 / -1;font-size:.85rem;font-weight:700;margin-top:6px}
+.phr .gt[hidden]{display:none}
+.sheet h4{margin:16px 0 0;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tip{font-size:.85rem;color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:no-preference){.days a,.views a{transition:background .15s,color .15s}}
+@media (min-width:600px){.item{grid-template-columns:76px minmax(0,1fr)}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><h1>Roma e Assis</h1><div class="brand-r"><small id="clock">14–24 nov 2026</small><button type="button" id="theme" class="theme" role="switch" aria-checked="false" aria-label="Tema escuro"><span class="tlabel" id="tlabel">Claro</span><span class="track"><span class="knob"></span></span></button></div></div>
+    <nav class="views" aria-label="Seções">
+      <a href="#" data-view="dias">Dia a dia</a>
+      <a href="#lugares" data-view="lugares">Lugares</a>
+      <a href="#intencoes" data-view="intencoes">Intenções</a>
+      <a href="#infos" data-view="infos">Infos</a>
+    </nav>
+    <nav class="days" id="days" aria-label="Dias da viagem"></nav>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <div class="sheet-head">
+      <div><h3 id="mtitle">Em italiano</h3><p id="msub"></p></div>
+      <button type="button" class="xbtn" id="mclose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="langsw" id="langsw" role="group" aria-label="Idioma das frases">
+      <button type="button" data-lang="it" aria-pressed="true">Italiano</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <ul class="phr" id="mlist"></ul>
+    <h4>Sempre úteis</h4>
+    <ul class="phr basic" id="mbasic"></ul>
+    <p class="tip">Sem som no iPhone? Desligue o modo silencioso (a chave na lateral) e aumente o volume. Leia a linha azul como se fosse português; a sílaba com acento é a forte. Comece com "Buongiorno" (até umas 16h) ou "Buonasera" (depois) e termine com "Grazie": faz muita diferença.</p>
+  </div>
+</div>
+<div class="wrap"><footer>Horários e preços vêm de guias e sites consultados em novembro de 2026; confirme ingressos, trens e horários de domingo antes de sair. Os itens marcados como feitos ficam salvos só neste aparelho.</footer></div>
+
+<script>
+const MAP = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+const STAY = {
+  olympic:{name:'Grand Hotel Olympic', addr:'Via Properzio 2/a, Prati, Roma', q:'Grand Hotel Olympic, Via Properzio 2a, Roma', when:'check-in 14h · check-out até 10h de 20/11'},
+  locanda:{name:'Locanda Giustini', addr:'Via Enrico Berlinguer 5, Santa Maria degli Angeli (Assis)', q:'Locanda Giustini, Via Enrico Berlinguer 5, Santa Maria degli Angeli', when:'check-in 15h30 · check-out até 10h30 de 22/11 · avisar 24h antes'},
+  extra:{name:'Hotel extra (a reservar)', addr:'Região de Tiburtina, Roma', q:null, when:'1 noite, 2 adultos · check-out no dia 23'},
+  aero:{name:'Aeroporto de Fiumicino', addr:'Noite no terminal até o voo das 5h55', q:'Aeroporto di Fiumicino', when:'check-in abre ~2h55'}
+};
+// t: hora de início ("06:25"), end opcional, nd = dia seguinte, ev = compromisso da Convenção, paid = ingresso pago
+const DAYS = [
+ {d:14, wd:'Sáb', title:'Chegada, H&M e Vaticano', city:'Roma', stay:'olympic',
+  sum:'Ônibus Terravision de madrugada, malas no hotel, H&M na abertura, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.',
+  items:[
+  {t:'00:05', label:'00h05', p:'Aeroporto de Fiumicino', a:'Pousar; imigração e malas levam cerca de 1h.', c:'—', q:'Aeroporto di Fiumicino'},
+  {t:'01:30', label:'01h30–05h30', p:'Aeroporto de Fiumicino', a:'Esperar na área pública do terminal, aberta a noite toda.', c:'grátis'},
+  {t:'05:35', label:'~05h35', p:'Ônibus Terravision → Termini', a:'1ª opção: primeiro ônibus (confirmar o horário), plataforma 18, direto, 45–55 min; comprar online antes (a partir de €4). 2ª opção: trem FL1 até Ostiense (~6h25, €8) ou Leonardo Express até Termini (€14).', c:'€4–6', q:'Terravision Fiumicino Airport'},
+  {t:'06:35', label:'~06h35', p:'Metrô A, Termini → Ottaviano', a:'Sair pelo lado leste (Via Marsala), pegar o metrô A e caminhar 8–10 min até o hotel. Se veio de FL1: ônibus 23 de Ostiense até a Piazza Risorgimento.', c:'€1,50', q:'Metro Ottaviano, Roma'},
+  {t:'07:00', label:'~07h00', p:'Grand Hotel Olympic', a:'Deixar as malas na recepção (check-in só às 14h); café com cornetto.', c:'€3–4', q:STAY.olympic.q},
+  {t:'09:15', label:'09h15', p:'Metrô A → Spagna', a:'Descer em Spagna e caminhar até a Via del Corso.', c:'€1,50', q:'Metro Spagna, Roma'},
+  {t:'10:00', label:'10h00', p:'H&M, Via del Corso 422', a:'Comprar as blusas; abre às 10h (confirmar).', c:'compras', q:'H&M Via del Corso 422, Roma'},
+  {t:'11:30', label:'11h30', p:'Piazza di Spagna', a:'Ver a escadaria e a praça, a poucos minutos a pé da H&M.', c:'grátis', q:'Piazza di Spagna, Roma'},
+  {t:'12:15', label:'12h15', p:'Perto da Via del Corso', a:'Almoço de pizza al taglio ou panino.', c:'€6–9'},
+  {t:'13:30', label:'13h30', p:'Metrô A, Spagna → Ottaviano', a:'Voltar ao hotel, fazer o check-in (a partir das 14h) e descansar até as 15h: depois da noite no aeroporto, esse descanso é importante.', c:'€1,50', q:'Metro Spagna, Roma'},
+  {t:'15:10', label:'15h10', p:'Hotel → Museus do Vaticano', a:'Ir a pé (~15 min).', c:'grátis', q:'Musei Vaticani'},
+  {t:'15:30', label:'15h30', p:'Museus do Vaticano e Capela Sistina', a:'Entrar com o ingresso das 15h30 (leve o comprovante); visita de 2h30–3h; ombros e joelhos cobertos. Fecha às 20h.', c:'€25', paid:1, q:'Musei Vaticani'},
+  {t:'19:00', label:'19h00', p:'Perto do hotel', a:'Jantar leve e dormir cedo.', c:'€8–12'}],
+  note:'Trevi, Pantheon e Navona estão na noite de domingo, 22/11, perto da Chiesa Nuova. Táxi descartado: €55 fixo contra cerca de €6–8 de ônibus e metrô.'},
+ {d:15, wd:'Dom', title:'São Pedro, cúpula e São Calisto', city:'Roma', stay:'olympic',
+  sum:'De manhã, missa, confissão e visita a São Pedro; credenciamento, Divina Misericórdia e almoço cedo. Cúpula às 13h com horário marcado e, no fim da tarde, as Catacumbas de São Calisto.',
+  items:[
+  {t:'07:00', label:'07h00', p:'Basílica de São Pedro', a:'Entrar na fila de segurança cedo e dizer que vai à missa das 8h (e participar). Ombros e joelhos cobertos.', c:'grátis', q:'Basilica di San Pietro'},
+  {t:'07:15', label:'07h15', p:'Confissão, à direita do baldaquino', a:'Domingo das 7h às 13h; avisar o atendente que vai se confessar. Depois, visitar a basílica com calma.', c:'grátis'},
+  {t:'08:00', label:'08h00', p:'Missa no Altar de São José', a:'Participar da missa. Outras opções de domingo: 9h e 10h30 no Altar da Cátedra.', c:'—'},
+  {t:'09:15', label:'09h15', p:'Centro São Lourenço, Via Pfeiffer 24', a:'Fazer o credenciamento (aberto das 9h às 18h), a poucos minutos de São Pedro.', c:'grátis', ev:1, q:'Centro San Lorenzo, Via Pfeiffer 24, Roma'},
+  {t:'10:00', label:'10h00', p:'Santuário da Divina Misericórdia', a:'Santo Spirito in Sassia, logo atrás do Centro São Lourenço (Via dei Penitenzieri 12): rezar diante da imagem de Jesus Misericordioso. Confirmar horários em divinamisericordia.it.', c:'grátis', q:'Santo Spirito in Sassia, Via dei Penitenzieri 12, Roma'},
+  {t:'11:30', label:'11h30', p:'Pizzarium, Via della Meloria 43', a:'Almoço cedo: metrô A, Ottaviano → Cipro; fatias simples (batata, tomate); confirmar horário de domingo.', c:'€5–8', q:'Pizzarium, Via della Meloria 43, Roma'},
+  {t:'12:30', label:'12h30', p:'Praça de São Pedro, fila de reservas', a:'Não pegue a fila principal: quem tem reserva fica à direita dela e segue até um controle separado. Mostre o QR code (chega por e-mail até 48h antes); há uma revista rápida.', c:'—', q:'Piazza San Pietro'},
+  {t:'13:00', label:'13h00', p:'Cúpula de São Pedro', a:'Subir no horário marcado (~1h); 537 degraus a pé ou parte de elevador.', c:'€17–22', paid:1, q:'Cupola di San Pietro'},
+  {t:'14:15', label:'14h15', p:'Metrô A + ônibus 218 → São Calisto', a:'Caminhar até Ottaviano, metrô A até San Giovanni e ônibus 218 até Fosse Ardeatine (~1h). Se atrasar, táxi dividido com o grupo.', c:'€1,50', q:'Metro Ottaviano, Roma'},
+  {t:'15:30', label:'15h30', p:'Catacumbas de São Calisto', a:'Visita guiada (~40 min), com a cripta dos papas e a de Santa Cecília. Fecha às 17h; última entrada 16h45.', c:'ver site', paid:1, q:'Catacombe di San Callisto, Via Appia Antica 110'},
+  {t:'17:00', label:'17h00', p:'Volta ao hotel', a:'Ônibus 218 e metrô A até Ottaviano.', c:'€1,50'},
+  {t:'19:00', label:'19h00', p:'Perto do hotel', a:'Jantar pizza al taglio ou supplì.', c:'€8–12'}]},
+ {d:16, wd:'Seg', title:'Scala Santa, Santa Croce e Latrão', city:'Roma', stay:'olympic',
+  sum:'Manhã na Scala Santa e em Santa Croce, com as relíquias da Paixão, tudo a pé perto do Latrão, onde é a acolhida das 13h.',
+  items:[
+  {t:'08:45', label:'08h45', p:'Metrô Ottaviano → San Giovanni', a:'Linha A direto (25–30 min).', c:'€1,50', q:'Metro San Giovanni, Roma'},
+  {t:'09:30', label:'09h30', p:'Scala Santa', a:'Subir de joelhos a escada que, segundo a tradição, Jesus subiu até Pilatos (aberta 6h–13h30). Ao lado fica o Sancta Sanctorum (9h–13h30; ingresso no local).', c:'grátis', q:'Scala Santa, Piazza di San Giovanni in Laterano 14, Roma'},
+  {t:'10:45', label:'10h45', p:'Santa Croce in Gerusalemme', a:'Caminhar uns 15 min e rezar na Capela das Relíquias da Paixão, com o fragmento da Santa Cruz; ela fecha 15 min antes de cada missa.', c:'grátis', q:'Basilica di Santa Croce in Gerusalemme'},
+  {t:'11:45', label:'11h45', p:'Basílica de São João de Latrão', a:'Voltar a pé (~15 min) e conhecer a basílica antes da acolhida; se atrasar, ir direto almoçar.', c:'grátis', q:'Basilica di San Giovanni in Laterano'},
+  {t:'12:15', label:'12h15', p:'Perto do Latrão', a:'Almoçar pizza al taglio ou forno (preço por quilo na vitrine).', c:'€4–8'},
+  {t:'13:00', label:'13h00', p:'São João de Latrão', a:'Acolhida.', c:'—', ev:1, q:'Basilica di San Giovanni in Laterano'},
+  {t:'17:00', label:'17h00', p:'São João de Latrão', a:'Santa Missa.', c:'—', ev:1},
+  {t:'18:30', label:'18h30', p:'Metrô San Giovanni → Ottaviano', a:'Voltar direto; jantar perto do hotel.', c:'€1,50 + €8–12'}],
+  note:'Scala Santa, Santa Croce e Latrão ficam a poucos minutos a pé um do outro: a manhã toda é sem metrô.'},
+ {d:17, wd:'Ter', title:'Tre Fontane e São Paulo', city:'Roma', stay:'olympic',
+  sum:'Manhã no lugar do martírio e da prisão de São Paulo, segundo a tradição, e tarde na basílica com o túmulo dele. O Coliseu passou para segunda, 23.',
+  items:[
+  {t:'08:30', label:'08h30', p:'Metrô Ottaviano → Laurentina', a:'Linha A até Termini e troca para a B até o fim da linha (~40 min).', c:'€1,50', q:'Metro Laurentina, Roma'},
+  {t:'09:30', label:'09h30', p:'Abadia das Tre Fontane', a:'Lugar do martírio de São Paulo. Na cripta de Santa Maria Scala Coeli fica, segundo a tradição, a prisão onde ele esperou a execução. Ver também São Paulo alle Tre Fontane (as três fontes), Santi Vincenzo e Anastasio e a gruta da aparição de 1947. Uns 15 min a pé de Laurentina.', c:'grátis', q:'Abbazia delle Tre Fontane, Via Acque Salvie 1, Roma'},
+  {t:'11:30', label:'11h30', p:'Caffè Tre Fontane', a:'Lanche ou almoço leve (ter–dom, 8h30–19h30).', c:'€6–9'},
+  {t:'12:30', label:'12h30', p:'Metrô Laurentina → Basilica San Paolo', a:'Linha B (~10 min) e 3 min a pé.', c:'€1,50'},
+  {t:'13:00', label:'13h00', p:'São Paulo Fora dos Muros', a:'Acolhida.', c:'—', ev:1, q:'Basilica di San Paolo fuori le Mura'},
+  {t:'17:00', label:'17h00', p:'São Paulo Fora dos Muros', a:'Santa Missa.', c:'—', ev:1},
+  {t:'18:30', label:'18h30', p:'Ônibus 23 → Piazza Risorgimento', a:'Voltar direto (ou metrô B + A).', c:'€1,50'}]},
+ {d:18, wd:'Qua', title:'Aventino, Testaccio e São Paulo', city:'Roma', stay:'olympic',
+  sum:'Dia sem ingresso pago: vista do Aventino, almoço no mercado e tarde no evento.',
+  items:[
+  {t:'09:00', label:'09h00', p:'Ônibus 23 → Testaccio/Piramide', a:'Pegar na Piazza Risorgimento (~30 min; ponto no app).', c:'€1,50', q:'Piramide Cestia'},
+  {t:'09:45', label:'09h45', p:'Aventino e Giardino degli Aranci', a:'Subir a pé (20–25 min); ver a vista e as igrejas do morro.', c:'grátis', q:'Giardino degli Aranci, Roma'},
+  {t:'11:30', label:'11h30', p:'Mercado de Testaccio', a:'Almoçar na Casa Manco (pizza al taglio) ou no Trapizzino; confirmar horário.', c:'€5–10', q:'Mercato di Testaccio'},
+  {t:'12:30', label:'12h30', p:'Metrô Piramide → Basilica San Paolo', a:'Linha B, 2 paradas (~5 min), e 3 min a pé.', c:'€1,50'},
+  {t:'13:00', label:'13h00', p:'São Paulo Fora dos Muros', a:'Acolhida.', c:'—', ev:1, q:'Basilica di San Paolo fuori le Mura'},
+  {t:'17:00', label:'17h00', p:'São Paulo Fora dos Muros', a:'Santa Missa.', c:'—', ev:1},
+  {t:'18:30', label:'18h30', p:'Ônibus 23 → Piazza Risorgimento', a:'Voltar; jantar perto do hotel e dormir cedo, porque amanhã você chega às 6h30 na Sala Paulo VI.', c:'€1,50 + €8–12'}],
+  note:'Hoje: reconfira o trem de sexta para Assis e a lista de trens garantidos da greve. Compre e deixe separados roupa, documentos, água e bastante lanche para amanhã: o almoço só sai por volta das 16h.'},
+ {d:19, wd:'Qui', title:'Encontro com o Papa', city:'Roma', stay:'olympic',
+  sum:'Você vai servir: chegue à Sala Paulo VI às 6h30. Depois da audiência, missa na Basílica de São Pedro (por dentro do Vaticano) e almoço só por volta das 16h.',
+  alert:'<strong>Leve lanche.</strong> O almoço só sai por volta das 16h e o grupo não sai do Vaticano entre a audiência e a missa. Café reforçado, frutas, sanduíche, barrinhas e água.',
+  items:[
+  {t:'05:45', label:'05h45', p:'Hotel', a:'Tomar um café reforçado e pegar o lanche e a água separados na noite anterior (o café do hotel talvez ainda não esteja aberto).', c:'—'},
+  {t:'06:10', label:'06h10', p:'Hotel → Sala Paulo VI', a:'Ir a pé (15–20 min); confirmar com a organização por qual entrada os voluntários passam.', c:'grátis', q:'Aula Paolo VI, Città del Vaticano'},
+  {t:'06:30', label:'06h30', p:'Sala Paulo VI', a:'Chegar para servir e fazer o credenciamento; levar passaporte e comprovante de inscrição.', c:'—', ev:1, q:'Aula Paolo VI, Città del Vaticano'},
+  {t:null, label:'a confirmar', p:'Sala Paulo VI', a:'Audiência, o encontro com o Papa. Comer o lanche nas pausas.', c:'—', ev:1},
+  {t:null, label:'Após a audiência', p:'Basílica de São Pedro', a:'Missa em ação de graças; o grupo vai por dentro do Vaticano, sem sair. O programa oficial cita 18h: confirmar com a organização.', c:'—', ev:1, q:'Basilica di San Pietro'},
+  {t:'16:00', label:'~16h00', p:'Panificio Bonci, Via Trionfale 36', a:'Almoço tardio: fatias de €4–6 (seg–sáb, até 20h), ou onde a organização indicar.', c:'€4–8', q:'Panificio Bonci, Via Trionfale 36, Roma'},
+  {t:'20:30', label:'Noite', p:'Hotel', a:'Arrumar as malas e acertar a conta e a taxa de turismo hoje: o check-out de sexta é às 6h.', c:'—'}]},
+ {d:20, wd:'Sex', title:'Roma → Assis', city:'Assis', stay:'locanda',
+  alert:'<strong>Trem comprado: Regionale Veloce 4712, Termini 6h52 → Assisi 9h06.</strong> A greve ferroviária só começa às 21h e o trem sai na faixa garantida dos regionais (6h–9h), mas há greve geral da CGIL hoje: confira o trem no app da Trenitalia na véspera. Se for cancelado, o reembolso é integral.',
+  sum:'Trem das 6h52, malas na Locanda, manhã na Basílica de São Francisco e peregrinação à tarde, até a Procissão das Velas.',
+  items:[
+  {t:'06:00', label:'06h00', p:'Hotel → Termini', a:'Fazer o check-out (conta acertada na noite anterior); metrô A, Ottaviano → Termini (~15 min; o metrô abre às 5h30). Estar na plataforma uns 20 min antes.', c:'€1,50', q:'Roma Termini'},
+  {t:'06:52', label:'06h52', p:'Trem Regionale Veloce 4712 → Assisi', a:'Termini 6h52 → Assisi 9h06, direto. Passagem digital no e-mail e no app da Trenitalia; se o app pedir check-in, faça antes de embarcar.', c:'€14,45', paid:1, q:'Roma Termini'},
+  {t:'09:15', label:'~09h15', p:'Locanda Giustini', a:'Deixar as malas (combinar antes); check-in só às 15h30. Dá para passar rápido pela Porciúncula, ali perto.', c:'—', q:STAY.locanda.q},
+  {t:'10:00', label:'~10h00', p:'Basílica de São Francisco', a:'Ônibus urbano até o centro (10–15 min) e visita com calma: basílica inferior, superior e o túmulo de São Francisco.', c:'€1,50–2', q:'Basilica di San Francesco d\'Assisi'},
+  {t:'12:00', label:'~12h00', p:'Centro de Assis', a:'Almoço leve.', c:'€6–9'},
+  {t:'13:00', label:'13h–17h', p:'São Rufino, Santa Clara e Igreja da Espoliação', a:'Peregrinação livre pelo centro de Assis.', c:'—', ev:1, q:'Cattedrale di San Rufino, Assisi'},
+  {t:'17:00', label:'17h–21h30', p:'Assis', a:'Procissão das Velas e Vigília Jovem.', c:'—', ev:1},
+  {t:'21:45', label:'~21h45', p:'Locanda Giustini', a:'Voltar; confirmar o último ônibus, senão táxi dividido por três.', c:'a confirmar', q:STAY.locanda.q}]},
+ {d:21, wd:'Sáb', title:'Encerramento em Assis', city:'Assis', stay:'locanda',
+  alert:'<strong>Greve ferroviária até as 20h.</strong> Não planeje trem hoje.',
+  sum:'Manhã inteira para rezar na Porciúncula, a poucos minutos da Locanda, e encerramento da Convenção à tarde. Confirme o local exato com a organização.',
+  items:[
+  {t:'08:30', label:'08h30–11h30', p:'Basílica de Santa Maria degli Angeli e Porciúncula', a:'Café na Locanda (incluso) e manhã sem pressa na basílica: rezar na Porciúncula, a capelinha restaurada por São Francisco; ver a Capela do Trânsito, onde ele morreu, e o Roseiral. Confirmar horários em porziuncola.org.', c:'grátis', q:'Basilica di Santa Maria degli Angeli, Assisi'},
+  {t:'12:00', label:'12h00', p:'Perto do local do encerramento', a:'Almoço leve; chegar com folga.', c:'€6–9'},
+  {t:'13:00', label:'13h00', p:'Local do encerramento (a confirmar)', a:'Acolhida.', c:'—', ev:1},
+  {t:'15:00', label:'15h00', p:'Local do encerramento', a:'Missa de Envio.', c:'—', ev:1},
+  {t:'16:30', label:'16h30', p:'Local do encerramento', a:'Bênção de envio.', c:'—', ev:1},
+  {t:'19:30', label:'Noite', p:'Santa Maria degli Angeli', a:'Jantar barato e descanso.', c:'€8–12'}]},
+ {d:22, wd:'Dom', title:'Santa Cecília e São Filipe Neri', city:'Roma', stay:'extra',
+  sum:'Trem de volta pela manhã, malas no hotel novo, Trastevere com Santa Cecília (padroeira dos músicos) e o túmulo de São Filipe Neri na Chiesa Nuova.',
+  items:[
+  {t:'10:30', label:'10h30', p:'Trem Assis → Roma Tiburtina', a:'Fazer o check-out; trem de ~2h (ou Termini, 2h–2h45). Domingo tem menos trens: confirmar o horário.', c:'€10–17', q:'Stazione di Assisi, Santa Maria degli Angeli'},
+  {t:'13:30', label:'~13h30', p:'Hotel novo, região de Tiburtina', a:'Deixar as malas.', c:'—', q:'Roma Tiburtina'},
+  {t:'15:00', label:'15h00', p:'Santa Maria in Trastevere', a:'Visitar a basílica e caminhar pelas ruas de Trastevere.', c:'grátis', q:'Santa Maria in Trastevere'},
+  {t:'16:00', label:'16h00', p:'Basílica de Santa Cecília', a:'Padroeira dos músicos: rezar diante da estátua da santa sob o altar e descer ao subterrâneo, com ruínas de casas romanas (não são catacumbas). Domingo aberta das 16h às 18h; o afresco de Cavallini só abre de manhã (domingo, 11h30–12h30).', c:'~€2', q:'Basilica di Santa Cecilia in Trastevere'},
+  {t:'17:30', label:'17h30', p:'Chiesa Nuova (Santa Maria in Vallicella)', a:'Atravessar a Ponte Sisto e caminhar ~20 min; rezar no túmulo de São Filipe Neri, na capela à esquerda do altar-mor. Missa às 19h; confirmar horários.', c:'grátis', q:'Chiesa Nuova, Santa Maria in Vallicella, Roma'},
+  {t:'18:30', label:'18h30', p:'Piazza Navona, Pantheon e Fontana di Trevi', a:'Caminhar à noite: Navona (3 min), Pantheon por fora (ou por dentro, €7, se ainda aberto) e a Trevi iluminada; jantar pizza al taglio no caminho e voltar de metrô A (Barberini) + B até Tiburtina.', c:'€8–12', q:'Piazza Navona, Roma'}]},
+ {d:23, wd:'Seg', title:'Coliseu com a irmã e voo das 5h55', city:'Roma', stay:'aero',
+  sum:'Malas no depósito de Termini, Coliseu, Fórum e Palatino à tarde, volta a pé até a estação e trem para o aeroporto à noite.',
+  items:[
+  {t:'11:00', label:'11h00', p:'Hotel → Termini', a:'Fazer o check-out; metrô B com as malas (15–25 min).', c:'€1,50', q:'Roma Termini'},
+  {t:'11:20', label:'11h20', p:'Depósito de bagagem de Termini', a:'Deixar as malas: o Coliseu não aceita malas nem mochilas grandes (~€6 por 5h e €0,60 por hora extra).', c:'€6–9', q:'Deposito bagagli Roma Termini'},
+  {t:'11:45', label:'11h45', p:'Metrô Termini → Colosseo', a:'Linha B, poucas paradas (~5 min).', c:'€1,50', q:'Metro Colosseo'},
+  {t:'12:00', label:'12h00', p:'Monti', a:'Almoço leve: pizza al taglio ou panino.', c:'€6–9', q:'Rione Monti, Roma'},
+  {t:'13:00', label:'13h00', p:'Coliseu', a:'Entrar no horário marcado com sua irmã (~1h). Ingressos nominais: levem os passaportes.', c:'€18', paid:1, q:'Colosseo'},
+  {t:'14:00', label:'14h00', p:'Fórum Romano e Palatino', a:'Visitar por 1h30–2h; fecha por volta das 16h30.', c:'incluso', q:'Foro Romano'},
+  {t:'16:00', label:'16h00', p:'Fori Imperiali, Piazza Venezia e Capitólio', a:'Sair do Fórum e caminhar pela Via dei Fori Imperiali. Opcional: Cárcere Mamertino, ao pé do Capitólio, onde a tradição diz que Pedro e Paulo passaram os últimos dias presos (€10; 9h–17h).', c:'grátis (Mamertino €10)', q:'Fori Imperiali, Roma'},
+  {t:'17:00', label:'17h00', p:'Café de balcão', a:'Pausa e descanso.', c:'€1–2'},
+  {t:'17:30', label:'17h30', p:'Basílica de Santa Maria Maggiore', a:'Ir a pé pela Via Cavour (~15 min); uma das quatro basílicas maiores de Roma, a 10 min de Termini; confirmar o horário.', c:'grátis', q:'Basilica di Santa Maria Maggiore'},
+  {t:'19:00', label:'19h00', p:'Perto de Termini', a:'Jantar barato e pegar as malas.', c:'€8–12'},
+  {t:'21:35', label:'~21h35', p:'Trem → Fiumicino', a:'Leonardo Express de Termini (€14; último às 22h35) ou FL1 de Tiburtina (€8, ~48 min).', c:'€8–14', q:'Roma Termini'},
+  {t:'22:10', label:'~22h10', p:'Aeroporto de Fiumicino', a:'Esperar na área pública, aberta a noite toda. Leve água e lanche.', c:'—', q:'Aeroporto di Fiumicino'},
+  {t:'02:55', nd:1, label:'Ter ~02h55', p:'Aeroporto de Fiumicino', a:'Fazer o check-in (~3h antes); embarque ~5h; voo às 5h55. Confirmar o terminal (T1 ou T3).', c:'—'}]}
+];
+
+const TODO_INFO = [
+  'Comprar online o ônibus Terravision Fiumicino → Termini de 14/11 e confirmar o primeiro horário (~5h35)',
+  'Ingresso dos Museus do Vaticano comprado para sáb 14/11, 15h30: guardar o comprovante no celular',
+  'Comprar 2 ingressos do Coliseu, Fórum e Palatino para seg 23/11, 13h, nos nomes de você e da sua irmã (€18 cada)',
+  'Trem Roma → Assis comprado (Regionale Veloce 4712, 20/11, 6h52): confirmar que o grupo está no mesmo trem e reconferir na véspera',
+  'Combinar com a Locanda Giustini a chegada por volta das 9h15 e o depósito das malas',
+  'Reservar o hotel de 22→23/11 na região de Tiburtina, com cancelamento grátis',
+  'Confirmar o local do encerramento de 21/11 em Assis',
+  'Confirmar o terminal do voo das 5h55 (T1 ou T3)',
+  'Perguntar ao Grand Hotel Olympic se o check-in pode ser feito sozinho'
+];
+
+/* ---------- frases em italiano: [italiano, pronúncia, português] ---------- */
+const PH = {
+ basic:{t:'Básicas',ph:[
+  ['Buongiorno! / Buonasera!','buondjórno / buonassêra','Bom dia! / Boa tarde, boa noite!'],
+  ['Per favore. Grazie!','per favôre. gráttsie!','Por favor. Obrigado!'],
+  ['Mi scusi.','mi skúzi','Com licença / Desculpe.'],
+  ['Non parlo bene l\'italiano. Può parlare piano?','non párlo bêne litaliáno. pó parláre piáno?','Não falo bem italiano. Pode falar devagar?']]},
+ aeroporto:{t:'No aeroporto (chegada)',ph:[
+  ['Scusi, dov\'è l\'autobus per Roma?','skúzi, dovê láutobus per rôma?','Com licença, onde fica o ônibus para Roma?'],
+  ['A che ora parte il primo autobus?','a ke ôra párte il prímo áutobus?','Que horas sai o primeiro ônibus?'],
+  ['Dove posso aspettare fino a domattina?','dôve pósso aspettáre fíno a domattína?','Onde posso esperar até amanhã cedo?'],
+  ['C\'è una presa per caricare il telefono?','tché úna prêza per caricáre il telêfono?','Tem tomada para carregar o celular?']]},
+ treno:{t:'Trem e estação',ph:[
+  ['Un biglietto per …, per favore.','un bilhêtto per …, per favôre','Uma passagem para …, por favor.'],
+  ['Da quale binario parte?','da cuále binário párte?','De qual plataforma sai?'],
+  ['Questo treno va a …?','cuésto trêno va a …?','Este trem vai para …?'],
+  ['Devo cambiare treno?','dêvo cambiáre trêno?','Preciso trocar de trem?'],
+  ['Il treno è in ritardo?','il trêno é in ritárdo?','O trem está atrasado?']]},
+ sciopero:{t:'Trem em dia de greve',ph:[
+  ['Oggi c\'è sciopero?','ódji tché chópero?','Hoje tem greve?'],
+  ['Questo treno è garantito?','cuésto trêno é garantíto?','Este trem está garantido?'],
+  ['Il treno è stato cancellato?','il trêno é státo cantcheláto?','O trem foi cancelado?'],
+  ['Posso cambiare il biglietto?','pósso cambiáre il bilhêtto?','Posso trocar a passagem?'],
+  ['Da quale binario parte?','da cuále binário párte?','De qual plataforma sai?']]},
+ autobus:{t:'Ônibus',ph:[
+  ['Dove si compra il biglietto?','dôve si cômpra il bilhêtto?','Onde se compra a passagem?'],
+  ['Questo autobus va a …?','cuésto áutobus va a …?','Este ônibus vai para …?'],
+  ['Mi dice quando devo scendere, per favore?','mi dítche cuándo dêvo chêndere, per favôre?','Pode me avisar quando devo descer?'],
+  ['Scendo alla prossima.','chêndo ála próssima','Desço na próxima.']]},
+ metro:{t:'Metrô',ph:[
+  ['Quale direzione per …?','cuále diretsiône per …?','Qual sentido para …?'],
+  ['Dove si cambia per la linea B?','dôve si cámbia per la línea bi?','Onde se troca para a linha B?'],
+  ['Posso pagare con la carta?','pósso pagáre con la cárta?','Posso pagar com cartão?'],
+  ['Qual è l\'uscita per …?','cuál é luchíta per …?','Qual é a saída para …?']]},
+ hotel:{t:'No hotel',ph:[
+  ['Buongiorno, ho una prenotazione a nome Silveira.','buondjórno, ó úna prenotatsiône a nôme silvêira','Bom dia, tenho uma reserva no nome Silveira.'],
+  ['Posso lasciare le valigie qui fino al check-in?','pósso lacháre le valídje cuí fíno al tchek-in?','Posso deixar as malas aqui até o check-in?'],
+  ['A che ora posso entrare in camera?','a ke ôra pósso entráre in cámera?','Que horas posso entrar no quarto?'],
+  ['Qual è la password del wi-fi?','cuál é la pássuord del uái-fai?','Qual é a senha do wi-fi?']]},
+ checkout:{t:'Check-out',ph:[
+  ['Vorrei fare il check-out.','vorréi fáre il tchek-áut','Queria fazer o check-out.'],
+  ['Devo pagare la tassa di soggiorno?','dêvo pagáre la tássa di sodjórno?','Preciso pagar a taxa de turismo?'],
+  ['Posso lasciare le valigie per qualche ora?','pósso lacháre le valídje per cuálke ôra?','Posso deixar as malas por algumas horas?']]},
+ caffe:{t:'No café',ph:[
+  ['Un cappuccino e un cornetto, per favore.','un capputchíno e un cornêtto, per favôre','Um cappuccino e um croissant, por favor.'],
+  ['Un caffè, per favore.','un caffé, per favôre','Um espresso, por favor.'],
+  ['Pago prima alla cassa?','págo príma ála cássa?','Pago antes no caixa?'],
+  ['Quanto le devo?','cuánto le dêvo?','Quanto lhe devo?']]},
+ negozio:{t:'Na loja',ph:[
+  ['Posso provare questa?','pósso prováre cuésta?','Posso experimentar esta?'],
+  ['Dove sono i camerini?','dôve sôno i cameríni?','Onde ficam os provadores?'],
+  ['Avete una taglia più grande? Più piccola?','avête úna tálha piú grande? piú píccola?','Vocês têm um tamanho maior? Menor?'],
+  ['Posso pagare con la carta?','pósso pagáre con la cárta?','Posso pagar com cartão?']]},
+ monumenti:{t:'Passeando',ph:[
+  ['Scusi, per andare al Pantheon?','skúzi, per andáre al pánteon?','Com licença, como chego ao Pantheon?'],
+  ['Mi può fare una foto, per favore?','mi pó fáre úna fóto, per favôre?','Pode tirar uma foto minha, por favor?'],
+  ['Quanto costa l\'ingresso?','cuánto cósta lingrésso?','Quanto custa a entrada?'],
+  ['Dove si fa la fila?','dôve si fá la fíla?','Onde é a fila?']]},
+ pizza:{t:'Pizza al taglio e lanches',ph:[
+  ['Un pezzo di questa, per favore.','un pétso di cuésta, per favôre','Um pedaço desta, por favor.'],
+  ['Un po\' più piccolo, grazie.','un pó piú píccolo, gráttsie','Um pouco menor, obrigado.'],
+  ['Due supplì, per favore.','dúe suplí, per favôre','Dois supplì, por favor.'],
+  ['Mangio qui. / Da portare via.','mándjo cuí / da portáre vía','Como aqui. / Para levar.'],
+  ['Basta così, grazie.','básta cozí, gráttsie','Está bom assim, obrigado.']]},
+ ristorante:{t:'No restaurante',ph:[
+  ['Un tavolo per tre, per favore.','un távolo per trê, per favôre','Uma mesa para três, por favor.'],
+  ['Cosa mi consiglia?','cóza mi consílha?','O que o senhor recomenda?'],
+  ['Un\'acqua naturale, per favore.','unácua naturále, per favôre','Uma água sem gás, por favor.'],
+  ['Il conto, per favore.','il cônto, per favôre','A conta, por favor.'],
+  ['Possiamo pagare separati?','possiámo pagáre separáti?','Podemos pagar separado?']]},
+ chiesa:{t:'Na basílica',ph:[
+  ['Dov\'è l\'entrata?','dovê lentráta?','Onde é a entrada?'],
+  ['A che ora c\'è la messa?','a ke ôra tché la méssa?','Que horas tem missa?'],
+  ['Si può entrare adesso?','si pó entráre adésso?','Pode entrar agora?'],
+  ['Dove sono i bagni?','dôve sôno i bánhi?','Onde ficam os banheiros?']]},
+ sanpietro:{t:'São Pedro: missa e confissão',ph:[
+  ['Vado alla messa delle otto.','vádo ála méssa déle ótto','Vou à missa das oito.'],
+  ['Vorrei confessarmi.','vorréi confessármi','Queria me confessar.'],
+  ['C\'è un sacerdote che parla portoghese?','tché un satcherdôte ke párla portoghêze?','Tem um padre que fala português?'],
+  ['Dov\'è l\'altare di San Giuseppe?','dovê laltáre di san djuzéppe?','Onde fica o altar de São José?'],
+  ['Da dove si sale alla cupola?','da dôve si sále ála cúpola?','Por onde se sobe à cúpula?']]},
+ cupola:{t:'Cúpula de São Pedro',ph:[
+  ['Dove si compra il biglietto per la cupola?','dôve si cômpra il bilhêtto per la cúpola?','Onde se compra o ingresso da cúpula?'],
+  ['Quanto costa con l\'ascensore?','cuánto cósta con lachenssôre?','Quanto custa com o elevador?'],
+  ['Quanti gradini ci sono?','cuánti gradíni tchi sôno?','Quantos degraus são?'],
+  ['A che ora chiude?','a ke ôra kiúde?','Que horas fecha?']]},
+ catacombe:{t:'Nas catacumbas',ph:[
+  ['Un biglietto per la visita guidata, per favore.','un bilhêtto per la vízita guidáta, per favôre','Um ingresso para a visita guiada, por favor.'],
+  ['C\'è una visita in portoghese o in spagnolo?','tché úna vízita in portoghêze o in spanhólo?','Tem visita em português ou espanhol?'],
+  ['A che ora parte la prossima visita?','a ke ôra párte la próssima vízita?','Que horas sai a próxima visita?'],
+  ['Dov\'è la fermata del 218 per tornare?','dovê la fermáta del duetchentoditchótto per tornáre?','Onde é o ponto do 218 para voltar?']]},
+ volontario:{t:'Servindo no evento',ph:[
+  ['Buongiorno, sono un volontario della Comunità Shalom.','buondjórno, sôno un volontário déla comunitá shálom','Bom dia, sou voluntário da Comunidade Shalom.'],
+  ['Dov\'è l\'ingresso per i volontari?','dovê lingrésso per i volontári?','Onde é a entrada dos voluntários?'],
+  ['Ecco il mio passaporto.','écco il mío passapórto','Aqui está meu passaporte.'],
+  ['Posso aiutarla?','pósso aiutárla?','Posso ajudar o senhor / a senhora?'],
+  ['Prego, da questa parte.','prégo, da cuésta párte','Por favor, por aqui.']]},
+ accredito:{t:'Credenciamento',ph:[
+  ['Buongiorno, sono qui per l\'evento Shalom.','buondjórno, sôno cuí per levênto shálom','Bom dia, estou aqui para o evento Shalom.'],
+  ['Dove si fa l\'accredito?','dôve si fá laccrêdito?','Onde se faz o credenciamento?'],
+  ['Ecco il mio passaporto.','écco il mío passapórto','Aqui está meu passaporte.'],
+  ['Parla portoghese o inglese?','párla portoghêze o inglêze?','O senhor fala português ou inglês?']]},
+ evento:{t:'No evento',ph:[
+  ['Dov\'è l\'ingresso per l\'evento Shalom?','dovê lingrésso per levênto shálom?','Onde é a entrada para o evento Shalom?'],
+  ['Questi posti sono liberi?','cuésti pósti sôno líberi?','Estes lugares estão livres?'],
+  ['Dove sono i bagni?','dôve sôno i bánhi?','Onde ficam os banheiros?'],
+  ['Siamo brasiliani!','siámo braziliáni!','Somos brasileiros!']]},
+ strada:{t:'Pedindo informação',ph:[
+  ['Scusi, per andare a …?','skúzi, per andáre a …?','Com licença, como chego a …?'],
+  ['È lontano a piedi?','é lontáno a piédi?','É longe a pé?'],
+  ['Sempre dritto?','sémpre drítto?','Sempre reto?'],
+  ['A destra o a sinistra?','a déstra o a sinístra?','À direita ou à esquerda?']]},
+ museo:{t:'Museus do Vaticano',ph:[
+  ['Ho già il biglietto online, per le tre e mezza.','ó djá il bilhêtto onláin, per le trê e méttsa','Já tenho o ingresso online, para as três e meia.'],
+  ['Dov\'è l\'ingresso per chi ha il biglietto?','dovê lingrésso per ki á il bilhêtto?','Onde é a entrada para quem já tem ingresso?'],
+  ['Da che parte per la Cappella Sistina?','da ke párte per la cappélla sistína?','Para que lado fica a Capela Sistina?'],
+  ['Si possono fare foto qui?','si póssono fáre fóto cuí?','Pode tirar foto aqui?']]},
+ colosseo:{t:'Coliseu e Fórum',ph:[
+  ['Abbiamo il biglietto per l\'una.','abbiámo il bilhêtto per lúna','Temos ingresso para a uma da tarde.'],
+  ['Il biglietto vale anche per il Foro e il Palatino?','il bilhêtto vále ánke per il fóro e il palatíno?','O ingresso vale também para o Fórum e o Palatino?'],
+  ['Dov\'è l\'ingresso del Foro Romano?','dovê lingrésso del fóro románo?','Onde é a entrada do Fórum Romano?'],
+  ['C\'è una fontanella?','tché úna fontanélla?','Tem bebedouro por aqui?']]},
+ mercato:{t:'No mercado',ph:[
+  ['Dov\'è il banco di Casa Manco?','dovê il bánco di kása mánco?','Onde fica a banca da Casa Manco?'],
+  ['Cosa mi consiglia?','cóza mi consílha?','O que o senhor recomenda?'],
+  ['Quanto costa questo?','cuánto cósta cuésto?','Quanto custa isto?'],
+  ['Un pezzo piccolo, per favore.','un pétso píccolo, per favôre','Um pedaço pequeno, por favor.']]},
+ locanda:{t:'Na Locanda',ph:[
+  ['Buongiorno, ho una prenotazione a nome Silveira, per tre persone.','buondjórno, ó úna prenotatsiône a nôme silvêira, per trê persône','Bom dia, tenho uma reserva no nome Silveira, para três pessoas.'],
+  ['Siamo arrivati presto: possiamo lasciare le valigie?','siámo arriváti présto: possiámo lacháre le valídje?','Chegamos cedo: podemos deixar as malas?'],
+  ['A che ora passa l\'autobus per il centro?','a ke ôra pássa láutobus per il tchêntro?','Que horas passa o ônibus para o centro?'],
+  ['A che ora è la colazione?','a ke ôra é la colatsiône?','Que horas é o café da manhã?']]},
+ taxi:{t:'Voltando à noite',ph:[
+  ['A che ora passa l\'ultimo autobus?','a ke ôra pássa lúltimo áutobus?','Que horas passa o último ônibus?'],
+  ['Mi può chiamare un taxi, per favore?','mi pó kiamáre un táxi, per favôre?','Pode me chamar um táxi, por favor?'],
+  ['Quanto costa fino a Santa Maria degli Angeli?','cuánto cósta fíno a sánta maría délhi ándjeli?','Quanto custa até Santa Maria degli Angeli?']]},
+ deposito:{t:'Guarda-volumes',ph:[
+  ['Vorrei lasciare due valigie fino alle sette.','vorréi lacháre dúe valídje fíno ále sétte','Queria deixar duas malas até as sete.'],
+  ['Quanto costa?','cuánto cósta?','Quanto custa?'],
+  ['A che ora chiude?','a ke ôra kiúde?','Que horas fecha?']]},
+ partenza:{t:'No aeroporto (saída)',ph:[
+  ['Dov\'è il check-in di questo volo?','dovê il tchek-in di cuésto vôlo?','Onde é o check-in deste voo?'],
+  ['Da quale terminal parte il volo?','da cuále têrminal párte il vôlo?','De qual terminal sai o voo?'],
+  ['A che ora apre il check-in?','a ke ôra ápre il tchek-in?','Que horas abre o check-in?'],
+  ['Dove sono i bagni?','dôve sôno i bánhi?','Onde ficam os banheiros?']]}
+};
+/* inglês: [inglês, pronúncia, português] — mesmas chaves do italiano */
+const HOW='hau mâtch iz it?', WC=['Where are the toilets?','uér ár dâ tóilets?','Onde ficam os banheiros?'], CARD=['Can I pay by card?','ken ai pêi bai kárd?','Posso pagar com cartão?'];
+const PH_EN = {
+ basic:{ph:[
+  ['Good morning! / Good evening!','gud mórnin / gud ívnin','Bom dia! / Boa noite!'],
+  ['Please. Thank you!','plíz. fênk iú!','Por favor. Obrigado!'],
+  ['Excuse me.','ekskiúz mi','Com licença / Desculpe.'],
+  ['I don\'t speak English well. Can you speak slowly?','ai dôunt spík ínglich uél. ken iú spík slôuli?','Não falo bem inglês. Pode falar devagar?']]},
+ aeroporto:{ph:[
+  ['Excuse me, where is the bus to Rome?','ekskiúz mi, uér iz dâ bâs tu rôum?','Com licença, onde fica o ônibus para Roma?'],
+  ['What time does the first bus leave?','uót táim dâz dâ fârst bâs lív?','Que horas sai o primeiro ônibus?'],
+  ['Where can I wait until the morning?','uér ken ai uêit ântil dâ mórnin?','Onde posso esperar até de manhã?'],
+  ['Is there a socket to charge my phone?','iz dér a sókit tu tchárdj mai fôun?','Tem tomada para carregar o celular?']]},
+ treno:{ph:[
+  ['One ticket to …, please.','uân tíkit tu …, plíz','Uma passagem para …, por favor.'],
+  ['Which platform does it leave from?','uítch plétform dâz it lív fróm?','De qual plataforma sai?'],
+  ['Does this train go to …?','dâz dís trêin gôu tu …?','Este trem vai para …?'],
+  ['Do I need to change trains?','du ai níd tu tchêindj trêinz?','Preciso trocar de trem?'],
+  ['Is the train late?','iz dâ trêin lêit?','O trem está atrasado?']]},
+ sciopero:{ph:[
+  ['Is there a strike today?','iz dér a stráik tudêi?','Hoje tem greve?'],
+  ['Is this train guaranteed?','iz dís trêin guerentíd?','Este trem está garantido?'],
+  ['Has the train been cancelled?','héz dâ trêin bín kénsold?','O trem foi cancelado?'],
+  ['Can I change my ticket?','ken ai tchêindj mai tíkit?','Posso trocar a passagem?'],
+  ['Which platform does it leave from?','uítch plétform dâz it lív fróm?','De qual plataforma sai?']]},
+ autobus:{ph:[
+  ['Where can I buy a ticket?','uér ken ai bái a tíkit?','Onde se compra a passagem?'],
+  ['Does this bus go to …?','dâz dís bâs gôu tu …?','Este ônibus vai para …?'],
+  ['Can you tell me when to get off, please?','ken iú tél mi uén tu guét óf, plíz?','Pode me avisar quando devo descer?'],
+  ['I\'m getting off at the next stop.','áim guétin óf ét dâ nékst stóp','Desço na próxima.']]},
+ metro:{ph:[
+  ['Which direction for …?','uítch dairékchân for …?','Qual sentido para …?'],
+  ['Where do I change for line B?','uér du ai tchêindj for láin bí?','Onde se troca para a linha B?'],
+  CARD,
+  ['Which exit for …?','uítch égzit for …?','Qual é a saída para …?']]},
+ hotel:{ph:[
+  ['Hi, I have a reservation under Silveira.','hai, ai hév a rezervêichân ânder silvêira','Olá, tenho uma reserva no nome Silveira.'],
+  ['Can I leave my luggage here until check-in?','ken ai lív mai lâguidj hír ântil tchék-in?','Posso deixar as malas aqui até o check-in?'],
+  ['What time can I get into the room?','uót táim ken ai guét íntu dâ rúm?','Que horas posso entrar no quarto?'],
+  ['What\'s the wi-fi password?','uóts dâ uái-fai pássuord?','Qual é a senha do wi-fi?']]},
+ checkout:{ph:[
+  ['I\'d like to check out.','áid láik tu tchék áut','Queria fazer o check-out.'],
+  ['Do I need to pay the city tax?','du ai níd tu pêi dâ síti téks?','Preciso pagar a taxa de turismo?'],
+  ['Can I leave my luggage for a few hours?','ken ai lív mai lâguidj for a fiú áuarz?','Posso deixar as malas por algumas horas?']]},
+ caffe:{ph:[
+  ['A cappuccino and a croissant, please.','a kaputchíno énd a kruassán, plíz','Um cappuccino e um croissant, por favor.'],
+  ['An espresso, please.','én esprésso, plíz','Um espresso, por favor.'],
+  ['Do I pay at the till first?','du ai pêi ét dâ tíl fârst?','Pago antes no caixa?'],
+  ['How much is it?',HOW,'Quanto é?']]},
+ negozio:{ph:[
+  ['Can I try this on?','ken ai trái dís ón?','Posso experimentar esta?'],
+  ['Where are the fitting rooms?','uér ár dâ fítin rúmz?','Onde ficam os provadores?'],
+  ['Do you have a bigger size? A smaller one?','du iú hév a bíguer sáiz? a smóler uân?','Vocês têm um tamanho maior? Menor?'],
+  CARD]},
+ monumenti:{ph:[
+  ['Excuse me, how do I get to the Pantheon?','ekskiúz mi, hau du ai guét tu dâ pântion?','Com licença, como chego ao Pantheon?'],
+  ['Could you take a photo of me, please?','kud iú têik a fôutou óv mi, plíz?','Pode tirar uma foto minha, por favor?'],
+  ['How much is the ticket?','hau mâtch iz dâ tíkit?','Quanto custa a entrada?'],
+  ['Where is the line?','uér iz dâ láin?','Onde é a fila?']]},
+ pizza:{ph:[
+  ['A slice of this one, please.','a sláis óv dís uân, plíz','Um pedaço desta, por favor.'],
+  ['A bit smaller, thanks.','a bít smóler, fênks','Um pouco menor, obrigado.'],
+  ['Two supplì, please.','tú suplí, plíz','Dois supplì, por favor.'],
+  ['To eat here. / To take away.','tu ít hír / tu têik euêi','Para comer aqui. / Para levar.'],
+  ['That\'s all, thanks.','déts ól, fênks','Só isso, obrigado.']]},
+ ristorante:{ph:[
+  ['A table for three, please.','a têibol for frí, plíz','Uma mesa para três, por favor.'],
+  ['What do you recommend?','uót du iú rékomend?','O que o senhor recomenda?'],
+  ['Still water, please.','stíl uóter, plíz','Água sem gás, por favor.'],
+  ['The bill, please.','dâ bíl, plíz','A conta, por favor.'],
+  ['Can we pay separately?','ken uí pêi séparatli?','Podemos pagar separado?']]},
+ chiesa:{ph:[
+  ['Where is the entrance?','uér iz dí éntrans?','Onde é a entrada?'],
+  ['What time is Mass?','uót táim iz més?','Que horas tem missa?'],
+  ['Can we go in now?','ken uí gôu in náu?','Pode entrar agora?'],
+  WC]},
+ cupola:{ph:[
+  ['Where do I buy the ticket for the dome?','uér du ai bái dâ tíkit for dâ dôum?','Onde se compra o ingresso da cúpula?'],
+  ['How much is it with the lift?','hau mâtch iz it uíd dâ líft?','Quanto custa com o elevador?'],
+  ['How many steps are there?','hau méni stéps ár dér?','Quantos degraus são?'],
+  ['What time does it close?','uót táim dâz it klôuz?','Que horas fecha?']]},
+ accredito:{ph:[
+  ['Hi, I\'m here for the Shalom event.','hai, áim hír for dâ chálom ivént','Olá, estou aqui para o evento Shalom.'],
+  ['Where is the registration?','uér iz dâ redjistrêichân?','Onde é o credenciamento?'],
+  ['Here is my passport.','hír iz mai pésport','Aqui está meu passaporte.'],
+  ['Do you speak Portuguese?','du iú spík portchuguíz?','O senhor fala português?']]},
+ evento:{ph:[
+  ['Where is the entrance for the Shalom event?','uér iz dí éntrans for dâ chálom ivént?','Onde é a entrada para o evento Shalom?'],
+  ['Are these seats free?','ár díz síts frí?','Estes lugares estão livres?'],
+  WC,
+  ['We are from Brazil!','uí ár fróm brazíl!','Somos do Brasil!']]},
+ strada:{ph:[
+  ['Excuse me, how do I get to …?','ekskiúz mi, hau du ai guét tu …?','Com licença, como chego a …?'],
+  ['Is it far on foot?','iz it fár ón fút?','É longe a pé?'],
+  ['Straight ahead?','strêit ahéd?','Sempre reto?'],
+  ['Left or right?','léft ór ráit?','Esquerda ou direita?']]},
+ museo:{ph:[
+  ['I already have an online ticket for half past three.','ai ólrédi hév én ónláin tíkit for háf pést frí','Já tenho o ingresso online para as três e meia.'],
+  ['Where is the entrance for ticket holders?','uér iz dí éntrans for tíkit hôulderz?','Onde é a entrada para quem já tem ingresso?'],
+  ['Which way to the Sistine Chapel?','uítch uêi tu dâ sístin tchépol?','Para que lado fica a Capela Sistina?'],
+  ['Can I take photos here?','ken ai têik fôutouz hír?','Pode tirar foto aqui?']]},
+ colosseo:{ph:[
+  ['We have tickets for one o\'clock.','uí hév tíkits for uân oklók','Temos ingresso para a uma da tarde.'],
+  ['Is the ticket also valid for the Forum and the Palatine?','iz dâ tíkit ólsou vélid for dâ fórum énd dâ pélatain?','O ingresso vale também para o Fórum e o Palatino?'],
+  ['Where is the entrance to the Roman Forum?','uér iz dí éntrans tu dâ rôuman fórum?','Onde é a entrada do Fórum Romano?'],
+  ['Is there a water fountain?','iz dér a uóter fáuntan?','Tem bebedouro por aqui?']]},
+ mercato:{ph:[
+  ['Where is the Casa Manco stall?','uér iz dâ kása mánco stól?','Onde fica a banca da Casa Manco?'],
+  ['What do you recommend?','uót du iú rékomend?','O que o senhor recomenda?'],
+  ['How much is this?','hau mâtch iz dís?','Quanto custa isto?'],
+  ['A small piece, please.','a smól pís, plíz','Um pedaço pequeno, por favor.']]},
+ locanda:{ph:[
+  ['Hi, I have a reservation under Silveira, for three people.','hai, ai hév a rezervêichân ânder silvêira, for frí pípol','Olá, tenho uma reserva no nome Silveira, para três pessoas.'],
+  ['We arrived early. Can we leave our bags?','uí arráivd ârli. ken uí lív áuar bégz?','Chegamos cedo. Podemos deixar as malas?'],
+  ['What time is the bus to the centre?','uót táim iz dâ bâs tu dâ sénter?','Que horas passa o ônibus para o centro?'],
+  ['What time is breakfast?','uót táim iz brékfast?','Que horas é o café da manhã?']]},
+ taxi:{ph:[
+  ['What time is the last bus?','uót táim iz dâ lést bâs?','Que horas passa o último ônibus?'],
+  ['Could you call me a taxi, please?','kud iú kól mi a téksi, plíz?','Pode me chamar um táxi, por favor?'],
+  ['How much to Santa Maria degli Angeli?','hau mâtch tu sánta maría délhi ándjeli?','Quanto custa até Santa Maria degli Angeli?']]},
+ deposito:{ph:[
+  ['I\'d like to leave two bags until seven.','áid láik tu lív tú bégz ântil séven','Queria deixar duas malas até as sete.'],
+  ['How much is it?',HOW,'Quanto custa?'],
+  ['What time do you close?','uót táim du iú klôuz?','Que horas fecha?']]},
+ partenza:{ph:[
+  ['Where is the check-in for this flight?','uér iz dâ tchék-in for dís fláit?','Onde é o check-in deste voo?'],
+  ['Which terminal does the flight leave from?','uítch târminal dâz dâ fláit lív fróm?','De qual terminal sai o voo?'],
+  ['What time does check-in open?','uót táim dâz tchék-in ôupen?','Que horas abre o check-in?'],
+  WC]},
+ sanpietro:{ph:[
+  ['I\'m going to the eight o\'clock Mass.','áim gôuin tu dí êit oklók més','Vou à missa das oito.'],
+  ['I would like to go to confession.','ai uúd láik tu gôu tu konféchân','Queria me confessar.'],
+  ['Is there a priest who speaks Portuguese?','iz dér a príst hu spíks portchuguíz?','Tem um padre que fala português?'],
+  ['Where is the altar of Saint Joseph?','uér iz dí óltar óv sêint djôusef?','Onde fica o altar de São José?'],
+  ['Where do I go up to the dome?','uér du ai gôu âp tu dâ dôum?','Por onde se sobe à cúpula?']]},
+ catacombe:{ph:[
+  ['One ticket for the guided tour, please.','uân tíkit for dâ gáidid túr, plíz','Um ingresso para a visita guiada, por favor.'],
+  ['Is there a tour in Portuguese or Spanish?','iz dér a túr in portchuguíz ór spénich?','Tem visita em português ou espanhol?'],
+  ['What time is the next tour?','uót táim iz dâ nékst túr?','Que horas sai a próxima visita?'],
+  ['Where is the stop for bus 218 back?','uér iz dâ stóp for bâs tú uân êit bék?','Onde é o ponto do 218 para voltar?']]},
+ volontario:{ph:[
+  ['Good morning, I\'m a volunteer with the Shalom Community.','gud mórnin, áim a volantír uíd dâ chálom komiúniti','Bom dia, sou voluntário da Comunidade Shalom.'],
+  ['Where is the volunteers\' entrance?','uér iz dâ volantírz éntrans?','Onde é a entrada dos voluntários?'],
+  ['Here is my passport.','hír iz mai pésport','Aqui está meu passaporte.'],
+  ['Can I help you?','ken ai hélp iú?','Posso ajudar?'],
+  ['This way, please.','dís uêi, plíz','Por aqui, por favor.']]}
+};
+const PHMAP = {
+ '14-0':'aeroporto','14-1':'aeroporto','14-2':'autobus','14-3':'metro','14-4':'hotel','14-5':'metro','14-6':'negozio','14-7':'monumenti','14-8':'pizza','14-9':'metro','14-10':'strada','14-11':'museo','14-12':'ristorante',
+ '15-0':'sanpietro','15-1':'sanpietro','15-2':'sanpietro','15-3':'accredito','15-4':'chiesa','15-5':'pizza','15-6':'cupola','15-7':'cupola','15-8':'autobus','15-9':'catacombe','15-10':'autobus','15-11':'pizza',
+ '16-0':'metro','16-1':'chiesa','16-2':'chiesa','16-3':'chiesa','16-4':'pizza','16-5':'evento','16-6':'evento','16-7':'metro',
+ '17-0':'metro','17-1':'chiesa','17-2':'pizza','17-3':'metro','17-4':'evento','17-5':'evento','17-6':'autobus',
+ '18-0':'autobus','18-1':'strada','18-2':'mercato','18-3':'metro','18-4':'evento','18-5':'evento','18-6':'autobus',
+ '19-0':'caffe','19-1':'strada','19-2':'volontario','19-3':'evento','19-4':'evento','19-5':'pizza','19-6':'checkout',
+ '20-0':'checkout','20-1':'sciopero','20-2':'locanda','20-3':'chiesa','20-4':'ristorante','20-5':'evento','20-6':'evento','20-7':'taxi',
+ '21-0':'chiesa','21-1':'ristorante','21-2':'evento','21-3':'evento','21-4':'evento','21-5':'ristorante',
+ '22-0':'treno','22-1':'hotel','22-2':'chiesa','22-3':'chiesa','22-4':'chiesa','22-5':'monumenti',
+ '23-0':'checkout','23-1':'deposito','23-2':'metro','23-3':'pizza','23-4':'colosseo','23-5':'colosseo','23-6':'strada','23-7':'caffe','23-8':'chiesa','23-9':'ristorante','23-10':'treno','23-11':'partenza','23-12':'partenza'
+};
+
+/* ---------- ingressos oficiais (aba Lugares) ---------- */
+const TICKETS = {
+  'Museus do Vaticano e Capela Sistina':{url:'https://tickets.museivaticani.va', label:'Comprar ingresso oficial', note:'Comprado: sáb 14/11, 15h30 · leve o comprovante'},
+  'Coliseu':{url:'https://ticketing.colosseo.it/', label:'Comprar ingresso oficial', note:'Compre antes: 13h de seg 23/11 · 2 ingressos nominais (você e sua irmã) · €18 cada'},
+  'Fórum Romano e Palatino':{url:'https://ticketing.colosseo.it/', label:'Mesmo ingresso do Coliseu', note:'Incluído no ingresso combinado'},
+  'Catacumbas de São Calisto':{url:'https://www.catacombesancallisto.it/en/dove-siamo.php', label:'Site oficial', note:'Preço, horários e como chegar'},
+  'Piazza Navona, Pantheon e Fontana di Trevi':{url:'https://portale.museiitaliani.it/b2c/buyTicketless/33f77159-0acd-40c4-8524-701f33aae108', label:'Ingresso do Pantheon', note:'Opcional · €7 · também vende no local'},
+  'Cúpula de São Pedro':{url:'https://www.basilicasanpietro.va/it/products/la-cupola', label:'Ingresso da cúpula', note:'Dom 15/11 às 13h · fila de reservas à direita · QR code por e-mail'}
+};
+Object.keys(TICKETS).forEach(k=>{ if(!TICKETS[k].url) delete TICKETS[k]; });
+
+/* ---------- popup ---------- */
+const modal=document.getElementById('modal'), mlist=document.getElementById('mlist'), mbasic=document.getElementById('mbasic');
+let lastFocus=null;
+const LKEY='roteiro-roma-idioma';
+let lang='it'; try{ const l=localStorage.getItem(LKEY); if(l==='en'||l==='it') lang=l; }catch(e){}
+let curKey=null, curPlace='';
+const GT = (t,l) => `https://translate.google.com/?sl=${l}&tl=pt&op=translate&text=` + encodeURIComponent(t.replace(/…/g,'').trim());
+const phLi = (p,l) => `<li><span class="it" lang="${l}">${esc(p[0])}</span><span class="pr">${esc(p[1])}</span><span class="pt">${esc(p[2])}</span>
+  <span class="acts"><button type="button" data-say="${esc(p[0])}" data-lang="${l}">Ouvir</button><button type="button" data-copy="${esc(p[0])}">Copiar</button></span>
+  <a class="gt" hidden href="${GT(p[0],l)}" target="_blank" rel="noopener">Sem áudio neste navegador. Ouvir no Google Tradutor ↗</a></li>`;
+function renderPhrases(){
+  const S = PH[curKey]; if(!S) return;
+  const src = lang==='en' ? PH_EN : PH;
+  const set = (src[curKey] || S).ph, basic = src.basic.ph;
+  document.getElementById('mtitle').textContent = S.t;
+  document.getElementById('msub').textContent = curPlace;
+  document.querySelectorAll('#langsw button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+  mlist.innerHTML = set.map(p=>phLi(p,lang)).join('');
+  mbasic.innerHTML = basic.map(p=>phLi(p,lang)).join('');
+}
+function openPhrases(key, place, btn){
+  if(!PH[key]) return;
+  curKey = key; curPlace = place; renderPhrases();
+  lastFocus = btn; modal.hidden = false; document.body.style.overflow='hidden';
+  document.getElementById('mclose').focus();
+}
+function closePhrases(){ modal.hidden = true; document.body.style.overflow=''; try{ speechSynthesis.cancel(); }catch(e){} if(lastFocus) lastFocus.focus(); }
+/* voz: no celular as vozes carregam depois, e o iPhone falha se cancel() vem colado no speak() */
+let voiceIT = null, voiceEN = null;
+function loadVoices(){ try{ const v = window.speechSynthesis.getVoices();
+  voiceIT = v.find(x=>/^it[-_]IT/i.test(x.lang)) || v.find(x=>/^it/i.test(x.lang)) || null;
+  voiceEN = v.find(x=>/^en[-_]US/i.test(x.lang)) || v.find(x=>/^en[-_]GB/i.test(x.lang)) || v.find(x=>/^en/i.test(x.lang)) || null; }catch(e){} }
+try{ if('speechSynthesis' in window){ loadVoices(); if(window.speechSynthesis.addEventListener) window.speechSynthesis.addEventListener('voiceschanged', loadVoices); else window.speechSynthesis.onvoiceschanged = loadVoices; } }catch(e){}
+function say(text, btn){
+  const li = btn.closest('li'); const fb = li && li.querySelector('.gt');
+  const fallback = ()=>{ if(fb) fb.hidden = false; btn.textContent = 'Ouvir'; };
+  if(!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance === 'undefined'){ fallback(); return; }
+  try{
+    const s = window.speechSynthesis;
+    const isEN = btn.dataset.lang === 'en';
+    if(!(isEN ? voiceEN : voiceIT)) loadVoices();
+    const u = new SpeechSynthesisUtterance(text.replace(/…/g,'').trim());
+    u.lang = isEN ? 'en-US' : 'it-IT'; u.rate = 0.9; u.volume = 1;
+    const vv = isEN ? voiceEN : voiceIT; if(vv) u.voice = vv;
+    let started = false;
+    u.onstart = ()=>{ started = true; btn.textContent = 'Tocando…'; };
+    u.onend = ()=>{ btn.textContent = 'Ouvir'; };
+    u.onerror = ()=>{ if(!started) fallback(); else btn.textContent = 'Ouvir'; };
+    const go = ()=>{ try{ s.resume(); }catch(e){} s.speak(u); };
+    if(s.speaking || s.pending){ s.cancel(); setTimeout(go, 150); } else { go(); }
+    setTimeout(()=>{ if(!started) fallback(); }, 2500);
+  }catch(e){ fallback(); }
+}
+modal.addEventListener('click', e=>{
+  if(e.target===modal || e.target.id==='mclose') return closePhrases();
+  const b=e.target.closest('button'); if(!b) return;
+  if(b.dataset.lang && b.closest('#langsw')){ lang = b.dataset.lang; try{ localStorage.setItem(LKEY, lang); }catch(e){} try{ speechSynthesis.cancel(); }catch(e){} renderPhrases(); return; }
+  if(b.dataset.say) say(b.dataset.say, b);
+  if(b.dataset.copy){
+    const ok=()=>{ b.textContent='Copiado'; setTimeout(()=>b.textContent='Copiar',1500); };
+    try{ navigator.clipboard.writeText(b.dataset.copy).then(ok).catch(()=>{ selectText(b); }); }catch(err){ selectText(b); }
+  }
+});
+function selectText(b){ try{ const r=document.createRange(); r.selectNodeContents(b.closest('li').querySelector('.it')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !modal.hidden) closePhrases(); });
+
+/* ---------- estado local (só neste aparelho) ---------- */
+const KEY='roteiro-roma-feitos-v1';
+let done = {};
+try{ done = JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+
+/* ---------- horário de Roma ---------- */
+function romeNow(){
+  const f = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  const p = Object.fromEntries(f.formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {y:+p.year, m:+p.month, d:+p.day, min:(+p.hour)*60 + (+p.minute), hh:p.hour, mm:p.minute};
+}
+const toMin = (t,nd)=> t ? (+t.slice(0,2))*60 + (+t.slice(3)) + (nd?1440:0) : null;
+const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const isPaid = it => it.paid;
+
+function tripState(){
+  const n = romeNow();
+  if(n.y===2026 && n.m===11 && n.d>=14 && n.d<=24){
+    // madrugada do dia 24 ainda pertence ao dia 23
+    return {day: n.d===24 ? 23 : n.d, min: n.d===24 ? n.min+1440 : n.min, n};
+  }
+  return {day:null, n};
+}
+function daysUntil(){
+  const n = romeNow();
+  const a = Date.UTC(n.y,n.m-1,n.d), b = Date.UTC(2026,10,14);
+  return Math.round((b-a)/86400000);
+}
+
+/* ---------- intenções (Google Forms) ---------- */
+// Links fixos: preencha quando o Lucas mandar; até lá vale o que ele salvar neste aparelho.
+const INTENT = { form: 'https://forms.gle/sV283WgoF1aWfMau7', sheet: 'https://docs.google.com/spreadsheets/d/13s8YEO8NqSDPatk8zntatW9cW3YEZZZFeJmG5pqFaCY/edit' };
+const IKEY = 'roteiro-roma-intencoes-links';
+let SESSION_INTENT = null; // vale nesta visita mesmo se o navegador bloquear o armazenamento
+function intentLinks(){
+  let local = {};
+  try{ local = JSON.parse(localStorage.getItem(IKEY) || '{}') || {}; }catch(e){ local = {}; }
+  const S = SESSION_INTENT || {};
+  return { form: INTENT.form || S.form || local.form || '', sheet: INTENT.sheet || S.sheet || local.sheet || '' };
+}
+const okUrl = u => /^https:\/\/(docs\.google\.com|forms\.gle|forms\.google\.com|drive\.google\.com)\//i.test(u||'');
+function intentMsg(form){
+  return 'Vou para Roma e Assis de 14 a 24 de novembro, para a Convenção Shalom. Se quiser que eu leve uma intenção sua para rezar nos lugares santos, escreva aqui: ' + form;
+}
+
+/* ---------- render ---------- */
+const main = document.getElementById('main');
+const daysNav = document.getElementById('days');
+
+function renderDaysNav(active, today){
+  daysNav.innerHTML = DAYS.map(D=>`<a href="#dia-${D.d}" aria-current="${D.d===active}" class="${D.d===today?'today':''}" aria-label="${D.wd} ${D.d} de novembro${D.d===today?' (hoje)':''}"><span>${D.wd}</span> <b>${D.d}</b></a>`).join('');
+  const cur = daysNav.querySelector('[aria-current="true"]');
+  if(cur){ try{ cur.scrollIntoView({block:'nearest',inline:'center'}); }catch(e){} }
+}
+
+function itemHTML(D,it,i,nowIdx){
+  const id = `${D.d}-${i}`;
+  const cls = ['item']; if(it.ev) cls.push('event'); if(done[id]) cls.push('is-done'); if(i===nowIdx) cls.push('is-now');
+  const cost = it.c && it.c!=='—' ? `<span class="cost${isPaid(it)?' paid':''}">${isPaid(it)?'Ingresso ':''}${esc(it.c)}</span>` : '';
+  const badge = it.ev ? `<span class="badge">Convenção</span>` : '';
+  const map = it.q ? `<a class="maplink" href="${MAP(it.q)}" target="_blank" rel="noopener">Mapa ↗</a>` : '';
+  const phk = PHMAP[id];
+  const phb = phk ? `<button type="button" class="itbtn" data-ph="${phk}" data-place="${esc(it.p)}" aria-haspopup="dialog">Idiomas <span class="langtag" aria-hidden="true">IT · EN</span></button>` : '';
+  return `<li class="${cls.join(' ')}" id="it-${id}">
+    <div class="time">${esc(it.label)}</div>
+    <div>
+      <p class="place">${esc(it.p)}</p>
+      <p class="do">${esc(it.a)}</p>
+      <div class="row">${badge}${cost}${map}${phb}
+        <label class="done"><input type="checkbox" id="chk-${id}" data-id="${id}" ${done[id]?'checked':''}> Feito</label>
+      </div>
+    </div></li>`;
+}
+
+function nowCard(D, ts){
+  if(ts.day !== D.d) return '';
+  const list = D.items.map((it,i)=>({it,i,m:toMin(it.t,it.nd)})).filter(x=>x.m!==null);
+  let cur=null, next=null;
+  for(const x of list){ if(x.m<=ts.min) cur=x; else { next=x; break; } }
+  const fmt = m => { const h=Math.floor((m%1440)/60), mm=m%60; return `${String(h).padStart(2,'0')}h${String(mm).padStart(2,'0')}`; };
+  let html = `<div class="now" role="status"><span class="lbl">Hoje · ${ts.n.hh}h${ts.n.mm} em Roma</span>`;
+  if(cur) html += `<span class="what">Agora: ${esc(cur.it.p)}</span><span class="sub">${esc(cur.it.a)}</span>`;
+  if(next){ const diff = next.m - ts.min; const h=Math.floor(diff/60), m=diff%60;
+    html += `<span class="sub"><b>Próximo:</b> ${esc(next.it.p)} às ${fmt(next.m)} (em ${h? h+'h ':''}${m} min)</span>`; }
+  else html += `<span class="sub">Nada mais programado hoje.</span>`;
+  return html + '</div>';
+  }
+
+function renderDay(d){
+  const D = DAYS.find(x=>x.d===d) || DAYS[0];
+  const ts = tripState();
+  renderDaysNav(D.d, ts.day);
+  let nowIdx = -1;
+  if(ts.day===D.d){ D.items.forEach((it,i)=>{ const m=toMin(it.t,it.nd); if(m!==null && m<=ts.min) nowIdx=i; }); }
+  const S = STAY[D.stay];
+  const nEv = D.items.filter(i=>i.ev).length;
+  const before = ts.day===null ? daysUntil() : null;
+  main.innerHTML = `
+    ${before!==null && before>0 ? `<p class="note">A viagem começa em ${before} ${before===1?'dia':'dias'}. Abra esta página em Roma para ver o que está acontecendo agora.</p>`:''}
+    <div class="dayhead">
+      <div class="eyebrow">${D.wd} · ${D.d} de novembro</div>
+      <h2>${esc(D.title)}</h2>
+      <p>${esc(D.sum)}</p>
+      <div class="meta"><span class="chip city">${D.city}</span>${nEv?`<span class="chip">${nEv} ${nEv===1?'compromisso':'compromissos'} da Convenção</span>`:''}</div>
+    </div>
+    ${D.alert?`<div class="alert">${D.alert}</div>`:''}
+    ${nowCard(D, ts)}
+    <ol class="timeline">${D.items.map((it,i)=>itemHTML(D,it,i,nowIdx)).join('')}</ol>
+    ${D.note?`<p class="note">${esc(D.note)}</p>`:''}
+    <div class="sleep"><div><span class="eyebrow">Onde dormir</span><b>${esc(S.name)}</b>${esc(S.addr)}<br><span style="color:var(--muted);font-size:.88rem">${esc(S.when)}</span></div>${S.q?`<a class="maplink" style="margin-left:auto" href="${MAP(S.q)}" target="_blank" rel="noopener">Mapa ↗</a>`:''}</div>
+  `;
+}
+
+function renderPlaces(){
+  renderDaysNav(null, tripState().day);
+  main.innerHTML = `<div class="dayhead"><div class="eyebrow">Resumo</div><h2>Todos os lugares</h2>
+    <p>Dois passeios exigem ingresso comprado antes: Museus do Vaticano com a Capela Sistina (€25, sáb 14 às 15h30, já comprado) e Coliseu, Fórum e Palatino (€18, seg 23 com sua irmã). Os links abaixo são dos sites oficiais; existem sites falsos com nomes parecidos, então compre só por eles.</p></div>` +
+    DAYS.map(D=>{
+      const seen=new Set(); const rows=D.items.filter(it=>it.q && !it.p.includes('→') && !seen.has(it.p) && seen.add(it.p));
+      return `<section class="card places"><h3><a href="#dia-${D.d}" style="color:inherit;text-decoration:none">${D.wd} ${D.d} · ${esc(D.title)}</a></h3><ul>${
+        rows.map(it=>{ const T=TICKETS[it.p];
+          const tk = T ? `<span class="tk"><a class="tklink" href="${T.url}" target="_blank" rel="noopener">${esc(T.label)} ↗</a><small>${esc(T.note)}</small></span>` : '';
+          return `<li><span class="pl"><span>${esc(it.p)}${isPaid(it)?` <span class="cost paid">${esc(it.c)}</span>`:''}</span>${tk}</span><a href="${MAP(it.q)}" target="_blank" rel="noopener">Mapa ↗</a></li>`; }).join('')}</ul></section>`;
+    }).join('');
+}
+
+function renderIntencoes(){
+  renderDaysNav(null, tripState().day);
+  const L = intentLinks();
+  main.innerHTML = `
+  <div class="dayhead"><div class="eyebrow">Para rezar</div><h2>Intenções</h2>
+    <p id="intent-lead">As intenções que chegam pelo seu formulário aparecem aqui.</p></div>
+  <section class="card" id="intent-owner"><h3 id="intent-count">Intenções recebidas</h3>
+    <p class="status" id="intent-state" role="status" style="color:var(--muted)">Carregando…</p>
+    <ol class="ilist" id="intent-list"></ol>
+    <div class="btns"><button type="button" class="btn primary" id="intent-refresh">Atualizar</button></div></section>
+  <section class="card intent-owner-only"><h3>Mensagem para enviar</h3>
+    <textarea class="msg" id="intent-msg" readonly aria-label="Mensagem para enviar">${esc(intentMsg(L.form))}</textarea>
+    <div class="btns"><button type="button" class="btn primary" id="intent-copy">Copiar mensagem</button></div>
+    <p class="status" id="intent-status" role="status"></p></section>
+  <section class="card"><h3>Onde levar as intenções</h3><ul>
+    <li>Sáb 14: Capela Sistina</li><li>Dom 15: missa em São Pedro e Divina Misericórdia</li>
+    <li>Seg 16: Scala Santa e Santa Croce</li><li>Ter 17: Tre Fontane e túmulo de São Paulo</li>
+    <li>Sex 20 e sáb 21: Assis, Porciúncula e Procissão das Velas</li><li>Dom 22: Santa Cecília e São Filipe Neri</li></ul></section>`;
+  loadIntents(false);
+}
+
+/* ---------- leitura da planilha pelo conector Google Sheets ---------- */
+async function useCap(n){ try{ return (window.claude && typeof window.claude.use === 'function') ? await window.claude.use(n) : null; }catch(e){ return null; } }
+const GS = 'Google Sheets', GS_TOOL = 'get_values';
+let intentArgs = null, intentRetried = false;
+const sheetId = u => { const m = String(u||'').match(/\/d\/([A-Za-z0-9_-]{20,})/); return m ? m[1] : ''; };
+function iState(html, color){ const el=document.getElementById('intent-state'); if(el){ el.style.color = color || 'var(--muted)'; el.innerHTML = html; } }
+function find2D(x, depth){
+  depth = depth || 0; if(depth > 6 || x == null) return null;
+  if(typeof x === 'string'){ try{ return find2D(JSON.parse(x), depth+1); }catch(e){ return null; } }
+  if(Array.isArray(x)){
+    if(x.length && x.every(Array.isArray)) return x;
+    for(const v of x){ const r = find2D(v, depth+1); if(r) return r; }
+    return null;
+  }
+  if(typeof x === 'object'){
+    if(x.values){ const r = find2D(x.values, depth+1); if(r) return r; }
+    for(const k of Object.keys(x)){ const r = find2D(x[k], depth+1); if(r) return r; }
+  }
+  return null;
+}
+function renderIntentRows(rows, storedAt){
+  const list = document.getElementById('intent-list'); if(!list) return;
+  if(!rows || rows.length < 2){ list.innerHTML=''; document.getElementById('intent-count').textContent='Intenções recebidas'; iState('A planilha foi lida, mas ainda não tem nenhuma resposta. Se você já enviou uma intenção, confira no Forms, em Respostas → Ver no Planilhas, se as respostas vão para esta mesma planilha.'); return; }
+  const head = rows[0].map(h=>String(h||''));
+  let iInt = head.findIndex(h=>/inten/i.test(h)); if(iInt<0) iInt = head.length-1;
+  const iName = head.findIndex(h=>/nome|name/i.test(h));
+  const iTs = head.findIndex(h=>/carimbo|timestamp|data|hora/i.test(h));
+  const items = rows.slice(1).filter(r=>String(r[iInt]||'').trim()).reverse();
+  document.getElementById('intent-count').textContent = items.length + (items.length===1 ? ' intenção recebida' : ' intenções recebidas');
+  list.innerHTML = items.map(r=>{
+    const meta = [iName>=0 ? r[iName] : '', iTs>=0 ? r[iTs] : ''].filter(Boolean).map(esc).join(' · ');
+    return `<li><p class="itxt">${esc(r[iInt])}</p>${meta?`<p class="imeta">${meta}</p>`:''}</li>`;
+  }).join('');
+  const when = storedAt ? new Date(storedAt) : new Date();
+  iState('Atualizado às ' + when.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}) + '. As mais novas no topo.');
+}
+async function buildArgs(mcp, id){
+  try{
+    const d = await mcp.describeTool(GS, GS_TOOL);
+    const props = (d && d.inputSchema && d.inputSchema.properties) || {};
+    const keys = Object.keys(props);
+    const idKey = keys.find(k=>/spreadsheet.?id/i.test(k)) || keys.find(k=>/^(file_?id|id)$/i.test(k));
+    const rKey = keys.find(k=>/range/i.test(k));
+    if(!idKey) return null;
+    const args = {}; args[idKey] = id;
+    if(rKey) args[rKey] = (props[rKey] && props[rKey].type === 'array') ? ['A1:Z2000'] : 'A1:Z2000';
+    return args;
+  }catch(e){ return null; }
+}
+async function loadIntents(force){
+  const mcp = await useCap('mcp');
+  const user = await useCap('user');
+  if(user && typeof user.isOwner === 'function' && !user.isOwner()){
+    // visitante: mostra só o formulário
+    const own = document.getElementById('intent-owner'); if(own) own.hidden = true;
+    document.querySelectorAll('.intent-owner-only').forEach(el=>el.hidden = true);
+    const lead = document.getElementById('intent-lead'); if(lead) lead.textContent = 'Esta aba é só para o dono do roteiro.';
+    return;
+  }
+  const L = intentLinks(), id = sheetId(L.sheet);
+  if(!id){ iState(L.sheet ? 'O link da planilha não parece de uma planilha do Google.' : 'Falta o link da planilha de respostas.', 'var(--warn)'); return; }
+  if(!mcp){ iState('Este navegador não deixou a página usar o Google Sheets. Abra o site pelo app do Claude ou pelo claude.ai logado na sua conta e permita o Google Sheets quando ele pedir.', 'var(--warn)'); return; }
+  if(!intentArgs) intentArgs = await buildArgs(mcp, id);
+  if(!intentArgs){
+    iState('Toque em <b>Carregar intenções</b> para permitir que o site leia sua planilha pelo Google Sheets.');
+    const r = document.getElementById('intent-refresh'); if(r) r.textContent = 'Carregar intenções';
+    if(!force) return;
+    const perms = await useCap('permissions');
+    if(perms){ try{ await perms.request(['mcp:' + GS]); }catch(e){} }
+    intentArgs = await buildArgs(mcp, id);
+    if(!intentArgs) intentArgs = { spreadsheetId: id, range: 'A1:Z2000' }; // sem esquema disponível: formato mais comum
+  }
+  iState('Carregando…');
+  try{
+    const res = await mcp.callTool(GS, GS_TOOL, intentArgs, force ? { cache: { staleTime: 0, gcTime: 600000, refresh: true } } : { cache: { staleTime: 60000, gcTime: 600000 } });
+    const r = document.getElementById('intent-refresh'); if(r) r.textContent = 'Atualizar';
+    renderIntentRows(find2D(res.payload !== undefined ? res.payload : res), res.cache && res.cache.storedAt);
+  }catch(err){
+    const code = err && err.code;
+    if(code==='server_not_connected') iState('Conecte o <b>Google Sheets</b> no Claude em Configurações → Conectores, com a mesma conta Google do formulário, e toque em Atualizar.', 'var(--warn)');
+    else if(code==='needs_reauth') iState('A conexão com o Google expirou. Reconecte o Google Sheets em Configurações → Conectores e toque em Atualizar.', 'var(--warn)');
+    else if(code==='not_in_manifest') iState('Você não permitiu o Google Sheets nesta página. <button type="button" class="btn ghost" id="intent-perms">Abrir permissões</button>', 'var(--warn)');
+    else if(code==='approval_required') iState('O Claude precisa da sua aprovação para ler a planilha. Toque em <b>Atualizar</b> e permita.', 'var(--warn)');
+    else if(code==='selection_required') iState('Você tem mais de uma conta do Google Sheets conectada. Escolha qual usar quando o Claude perguntar e toque em Atualizar.', 'var(--warn)');
+    else if(code==='tool_error') iState('O Google Sheets não conseguiu ler a planilha. Confira se o link é o da planilha de respostas e se ela é da mesma conta conectada.', 'var(--warn)');
+    else if(err && err.retryable && !intentRetried){ intentRetried = true; setTimeout(()=>loadIntents(false), (err.retryAfterMs || 1500) + Math.random()*1000); iState('O Google demorou a responder. Tentando de novo…'); }
+    else iState('Não deu para carregar agora. Toque em Atualizar. (código: ' + esc(code || 'desconhecido') + ')', 'var(--warn)');
+  }
+}
+
+function renderInfos(){
+  renderDaysNav(null, tripState().day);
+  main.innerHTML = `
+  <div class="dayhead"><div class="eyebrow">Para consultar</div><h2>Infos práticas</h2></div>
+  <section class="card"><h3>Antes de viajar</h3><ul class="check">${TODO_INFO.map((t,i)=>`<li><label><input type="checkbox" id="todo-${i}" data-id="todo-${i}" ${done['todo-'+i]?'checked':''}> <span>${esc(t)}</span></label></li>`).join('')}</ul></section>
+  <section class="card"><h3>Hospedagens</h3><ul>
+    <li><b>14→20/11 · Grand Hotel Olympic</b><br>Via Properzio 2/a, Prati. Check-in 14h, check-out 10h. Taxa no local: €135 para os 3. <a href="${MAP(STAY.olympic.q)}" target="_blank" rel="noopener">Mapa ↗</a></li>
+    <li><b>20→22/11 · Locanda Giustini</b><br>Via Enrico Berlinguer 5, Santa Maria degli Angeli. Check-in 15h30, check-out 10h30. Taxa: €18. Todos com passaporte no check-in. <a href="${MAP(STAY.locanda.q)}" target="_blank" rel="noopener">Mapa ↗</a></li>
+    <li><b>22→23/11 · Hotel extra</b><br>A reservar, região de Tiburtina, 2 adultos.</li>
+    <li><b>23→24/11 · Aeroporto</b><br>Noite em Fiumicino; voo às 5h55.</li></ul></section>
+  <section class="card"><h3>Transporte em Roma</h3><div class="kv">
+    <div>Bilhete BIT (100 min; metrô uma vez)</div><div>€1,50</div>
+    <div>Teto diário no cartão contactless</div><div>€8,50</div>
+    <div>Ônibus Terravision aeroporto ↔ Termini (1ª opção)</div><div>a partir de €4</div>
+    <div>FL1 aeroporto ↔ Ostiense/Tiburtina</div><div>€8</div>
+    <div>Leonardo Express aeroporto ↔ Termini</div><div>€14</div>
+    <div>Trem Roma ↔ Assis (cada trecho)</div><div>€10–17</div></div>
+    <p class="note" style="margin-top:10px">O BIT pode ter subido para €2. Os bilhetes urbanos não valem nos trens do aeroporto nem para Assis.</p></section>
+  <section class="card"><h3>Orçamento por pessoa</h3><div class="kv">
+    <div>Total estimado (sem passagem e diárias já pagas)</div><div>€379–537</div>
+    <div>Comida (10 dias)</div><div>€180–250</div>
+    <div>Transporte e aeroporto</div><div>€47–65</div>
+    <div>Ingressos</div><div>€43–73</div>
+    <div>Trem Roma ↔ Assis</div><div>€24–34</div>
+    <div>Taxas de turismo</div><div>~€57</div>
+    <div>Hotel extra (metade)</div><div>€25–55</div></div></section>
+  <section class="card"><h3>Lembretes</h3><ul>
+    <li>Ombros e joelhos cobertos em São Pedro, nas basílicas e nos Museus do Vaticano.</li>
+    <li>Passaporte sempre junto: credenciamentos, Coliseu e check-in.</li>
+    <li>Greve geral em 20/11 e ferroviária até 20h de 21/11.</li>
+    <li>Emergência na Europa: <b>112</b>.</li></ul></section>`;
+}
+
+function route(){
+  const h = location.hash.replace('#','');
+  let view='dias';
+  if(h==='lugares') view='lugares'; else if(h==='infos') view='infos'; else if(h==='intencoes') view='intencoes';
+  document.querySelectorAll('.views a').forEach(a=>a.setAttribute('aria-current', a.dataset.view===view?'page':'false'));
+  if(view==='lugares') return renderPlaces();
+  if(view==='infos') return renderInfos();
+  if(view==='intencoes') return renderIntencoes();
+  const m = h.match(/^dia-(\d+)$/);
+  const ts = tripState();
+  const d = m ? +m[1] : (ts.day || 14);
+  renderDay(d);
+}
+
+main.addEventListener('click', e=>{
+  if(e.target.id==='intent-save'){
+    const form=document.getElementById('intent-form').value.trim(), sheet=document.getElementById('intent-sheet').value.trim();
+    const st=document.getElementById('intent-save-status');
+    if(!okUrl(form) || !okUrl(sheet)){ st.style.color='var(--warn)'; st.textContent='Cole os dois links do Google (o do formulário e o da planilha).'; return; }
+    SESSION_INTENT = {form, sheet}; intentArgs = null;
+    let saved = true; try{ localStorage.setItem(IKEY, JSON.stringify({form, sheet})); }catch(err){ saved = false; }
+    renderIntencoes();
+    if(!saved){ const s2=document.getElementById('intent-save-status'); if(s2){ s2.style.color='var(--warn)'; s2.textContent='Este navegador não guarda os links depois de fechar. Me mande os links no chat que eu deixo fixos.'; } }
+    return;
+  }
+  if(e.target.id==='intent-refresh'){ intentRetried = false; loadIntents(true); return; }
+  if(e.target.id==='intent-perms'){ useCap('permissions').then(p=>p && p.manage()).catch(()=>{}).then(()=>loadIntents(true)); return; }
+  if(e.target.id==='intent-copy'){
+    const ta=document.getElementById('intent-msg'), st=document.getElementById('intent-status');
+    const sel=()=>{ ta.focus(); ta.select(); st.textContent='Texto selecionado: toque em Copiar.'; };
+    try{ navigator.clipboard.writeText(ta.value).then(()=>{ st.textContent='Mensagem copiada. Cole no WhatsApp.'; }).catch(sel); }catch(err){ sel(); }
+    return;
+  }
+  const b = e.target.closest('.itbtn'); if(!b) return;
+  openPhrases(b.dataset.ph, b.dataset.place, b);
+});
+main.addEventListener('change', e=>{
+  const t = e.target; if(!t.dataset || !t.dataset.id) return;
+  if(t.checked) done[t.dataset.id]=1; else delete done[t.dataset.id];
+  save();
+  const li = t.closest('.item'); if(li) li.classList.toggle('is-done', t.checked);
+});
+document.querySelector('.views a[data-view="dias"]').addEventListener('click', e=>{
+  e.preventDefault(); const ts=tripState(); location.hash = 'dia-' + (ts.day || 14);
+});
+window.addEventListener('hashchange', ()=>{ route(); window.scrollTo(0,0); });
+
+/* ---------- tema claro/escuro ---------- */
+const TKEY='roteiro-roma-tema';
+const themeBtn=document.getElementById('theme'), tlabel=document.getElementById('tlabel');
+function currentDark(){
+  const t=document.documentElement.getAttribute('data-theme');
+  if(t==='dark') return true; if(t==='light') return false;
+  return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+}
+function syncTheme(){ const dk=currentDark(); themeBtn.setAttribute('aria-checked', String(dk)); tlabel.textContent = dk?'Escuro':'Claro'; }
+function applyTheme(t){ document.documentElement.setAttribute('data-theme', t); syncTheme(); }
+let savedTheme=null; try{ savedTheme=localStorage.getItem(TKEY); }catch(e){}
+if(savedTheme==='dark'||savedTheme==='light') applyTheme(savedTheme); else syncTheme();
+themeBtn.addEventListener('click', ()=>{ const t=currentDark()?'light':'dark'; applyTheme(t); try{ localStorage.setItem(TKEY,t); }catch(e){} });
+try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncTheme); }catch(e){}
+route();
+// atualiza o "agora" a cada minuto
+setInterval(()=>{ const ts=tripState(); if(ts.day && /^#?dia-\d+$|^$/.test(location.hash)) { const y=window.scrollY; route(); window.scrollTo(0,y);} }, 60000);
+</script>

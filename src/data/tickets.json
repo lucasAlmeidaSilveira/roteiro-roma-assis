@@ -1,0 +1,38 @@
+[
+  {
+    "place": "Museus do Vaticano e Capela Sistina",
+    "url": "https://tickets.museivaticani.va",
+    "label": "Comprar ingresso oficial",
+    "note": "Comprado: sáb 14/11, 15h30 · leve o comprovante"
+  },
+  {
+    "place": "Coliseu",
+    "url": "https://ticketing.colosseo.it/",
+    "label": "Comprar ingresso oficial",
+    "note": "Compre antes: 13h de seg 23/11 · 2 ingressos nominais (você e sua irmã) · €18 cada"
+  },
+  {
+    "place": "Fórum Romano e Palatino",
+    "url": "https://ticketing.colosseo.it/",
+    "label": "Mesmo ingresso do Coliseu",
+    "note": "Incluído no ingresso combinado"
+  },
+  {
+    "place": "Catacumbas de São Calisto",
+    "url": "https://www.catacombesancallisto.it/en/dove-siamo.php",
+    "label": "Site oficial",
+    "note": "Preço, horários e como chegar"
+  },
+  {
+    "place": "Piazza Navona, Pantheon e Fontana di Trevi",
+    "url": "https://portale.museiitaliani.it/b2c/buyTicketless/33f77159-0acd-40c4-8524-701f33aae108",
+    "label": "Ingresso do Pantheon",
+    "note": "Opcional · €7 · também vende no local"
+  },
+  {
+    "place": "Cúpula de São Pedro",
+    "url": "https://www.basilicasanpietro.va/it/products/la-cupola",
+    "label": "Ingresso da cúpula",
+    "note": "Dom 15/11 às 13h · fila de reservas à direita · QR code por e-mail"
+  }
+]

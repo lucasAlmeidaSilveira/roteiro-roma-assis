@@ -1,0 +1,1046 @@
+[
+  {
+    "day": 14,
+    "date": "2026-11-14",
+    "weekday": "Sáb",
+    "title": "Chegada, H&M e Vaticano",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "Ônibus Terravision de madrugada, malas no hotel, H&M na abertura, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.",
+    "note": "Trevi, Pantheon e Navona estão na noite de domingo, 22/11, perto da Chiesa Nuova. Táxi descartado: €55 fixo contra cerca de €6–8 de ônibus e metrô.",
+    "details": {
+      "heading": "Sáb 14/11 — Chegada, H&M e Museus do Vaticano",
+      "intro": "Espere no aeroporto até o primeiro ônibus da Terravision (por volta das 5h35), deixe as malas no hotel, chegue à H&M na abertura, às 10h, descanse depois do almoço e entre nos Museus do Vaticano às 15h30.",
+      "tips": [
+        "Alternativa na chegada: táxi com tarifa fixa de €55 dentro das muralhas, mas chegando sozinho ela não compensa: €55 contra cerca de €6–8 de ônibus Terravision e metrô. Depois da noite no aeroporto, descanse no hotel das 14h às 15h antes do museu; leve o comprovante do ingresso e cubra ombros e joelhos (a Capela Sistina está no mesmo ingresso). Trevi, Pantheon e Navona passaram para a noite de domingo, 22/11, perto da Chiesa Nuova."
+      ]
+    },
+    "items": [
+      {
+        "id": "14-0",
+        "start": "00:05",
+        "label": "00h05",
+        "place": "Aeroporto de Fiumicino",
+        "action": "Pousar; imigração e malas levam cerca de 1h.",
+        "cost": "—",
+        "mapQuery": "Aeroporto di Fiumicino",
+        "phrases": "aeroporto"
+      },
+      {
+        "id": "14-1",
+        "start": "01:30",
+        "label": "01h30–05h30",
+        "place": "Aeroporto de Fiumicino",
+        "action": "Esperar na área pública do terminal, aberta a noite toda.",
+        "cost": "grátis",
+        "phrases": "aeroporto"
+      },
+      {
+        "id": "14-2",
+        "start": "05:35",
+        "label": "~05h35",
+        "place": "Ônibus Terravision → Termini",
+        "action": "1ª opção: primeiro ônibus (confirmar o horário), plataforma 18, direto, 45–55 min; comprar online antes (a partir de €4). 2ª opção: trem FL1 até Ostiense (~6h25, €8) ou Leonardo Express até Termini (€14).",
+        "cost": "€4–6",
+        "mapQuery": "Terravision Fiumicino Airport",
+        "phrases": "autobus"
+      },
+      {
+        "id": "14-3",
+        "start": "06:35",
+        "label": "~06h35",
+        "place": "Metrô A, Termini → Ottaviano",
+        "action": "Sair pelo lado leste (Via Marsala), pegar o metrô A e caminhar 8–10 min até o hotel. Se veio de FL1: ônibus 23 de Ostiense até a Piazza Risorgimento.",
+        "cost": "€1,50",
+        "mapQuery": "Metro Ottaviano, Roma",
+        "phrases": "metro"
+      },
+      {
+        "id": "14-4",
+        "start": "07:00",
+        "label": "~07h00",
+        "place": "Grand Hotel Olympic",
+        "action": "Deixar as malas na recepção (check-in só às 14h); café com cornetto.",
+        "cost": "€3–4",
+        "mapQuery": "Grand Hotel Olympic, Via Properzio 2a, Roma",
+        "phrases": "hotel"
+      },
+      {
+        "id": "14-5",
+        "start": "09:15",
+        "label": "09h15",
+        "place": "Metrô A → Spagna",
+        "action": "Descer em Spagna e caminhar até a Via del Corso.",
+        "cost": "€1,50",
+        "mapQuery": "Metro Spagna, Roma",
+        "phrases": "metro"
+      },
+      {
+        "id": "14-6",
+        "start": "10:00",
+        "label": "10h00",
+        "place": "H&M, Via del Corso 422",
+        "action": "Comprar as blusas; abre às 10h (confirmar).",
+        "cost": "compras",
+        "mapQuery": "H&M Via del Corso 422, Roma",
+        "phrases": "negozio"
+      },
+      {
+        "id": "14-7",
+        "start": "11:30",
+        "label": "11h30",
+        "place": "Piazza di Spagna",
+        "action": "Ver a escadaria e a praça, a poucos minutos a pé da H&M.",
+        "cost": "grátis",
+        "mapQuery": "Piazza di Spagna, Roma",
+        "phrases": "monumenti"
+      },
+      {
+        "id": "14-8",
+        "start": "12:15",
+        "label": "12h15",
+        "place": "Perto da Via del Corso",
+        "action": "Almoço de pizza al taglio ou panino.",
+        "cost": "€6–9",
+        "phrases": "pizza"
+      },
+      {
+        "id": "14-9",
+        "start": "13:30",
+        "label": "13h30",
+        "place": "Metrô A, Spagna → Ottaviano",
+        "action": "Voltar ao hotel, fazer o check-in (a partir das 14h) e descansar até as 15h: depois da noite no aeroporto, esse descanso é importante.",
+        "cost": "€1,50",
+        "mapQuery": "Metro Spagna, Roma",
+        "phrases": "metro"
+      },
+      {
+        "id": "14-10",
+        "start": "15:10",
+        "label": "15h10",
+        "place": "Hotel → Museus do Vaticano",
+        "action": "Ir a pé (~15 min).",
+        "cost": "grátis",
+        "mapQuery": "Musei Vaticani",
+        "phrases": "strada"
+      },
+      {
+        "id": "14-11",
+        "start": "15:30",
+        "label": "15h30",
+        "place": "Museus do Vaticano e Capela Sistina",
+        "action": "Entrar com o ingresso das 15h30 (leve o comprovante); visita de 2h30–3h; ombros e joelhos cobertos. Fecha às 20h.",
+        "cost": "€25",
+        "mapQuery": "Musei Vaticani",
+        "paid": true,
+        "phrases": "museo"
+      },
+      {
+        "id": "14-12",
+        "start": "19:00",
+        "label": "19h00",
+        "place": "Perto do hotel",
+        "action": "Jantar leve e dormir cedo.",
+        "cost": "€8–12",
+        "phrases": "ristorante"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "date": "2026-11-15",
+    "weekday": "Dom",
+    "title": "São Pedro, cúpula e São Calisto",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "De manhã, missa, confissão e visita a São Pedro; credenciamento, Divina Misericórdia e almoço cedo. Cúpula às 13h com horário marcado e, no fim da tarde, as Catacumbas de São Calisto.",
+    "details": {
+      "heading": "Dom 15/11 — Credenciamento e São Pedro",
+      "intro": "De manhã, missa, confissão e visita a São Pedro; depois credenciamento, Santuário da Divina Misericórdia e almoço cedo. Às 13h, a cúpula com horário marcado, e no fim da tarde as Catacumbas de São Calisto.",
+      "tips": [
+        "Cúpula com horário marcado: você não pega a fila principal. Quem tem reserva fica à direita dela e segue por uma passagem até um controle separado, onde leem o QR code (enviado por e-mail até 48h antes) e fazem uma revista rápida; chegue de 15 a 30 minutos antes. Um guia cita €17 pela escada e €22 com elevador no [site oficial da Basílica](https://www.basilicasanpietro.va/it/products/la-cupola). Dica de quem já foi: de manhã, chegar perto do horário de uma missa e dizer na fila que vai participar dela leva a um caminho mais rápido."
+      ]
+    },
+    "items": [
+      {
+        "id": "15-0",
+        "start": "07:00",
+        "label": "07h00",
+        "place": "Basílica de São Pedro",
+        "action": "Entrar na fila de segurança cedo e dizer que vai à missa das 8h (e participar). Ombros e joelhos cobertos.",
+        "cost": "grátis",
+        "mapQuery": "Basilica di San Pietro",
+        "phrases": "sanpietro"
+      },
+      {
+        "id": "15-1",
+        "start": "07:15",
+        "label": "07h15",
+        "place": "Confissão, à direita do baldaquino",
+        "action": "Domingo das 7h às 13h; avisar o atendente que vai se confessar. Depois, visitar a basílica com calma.",
+        "cost": "grátis",
+        "phrases": "sanpietro"
+      },
+      {
+        "id": "15-2",
+        "start": "08:00",
+        "label": "08h00",
+        "place": "Missa no Altar de São José",
+        "action": "Participar da missa. Outras opções de domingo: 9h e 10h30 no Altar da Cátedra.",
+        "cost": "—",
+        "phrases": "sanpietro"
+      },
+      {
+        "id": "15-3",
+        "start": "09:15",
+        "label": "09h15",
+        "place": "Centro São Lourenço, Via Pfeiffer 24",
+        "action": "Fazer o credenciamento (aberto das 9h às 18h), a poucos minutos de São Pedro.",
+        "cost": "grátis",
+        "mapQuery": "Centro San Lorenzo, Via Pfeiffer 24, Roma",
+        "event": true,
+        "phrases": "accredito"
+      },
+      {
+        "id": "15-4",
+        "start": "10:00",
+        "label": "10h00",
+        "place": "Santuário da Divina Misericórdia",
+        "action": "Santo Spirito in Sassia, logo atrás do Centro São Lourenço (Via dei Penitenzieri 12): rezar diante da imagem de Jesus Misericordioso. Confirmar horários em divinamisericordia.it.",
+        "cost": "grátis",
+        "mapQuery": "Santo Spirito in Sassia, Via dei Penitenzieri 12, Roma",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "15-5",
+        "start": "11:30",
+        "label": "11h30",
+        "place": "Pizzarium, Via della Meloria 43",
+        "action": "Almoço cedo: metrô A, Ottaviano → Cipro; fatias simples (batata, tomate); confirmar horário de domingo.",
+        "cost": "€5–8",
+        "mapQuery": "Pizzarium, Via della Meloria 43, Roma",
+        "phrases": "pizza"
+      },
+      {
+        "id": "15-6",
+        "start": "12:30",
+        "label": "12h30",
+        "place": "Praça de São Pedro, fila de reservas",
+        "action": "Não pegue a fila principal: quem tem reserva fica à direita dela e segue até um controle separado. Mostre o QR code (chega por e-mail até 48h antes); há uma revista rápida.",
+        "cost": "—",
+        "mapQuery": "Piazza San Pietro",
+        "phrases": "cupola"
+      },
+      {
+        "id": "15-7",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "Cúpula de São Pedro",
+        "action": "Subir no horário marcado (~1h); 537 degraus a pé ou parte de elevador.",
+        "cost": "€17–22",
+        "mapQuery": "Cupola di San Pietro",
+        "paid": true,
+        "phrases": "cupola"
+      },
+      {
+        "id": "15-8",
+        "start": "14:15",
+        "label": "14h15",
+        "place": "Metrô A + ônibus 218 → São Calisto",
+        "action": "Caminhar até Ottaviano, metrô A até San Giovanni e ônibus 218 até Fosse Ardeatine (~1h). Se atrasar, táxi dividido com o grupo.",
+        "cost": "€1,50",
+        "mapQuery": "Metro Ottaviano, Roma",
+        "phrases": "autobus"
+      },
+      {
+        "id": "15-9",
+        "start": "15:30",
+        "label": "15h30",
+        "place": "Catacumbas de São Calisto",
+        "action": "Visita guiada (~40 min), com a cripta dos papas e a de Santa Cecília. Fecha às 17h; última entrada 16h45.",
+        "cost": "ver site",
+        "mapQuery": "Catacombe di San Callisto, Via Appia Antica 110",
+        "paid": true,
+        "phrases": "catacombe"
+      },
+      {
+        "id": "15-10",
+        "start": "17:00",
+        "label": "17h00",
+        "place": "Volta ao hotel",
+        "action": "Ônibus 218 e metrô A até Ottaviano.",
+        "cost": "€1,50",
+        "phrases": "autobus"
+      },
+      {
+        "id": "15-11",
+        "start": "19:00",
+        "label": "19h00",
+        "place": "Perto do hotel",
+        "action": "Jantar pizza al taglio ou supplì.",
+        "cost": "€8–12",
+        "phrases": "pizza"
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "date": "2026-11-16",
+    "weekday": "Seg",
+    "title": "Scala Santa, Santa Croce e Latrão",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "Manhã na Scala Santa e em Santa Croce, com as relíquias da Paixão, tudo a pé perto do Latrão, onde é a acolhida das 13h.",
+    "note": "Scala Santa, Santa Croce e Latrão ficam a poucos minutos a pé um do outro: a manhã toda é sem metrô.",
+    "details": {
+      "heading": "Seg 16/11 — Scala Santa, Santa Croce e São João de Latrão",
+      "intro": "A manhã fica para a Scala Santa e a Basílica de Santa Croce, com as relíquias da Paixão, tudo a pé perto do Latrão, onde é a acolhida das 13h.",
+      "tips": [
+        "Scala Santa, Santa Croce e Latrão ficam a poucos minutos a pé um do outro, então a manhã toda é sem metrô. Santa Maria Maggiore passou para segunda, 23/11, perto de Termini."
+      ]
+    },
+    "items": [
+      {
+        "id": "16-0",
+        "start": "08:45",
+        "label": "08h45",
+        "place": "Metrô Ottaviano → San Giovanni",
+        "action": "Linha A direto (25–30 min).",
+        "cost": "€1,50",
+        "mapQuery": "Metro San Giovanni, Roma",
+        "phrases": "metro"
+      },
+      {
+        "id": "16-1",
+        "start": "09:30",
+        "label": "09h30",
+        "place": "Scala Santa",
+        "action": "Subir de joelhos a escada que, segundo a tradição, Jesus subiu até Pilatos (aberta 6h–13h30). Ao lado fica o Sancta Sanctorum (9h–13h30; ingresso no local).",
+        "cost": "grátis",
+        "mapQuery": "Scala Santa, Piazza di San Giovanni in Laterano 14, Roma",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "16-2",
+        "start": "10:45",
+        "label": "10h45",
+        "place": "Santa Croce in Gerusalemme",
+        "action": "Caminhar uns 15 min e rezar na Capela das Relíquias da Paixão, com o fragmento da Santa Cruz; ela fecha 15 min antes de cada missa.",
+        "cost": "grátis",
+        "mapQuery": "Basilica di Santa Croce in Gerusalemme",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "16-3",
+        "start": "11:45",
+        "label": "11h45",
+        "place": "Basílica de São João de Latrão",
+        "action": "Voltar a pé (~15 min) e conhecer a basílica antes da acolhida; se atrasar, ir direto almoçar.",
+        "cost": "grátis",
+        "mapQuery": "Basilica di San Giovanni in Laterano",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "16-4",
+        "start": "12:15",
+        "label": "12h15",
+        "place": "Perto do Latrão",
+        "action": "Almoçar pizza al taglio ou forno (preço por quilo na vitrine).",
+        "cost": "€4–8",
+        "phrases": "pizza"
+      },
+      {
+        "id": "16-5",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "São João de Latrão",
+        "action": "Acolhida.",
+        "cost": "—",
+        "mapQuery": "Basilica di San Giovanni in Laterano",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "16-6",
+        "start": "17:00",
+        "label": "17h00",
+        "place": "São João de Latrão",
+        "action": "Santa Missa.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "16-7",
+        "start": "18:30",
+        "label": "18h30",
+        "place": "Metrô San Giovanni → Ottaviano",
+        "action": "Voltar direto; jantar perto do hotel.",
+        "cost": "€1,50 + €8–12",
+        "phrases": "metro"
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "date": "2026-11-17",
+    "weekday": "Ter",
+    "title": "Tre Fontane e São Paulo",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "Manhã no lugar do martírio e da prisão de São Paulo, segundo a tradição, e tarde na basílica com o túmulo dele. O Coliseu passou para segunda, 23.",
+    "details": {
+      "heading": "Ter 17/11 — Tre Fontane e São Paulo Fora dos Muros",
+      "intro": "A manhã livre vai para a Abadia das Tre Fontane, lugar do martírio e, segundo a tradição, da prisão de São Paulo, e o metrô B leva dali à basílica com o túmulo dele em uns 10 minutos. O Coliseu passou para segunda, 23/11.",
+      "tips": []
+    },
+    "items": [
+      {
+        "id": "17-0",
+        "start": "08:30",
+        "label": "08h30",
+        "place": "Metrô Ottaviano → Laurentina",
+        "action": "Linha A até Termini e troca para a B até o fim da linha (~40 min).",
+        "cost": "€1,50",
+        "mapQuery": "Metro Laurentina, Roma",
+        "phrases": "metro"
+      },
+      {
+        "id": "17-1",
+        "start": "09:30",
+        "label": "09h30",
+        "place": "Abadia das Tre Fontane",
+        "action": "Lugar do martírio de São Paulo. Na cripta de Santa Maria Scala Coeli fica, segundo a tradição, a prisão onde ele esperou a execução. Ver também São Paulo alle Tre Fontane (as três fontes), Santi Vincenzo e Anastasio e a gruta da aparição de 1947. Uns 15 min a pé de Laurentina.",
+        "cost": "grátis",
+        "mapQuery": "Abbazia delle Tre Fontane, Via Acque Salvie 1, Roma",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "17-2",
+        "start": "11:30",
+        "label": "11h30",
+        "place": "Caffè Tre Fontane",
+        "action": "Lanche ou almoço leve (ter–dom, 8h30–19h30).",
+        "cost": "€6–9",
+        "phrases": "pizza"
+      },
+      {
+        "id": "17-3",
+        "start": "12:30",
+        "label": "12h30",
+        "place": "Metrô Laurentina → Basilica San Paolo",
+        "action": "Linha B (~10 min) e 3 min a pé.",
+        "cost": "€1,50",
+        "phrases": "metro"
+      },
+      {
+        "id": "17-4",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "São Paulo Fora dos Muros",
+        "action": "Acolhida.",
+        "cost": "—",
+        "mapQuery": "Basilica di San Paolo fuori le Mura",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "17-5",
+        "start": "17:00",
+        "label": "17h00",
+        "place": "São Paulo Fora dos Muros",
+        "action": "Santa Missa.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "17-6",
+        "start": "18:30",
+        "label": "18h30",
+        "place": "Ônibus 23 → Piazza Risorgimento",
+        "action": "Voltar direto (ou metrô B + A).",
+        "cost": "€1,50",
+        "phrases": "autobus"
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "date": "2026-11-18",
+    "weekday": "Qua",
+    "title": "Aventino, Testaccio e São Paulo",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "Dia sem ingresso pago: vista do Aventino, almoço no mercado e tarde no evento.",
+    "note": "Hoje: reconfira o trem de sexta para Assis e a lista de trens garantidos da greve. Compre e deixe separados roupa, documentos, água e bastante lanche para amanhã: o almoço só sai por volta das 16h.",
+    "details": {
+      "heading": "Qua 18/11 — Aventino, Testaccio e São Paulo Fora dos Muros",
+      "intro": "Dia sem ingresso pago: vista do Aventino, almoço no Mercado de Testaccio e o metrô B leva a São Paulo Fora dos Muros em 5 minutos.",
+      "tips": []
+    },
+    "items": [
+      {
+        "id": "18-0",
+        "start": "09:00",
+        "label": "09h00",
+        "place": "Ônibus 23 → Testaccio/Piramide",
+        "action": "Pegar na Piazza Risorgimento (~30 min; ponto no app).",
+        "cost": "€1,50",
+        "mapQuery": "Piramide Cestia",
+        "phrases": "autobus"
+      },
+      {
+        "id": "18-1",
+        "start": "09:45",
+        "label": "09h45",
+        "place": "Aventino e Giardino degli Aranci",
+        "action": "Subir a pé (20–25 min); ver a vista e as igrejas do morro.",
+        "cost": "grátis",
+        "mapQuery": "Giardino degli Aranci, Roma",
+        "phrases": "strada"
+      },
+      {
+        "id": "18-2",
+        "start": "11:30",
+        "label": "11h30",
+        "place": "Mercado de Testaccio",
+        "action": "Almoçar na Casa Manco (pizza al taglio) ou no Trapizzino; confirmar horário.",
+        "cost": "€5–10",
+        "mapQuery": "Mercato di Testaccio",
+        "phrases": "mercato"
+      },
+      {
+        "id": "18-3",
+        "start": "12:30",
+        "label": "12h30",
+        "place": "Metrô Piramide → Basilica San Paolo",
+        "action": "Linha B, 2 paradas (~5 min), e 3 min a pé.",
+        "cost": "€1,50",
+        "phrases": "metro"
+      },
+      {
+        "id": "18-4",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "São Paulo Fora dos Muros",
+        "action": "Acolhida.",
+        "cost": "—",
+        "mapQuery": "Basilica di San Paolo fuori le Mura",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "18-5",
+        "start": "17:00",
+        "label": "17h00",
+        "place": "São Paulo Fora dos Muros",
+        "action": "Santa Missa.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "18-6",
+        "start": "18:30",
+        "label": "18h30",
+        "place": "Ônibus 23 → Piazza Risorgimento",
+        "action": "Voltar; jantar perto do hotel e dormir cedo, porque amanhã você chega às 6h30 na Sala Paulo VI.",
+        "cost": "€1,50 + €8–12",
+        "phrases": "autobus"
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "date": "2026-11-19",
+    "weekday": "Qui",
+    "title": "Encontro com o Papa",
+    "city": "Roma",
+    "stay": "olympic",
+    "summary": "Você vai servir: chegue à Sala Paulo VI às 6h30. Depois da audiência, missa na Basílica de São Pedro (por dentro do Vaticano) e almoço só por volta das 16h.",
+    "alert": {
+      "title": "Leve lanche.",
+      "body": "O almoço só sai por volta das 16h e o grupo não sai do Vaticano entre a audiência e a missa. Café reforçado, frutas, sanduíche, barrinhas e água."
+    },
+    "details": {
+      "heading": "Qui 19/11 — Encontro com o Papa",
+      "intro": "Você vai servir no evento, então chegue à Sala Paulo VI às 6h30. Depois da audiência com o Papa, a missa é na Basílica de São Pedro, indo por dentro do Vaticano, e o almoço só sai por volta das 16h: tome um café reforçado e leve bastante lanche.",
+      "tips": []
+    },
+    "items": [
+      {
+        "id": "19-0",
+        "start": "05:45",
+        "label": "05h45",
+        "place": "Hotel",
+        "action": "Tomar um café reforçado e pegar o lanche e a água separados na noite anterior (o café do hotel talvez ainda não esteja aberto).",
+        "cost": "—",
+        "phrases": "caffe"
+      },
+      {
+        "id": "19-1",
+        "start": "06:10",
+        "label": "06h10",
+        "place": "Hotel → Sala Paulo VI",
+        "action": "Ir a pé (15–20 min); confirmar com a organização por qual entrada os voluntários passam.",
+        "cost": "grátis",
+        "mapQuery": "Aula Paolo VI, Città del Vaticano",
+        "phrases": "strada"
+      },
+      {
+        "id": "19-2",
+        "start": "06:30",
+        "label": "06h30",
+        "place": "Sala Paulo VI",
+        "action": "Chegar para servir e fazer o credenciamento; levar passaporte e comprovante de inscrição.",
+        "cost": "—",
+        "mapQuery": "Aula Paolo VI, Città del Vaticano",
+        "event": true,
+        "phrases": "volontario"
+      },
+      {
+        "id": "19-3",
+        "start": null,
+        "label": "a confirmar",
+        "place": "Sala Paulo VI",
+        "action": "Audiência, o encontro com o Papa. Comer o lanche nas pausas.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "19-4",
+        "start": null,
+        "label": "Após a audiência",
+        "place": "Basílica de São Pedro",
+        "action": "Missa em ação de graças; o grupo vai por dentro do Vaticano, sem sair. O programa oficial cita 18h: confirmar com a organização.",
+        "cost": "—",
+        "mapQuery": "Basilica di San Pietro",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "19-5",
+        "start": "16:00",
+        "label": "~16h00",
+        "place": "Panificio Bonci, Via Trionfale 36",
+        "action": "Almoço tardio: fatias de €4–6 (seg–sáb, até 20h), ou onde a organização indicar.",
+        "cost": "€4–8",
+        "mapQuery": "Panificio Bonci, Via Trionfale 36, Roma",
+        "phrases": "pizza"
+      },
+      {
+        "id": "19-6",
+        "start": "20:30",
+        "label": "Noite",
+        "place": "Hotel",
+        "action": "Arrumar as malas e acertar a conta e a taxa de turismo hoje: o check-out de sexta é às 6h.",
+        "cost": "—",
+        "phrases": "checkout"
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "date": "2026-11-20",
+    "weekday": "Sex",
+    "title": "Roma → Assis",
+    "city": "Assis",
+    "stay": "locanda",
+    "summary": "Trem das 6h52, malas na Locanda, manhã na Basílica de São Francisco e peregrinação à tarde, até a Procissão das Velas.",
+    "alert": {
+      "title": "Trem comprado: Regionale Veloce 4712, Termini 6h52 → Assisi 9h06.",
+      "body": "A greve ferroviária só começa às 21h e o trem sai na faixa garantida dos regionais (6h–9h), mas há greve geral da CGIL hoje: confira o trem no app da Trenitalia na véspera. Se for cancelado, o reembolso é integral."
+    },
+    "details": {
+      "heading": "Sex 20/11 — Roma para Assis",
+      "intro": "Trem comprado: Regionale Veloce 4712, que sai de Termini às 6h52 e chega a Assis às 9h06. Com a manhã livre, dá para deixar as malas na Locanda e visitar a Basílica de São Francisco com calma antes da peregrinação das 13h.",
+      "tips": [
+        "A greve ferroviária só começa às 21h, e o trem das 6h52 sai dentro da faixa garantida dos regionais (6h–9h). Por causa da greve geral da CGIL no mesmo dia, confira o trem no app da Trenitalia na véspera; se for cancelado, o reembolso é integral. Confirme também que o grupo tem passagem no mesmo trem."
+      ]
+    },
+    "items": [
+      {
+        "id": "20-0",
+        "start": "06:00",
+        "label": "06h00",
+        "place": "Hotel → Termini",
+        "action": "Fazer o check-out (conta acertada na noite anterior); metrô A, Ottaviano → Termini (~15 min; o metrô abre às 5h30). Estar na plataforma uns 20 min antes.",
+        "cost": "€1,50",
+        "mapQuery": "Roma Termini",
+        "phrases": "checkout"
+      },
+      {
+        "id": "20-1",
+        "start": "06:52",
+        "label": "06h52",
+        "place": "Trem Regionale Veloce 4712 → Assisi",
+        "action": "Termini 6h52 → Assisi 9h06, direto. Passagem digital no e-mail e no app da Trenitalia; se o app pedir check-in, faça antes de embarcar.",
+        "cost": "€14,45",
+        "mapQuery": "Roma Termini",
+        "paid": true,
+        "phrases": "sciopero"
+      },
+      {
+        "id": "20-2",
+        "start": "09:15",
+        "label": "~09h15",
+        "place": "Locanda Giustini",
+        "action": "Deixar as malas (combinar antes); check-in só às 15h30. Dá para passar rápido pela Porciúncula, ali perto.",
+        "cost": "—",
+        "mapQuery": "Locanda Giustini, Via Enrico Berlinguer 5, Santa Maria degli Angeli",
+        "phrases": "locanda"
+      },
+      {
+        "id": "20-3",
+        "start": "10:00",
+        "label": "~10h00",
+        "place": "Basílica de São Francisco",
+        "action": "Ônibus urbano até o centro (10–15 min) e visita com calma: basílica inferior, superior e o túmulo de São Francisco.",
+        "cost": "€1,50–2",
+        "mapQuery": "Basilica di San Francesco d'Assisi",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "20-4",
+        "start": "12:00",
+        "label": "~12h00",
+        "place": "Centro de Assis",
+        "action": "Almoço leve.",
+        "cost": "€6–9",
+        "phrases": "ristorante"
+      },
+      {
+        "id": "20-5",
+        "start": "13:00",
+        "label": "13h–17h",
+        "place": "São Rufino, Santa Clara e Igreja da Espoliação",
+        "action": "Peregrinação livre pelo centro de Assis.",
+        "cost": "—",
+        "mapQuery": "Cattedrale di San Rufino, Assisi",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "20-6",
+        "start": "17:00",
+        "label": "17h–21h30",
+        "place": "Assis",
+        "action": "Procissão das Velas e Vigília Jovem.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "20-7",
+        "start": "21:45",
+        "label": "~21h45",
+        "place": "Locanda Giustini",
+        "action": "Voltar; confirmar o último ônibus, senão táxi dividido por três.",
+        "cost": "a confirmar",
+        "mapQuery": "Locanda Giustini, Via Enrico Berlinguer 5, Santa Maria degli Angeli",
+        "phrases": "taxi"
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "date": "2026-11-21",
+    "weekday": "Sáb",
+    "title": "Encerramento em Assis",
+    "city": "Assis",
+    "stay": "locanda",
+    "summary": "Manhã inteira para rezar na Porciúncula, a poucos minutos da Locanda, e encerramento da Convenção à tarde. Confirme o local exato com a organização.",
+    "alert": {
+      "title": "Greve ferroviária até as 20h.",
+      "body": "Não planeje trem hoje."
+    },
+    "details": {
+      "heading": "Sáb 21/11 e Dom 22/11 — Encerramento em Assis e volta a Roma",
+      "intro": "Sábado fica inteiro em Assis, com a manhã para rezar na Porciúncula, a poucos minutos da Locanda, e o encerramento à tarde; domingo é dia de voltar a Roma de trem.",
+      "tips": [
+        "O cronograma não diz o local exato do encerramento em Assis; confirme com a organização."
+      ]
+    },
+    "items": [
+      {
+        "id": "21-0",
+        "start": "08:30",
+        "label": "08h30–11h30",
+        "place": "Basílica de Santa Maria degli Angeli e Porciúncula",
+        "action": "Café na Locanda (incluso) e manhã sem pressa na basílica: rezar na Porciúncula, a capelinha restaurada por São Francisco; ver a Capela do Trânsito, onde ele morreu, e o Roseiral. Confirmar horários em porziuncola.org.",
+        "cost": "grátis",
+        "mapQuery": "Basilica di Santa Maria degli Angeli, Assisi",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "21-1",
+        "start": "12:00",
+        "label": "12h00",
+        "place": "Perto do local do encerramento",
+        "action": "Almoço leve; chegar com folga.",
+        "cost": "€6–9",
+        "phrases": "ristorante"
+      },
+      {
+        "id": "21-2",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "Local do encerramento (a confirmar)",
+        "action": "Acolhida.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "21-3",
+        "start": "15:00",
+        "label": "15h00",
+        "place": "Local do encerramento",
+        "action": "Missa de Envio.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "21-4",
+        "start": "16:30",
+        "label": "16h30",
+        "place": "Local do encerramento",
+        "action": "Bênção de envio.",
+        "cost": "—",
+        "event": true,
+        "phrases": "evento"
+      },
+      {
+        "id": "21-5",
+        "start": "19:30",
+        "label": "Noite",
+        "place": "Santa Maria degli Angeli",
+        "action": "Jantar barato e descanso.",
+        "cost": "€8–12",
+        "phrases": "ristorante"
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "date": "2026-11-22",
+    "weekday": "Dom",
+    "title": "Santa Cecília e São Filipe Neri",
+    "city": "Roma",
+    "stay": "extra",
+    "summary": "Trem de volta pela manhã, malas no hotel novo, Trastevere com Santa Cecília (padroeira dos músicos) e o túmulo de São Filipe Neri na Chiesa Nuova.",
+    "items": [
+      {
+        "id": "22-0",
+        "start": "10:30",
+        "label": "10h30",
+        "place": "Trem Assis → Roma Tiburtina",
+        "action": "Fazer o check-out; trem de ~2h (ou Termini, 2h–2h45). Domingo tem menos trens: confirmar o horário.",
+        "cost": "€10–17",
+        "mapQuery": "Stazione di Assisi, Santa Maria degli Angeli",
+        "phrases": "treno"
+      },
+      {
+        "id": "22-1",
+        "start": "13:30",
+        "label": "~13h30",
+        "place": "Hotel novo, região de Tiburtina",
+        "action": "Deixar as malas.",
+        "cost": "—",
+        "mapQuery": "Roma Tiburtina",
+        "phrases": "hotel"
+      },
+      {
+        "id": "22-2",
+        "start": "15:00",
+        "label": "15h00",
+        "place": "Santa Maria in Trastevere",
+        "action": "Visitar a basílica e caminhar pelas ruas de Trastevere.",
+        "cost": "grátis",
+        "mapQuery": "Santa Maria in Trastevere",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "22-3",
+        "start": "16:00",
+        "label": "16h00",
+        "place": "Basílica de Santa Cecília",
+        "action": "Padroeira dos músicos: rezar diante da estátua da santa sob o altar e descer ao subterrâneo, com ruínas de casas romanas (não são catacumbas). Domingo aberta das 16h às 18h; o afresco de Cavallini só abre de manhã (domingo, 11h30–12h30).",
+        "cost": "~€2",
+        "mapQuery": "Basilica di Santa Cecilia in Trastevere",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "22-4",
+        "start": "17:30",
+        "label": "17h30",
+        "place": "Chiesa Nuova (Santa Maria in Vallicella)",
+        "action": "Atravessar a Ponte Sisto e caminhar ~20 min; rezar no túmulo de São Filipe Neri, na capela à esquerda do altar-mor. Missa às 19h; confirmar horários.",
+        "cost": "grátis",
+        "mapQuery": "Chiesa Nuova, Santa Maria in Vallicella, Roma",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "22-5",
+        "start": "18:30",
+        "label": "18h30",
+        "place": "Piazza Navona, Pantheon e Fontana di Trevi",
+        "action": "Caminhar à noite: Navona (3 min), Pantheon por fora (ou por dentro, €7, se ainda aberto) e a Trevi iluminada; jantar pizza al taglio no caminho e voltar de metrô A (Barberini) + B até Tiburtina.",
+        "cost": "€8–12",
+        "mapQuery": "Piazza Navona, Roma",
+        "phrases": "monumenti"
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "date": "2026-11-23",
+    "weekday": "Seg",
+    "title": "Coliseu com a irmã e voo das 5h55",
+    "city": "Roma",
+    "stay": "aero",
+    "summary": "Malas no depósito de Termini, Coliseu, Fórum e Palatino à tarde, volta a pé até a estação e trem para o aeroporto à noite.",
+    "details": {
+      "heading": "Seg 23/11 e Ter 24/11 — Coliseu, último dia e voo das 5h55",
+      "intro": "Segunda é o dia do Coliseu com sua irmã: deixe as malas no depósito de Termini, visite Coliseu, Fórum e Palatino, volte a pé até a estação e pegue o trem para o aeroporto por volta das 21h35.",
+      "tips": [
+        "Compre no site oficial dois ingressos nominais, o seu e o da sua irmã, para as 13h, e levem os passaportes. O Coliseu não aceita malas nem mochilas grandes, por isso o depósito vem antes. Em novembro ele fecha por volta das 16h30; confirme no site oficial.",
+        "Confirme no bilhete o terminal de saída (T1 ou T3). Segundo relatos de viajantes, o T3 tem bancos planos na área de bagagem e poltronas reclináveis perto dos portões E, mas o acesso à área de embarque de madrugada nem sempre é liberado. Leve água e lanche, porque as lojas fecham à noite."
+      ]
+    },
+    "items": [
+      {
+        "id": "23-0",
+        "start": "11:00",
+        "label": "11h00",
+        "place": "Hotel → Termini",
+        "action": "Fazer o check-out; metrô B com as malas (15–25 min).",
+        "cost": "€1,50",
+        "mapQuery": "Roma Termini",
+        "phrases": "checkout"
+      },
+      {
+        "id": "23-1",
+        "start": "11:20",
+        "label": "11h20",
+        "place": "Depósito de bagagem de Termini",
+        "action": "Deixar as malas: o Coliseu não aceita malas nem mochilas grandes (~€6 por 5h e €0,60 por hora extra).",
+        "cost": "€6–9",
+        "mapQuery": "Deposito bagagli Roma Termini",
+        "phrases": "deposito"
+      },
+      {
+        "id": "23-2",
+        "start": "11:45",
+        "label": "11h45",
+        "place": "Metrô Termini → Colosseo",
+        "action": "Linha B, poucas paradas (~5 min).",
+        "cost": "€1,50",
+        "mapQuery": "Metro Colosseo",
+        "phrases": "metro"
+      },
+      {
+        "id": "23-3",
+        "start": "12:00",
+        "label": "12h00",
+        "place": "Monti",
+        "action": "Almoço leve: pizza al taglio ou panino.",
+        "cost": "€6–9",
+        "mapQuery": "Rione Monti, Roma",
+        "phrases": "pizza"
+      },
+      {
+        "id": "23-4",
+        "start": "13:00",
+        "label": "13h00",
+        "place": "Coliseu",
+        "action": "Entrar no horário marcado com sua irmã (~1h). Ingressos nominais: levem os passaportes.",
+        "cost": "€18",
+        "mapQuery": "Colosseo",
+        "paid": true,
+        "phrases": "colosseo"
+      },
+      {
+        "id": "23-5",
+        "start": "14:00",
+        "label": "14h00",
+        "place": "Fórum Romano e Palatino",
+        "action": "Visitar por 1h30–2h; fecha por volta das 16h30.",
+        "cost": "incluso",
+        "mapQuery": "Foro Romano",
+        "phrases": "colosseo"
+      },
+      {
+        "id": "23-6",
+        "start": "16:00",
+        "label": "16h00",
+        "place": "Fori Imperiali, Piazza Venezia e Capitólio",
+        "action": "Sair do Fórum e caminhar pela Via dei Fori Imperiali. Opcional: Cárcere Mamertino, ao pé do Capitólio, onde a tradição diz que Pedro e Paulo passaram os últimos dias presos (€10; 9h–17h).",
+        "cost": "grátis (Mamertino €10)",
+        "mapQuery": "Fori Imperiali, Roma",
+        "phrases": "strada"
+      },
+      {
+        "id": "23-7",
+        "start": "17:00",
+        "label": "17h00",
+        "place": "Café de balcão",
+        "action": "Pausa e descanso.",
+        "cost": "€1–2",
+        "phrases": "caffe"
+      },
+      {
+        "id": "23-8",
+        "start": "17:30",
+        "label": "17h30",
+        "place": "Basílica de Santa Maria Maggiore",
+        "action": "Ir a pé pela Via Cavour (~15 min); uma das quatro basílicas maiores de Roma, a 10 min de Termini; confirmar o horário.",
+        "cost": "grátis",
+        "mapQuery": "Basilica di Santa Maria Maggiore",
+        "phrases": "chiesa"
+      },
+      {
+        "id": "23-9",
+        "start": "19:00",
+        "label": "19h00",
+        "place": "Perto de Termini",
+        "action": "Jantar barato e pegar as malas.",
+        "cost": "€8–12",
+        "phrases": "ristorante"
+      },
+      {
+        "id": "23-10",
+        "start": "21:35",
+        "label": "~21h35",
+        "place": "Trem → Fiumicino",
+        "action": "Leonardo Express de Termini (€14; último às 22h35) ou FL1 de Tiburtina (€8, ~48 min).",
+        "cost": "€8–14",
+        "mapQuery": "Roma Termini",
+        "phrases": "treno"
+      },
+      {
+        "id": "23-11",
+        "start": "22:10",
+        "label": "~22h10",
+        "place": "Aeroporto de Fiumicino",
+        "action": "Esperar na área pública, aberta a noite toda. Leve água e lanche.",
+        "cost": "—",
+        "mapQuery": "Aeroporto di Fiumicino",
+        "phrases": "partenza"
+      },
+      {
+        "id": "23-12",
+        "start": "02:55",
+        "nextDay": true,
+        "label": "Ter ~02h55",
+        "place": "Aeroporto de Fiumicino",
+        "action": "Fazer o check-in (~3h antes); embarque ~5h; voo às 5h55. Confirmar o terminal (T1 ou T3).",
+        "cost": "—",
+        "phrases": "partenza"
+      }
+    ]
+  }
+]

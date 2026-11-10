@@ -1,0 +1,1348 @@
+{
+  "basic": {
+    "title": "Básicas",
+    "it": [
+      {
+        "text": "Buongiorno! / Buonasera!",
+        "pron": "buondjórno / buonassêra",
+        "pt": "Bom dia! / Boa tarde, boa noite!"
+      },
+      {
+        "text": "Per favore. Grazie!",
+        "pron": "per favôre. gráttsie!",
+        "pt": "Por favor. Obrigado!"
+      },
+      {
+        "text": "Mi scusi.",
+        "pron": "mi skúzi",
+        "pt": "Com licença / Desculpe."
+      },
+      {
+        "text": "Non parlo bene l'italiano. Può parlare piano?",
+        "pron": "non párlo bêne litaliáno. pó parláre piáno?",
+        "pt": "Não falo bem italiano. Pode falar devagar?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Good morning! / Good evening!",
+        "pron": "gud mórnin / gud ívnin",
+        "pt": "Bom dia! / Boa noite!"
+      },
+      {
+        "text": "Please. Thank you!",
+        "pron": "plíz. fênk iú!",
+        "pt": "Por favor. Obrigado!"
+      },
+      {
+        "text": "Excuse me.",
+        "pron": "ekskiúz mi",
+        "pt": "Com licença / Desculpe."
+      },
+      {
+        "text": "I don't speak English well. Can you speak slowly?",
+        "pron": "ai dôunt spík ínglich uél. ken iú spík slôuli?",
+        "pt": "Não falo bem inglês. Pode falar devagar?"
+      }
+    ]
+  },
+  "aeroporto": {
+    "title": "No aeroporto (chegada)",
+    "it": [
+      {
+        "text": "Scusi, dov'è l'autobus per Roma?",
+        "pron": "skúzi, dovê láutobus per rôma?",
+        "pt": "Com licença, onde fica o ônibus para Roma?"
+      },
+      {
+        "text": "A che ora parte il primo autobus?",
+        "pron": "a ke ôra párte il prímo áutobus?",
+        "pt": "Que horas sai o primeiro ônibus?"
+      },
+      {
+        "text": "Dove posso aspettare fino a domattina?",
+        "pron": "dôve pósso aspettáre fíno a domattína?",
+        "pt": "Onde posso esperar até amanhã cedo?"
+      },
+      {
+        "text": "C'è una presa per caricare il telefono?",
+        "pron": "tché úna prêza per caricáre il telêfono?",
+        "pt": "Tem tomada para carregar o celular?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Excuse me, where is the bus to Rome?",
+        "pron": "ekskiúz mi, uér iz dâ bâs tu rôum?",
+        "pt": "Com licença, onde fica o ônibus para Roma?"
+      },
+      {
+        "text": "What time does the first bus leave?",
+        "pron": "uót táim dâz dâ fârst bâs lív?",
+        "pt": "Que horas sai o primeiro ônibus?"
+      },
+      {
+        "text": "Where can I wait until the morning?",
+        "pron": "uér ken ai uêit ântil dâ mórnin?",
+        "pt": "Onde posso esperar até de manhã?"
+      },
+      {
+        "text": "Is there a socket to charge my phone?",
+        "pron": "iz dér a sókit tu tchárdj mai fôun?",
+        "pt": "Tem tomada para carregar o celular?"
+      }
+    ]
+  },
+  "treno": {
+    "title": "Trem e estação",
+    "it": [
+      {
+        "text": "Un biglietto per …, per favore.",
+        "pron": "un bilhêtto per …, per favôre",
+        "pt": "Uma passagem para …, por favor."
+      },
+      {
+        "text": "Da quale binario parte?",
+        "pron": "da cuále binário párte?",
+        "pt": "De qual plataforma sai?"
+      },
+      {
+        "text": "Questo treno va a …?",
+        "pron": "cuésto trêno va a …?",
+        "pt": "Este trem vai para …?"
+      },
+      {
+        "text": "Devo cambiare treno?",
+        "pron": "dêvo cambiáre trêno?",
+        "pt": "Preciso trocar de trem?"
+      },
+      {
+        "text": "Il treno è in ritardo?",
+        "pron": "il trêno é in ritárdo?",
+        "pt": "O trem está atrasado?"
+      }
+    ],
+    "en": [
+      {
+        "text": "One ticket to …, please.",
+        "pron": "uân tíkit tu …, plíz",
+        "pt": "Uma passagem para …, por favor."
+      },
+      {
+        "text": "Which platform does it leave from?",
+        "pron": "uítch plétform dâz it lív fróm?",
+        "pt": "De qual plataforma sai?"
+      },
+      {
+        "text": "Does this train go to …?",
+        "pron": "dâz dís trêin gôu tu …?",
+        "pt": "Este trem vai para …?"
+      },
+      {
+        "text": "Do I need to change trains?",
+        "pron": "du ai níd tu tchêindj trêinz?",
+        "pt": "Preciso trocar de trem?"
+      },
+      {
+        "text": "Is the train late?",
+        "pron": "iz dâ trêin lêit?",
+        "pt": "O trem está atrasado?"
+      }
+    ]
+  },
+  "sciopero": {
+    "title": "Trem em dia de greve",
+    "it": [
+      {
+        "text": "Oggi c'è sciopero?",
+        "pron": "ódji tché chópero?",
+        "pt": "Hoje tem greve?"
+      },
+      {
+        "text": "Questo treno è garantito?",
+        "pron": "cuésto trêno é garantíto?",
+        "pt": "Este trem está garantido?"
+      },
+      {
+        "text": "Il treno è stato cancellato?",
+        "pron": "il trêno é státo cantcheláto?",
+        "pt": "O trem foi cancelado?"
+      },
+      {
+        "text": "Posso cambiare il biglietto?",
+        "pron": "pósso cambiáre il bilhêtto?",
+        "pt": "Posso trocar a passagem?"
+      },
+      {
+        "text": "Da quale binario parte?",
+        "pron": "da cuále binário párte?",
+        "pt": "De qual plataforma sai?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Is there a strike today?",
+        "pron": "iz dér a stráik tudêi?",
+        "pt": "Hoje tem greve?"
+      },
+      {
+        "text": "Is this train guaranteed?",
+        "pron": "iz dís trêin guerentíd?",
+        "pt": "Este trem está garantido?"
+      },
+      {
+        "text": "Has the train been cancelled?",
+        "pron": "héz dâ trêin bín kénsold?",
+        "pt": "O trem foi cancelado?"
+      },
+      {
+        "text": "Can I change my ticket?",
+        "pron": "ken ai tchêindj mai tíkit?",
+        "pt": "Posso trocar a passagem?"
+      },
+      {
+        "text": "Which platform does it leave from?",
+        "pron": "uítch plétform dâz it lív fróm?",
+        "pt": "De qual plataforma sai?"
+      }
+    ]
+  },
+  "autobus": {
+    "title": "Ônibus",
+    "it": [
+      {
+        "text": "Dove si compra il biglietto?",
+        "pron": "dôve si cômpra il bilhêtto?",
+        "pt": "Onde se compra a passagem?"
+      },
+      {
+        "text": "Questo autobus va a …?",
+        "pron": "cuésto áutobus va a …?",
+        "pt": "Este ônibus vai para …?"
+      },
+      {
+        "text": "Mi dice quando devo scendere, per favore?",
+        "pron": "mi dítche cuándo dêvo chêndere, per favôre?",
+        "pt": "Pode me avisar quando devo descer?"
+      },
+      {
+        "text": "Scendo alla prossima.",
+        "pron": "chêndo ála próssima",
+        "pt": "Desço na próxima."
+      }
+    ],
+    "en": [
+      {
+        "text": "Where can I buy a ticket?",
+        "pron": "uér ken ai bái a tíkit?",
+        "pt": "Onde se compra a passagem?"
+      },
+      {
+        "text": "Does this bus go to …?",
+        "pron": "dâz dís bâs gôu tu …?",
+        "pt": "Este ônibus vai para …?"
+      },
+      {
+        "text": "Can you tell me when to get off, please?",
+        "pron": "ken iú tél mi uén tu guét óf, plíz?",
+        "pt": "Pode me avisar quando devo descer?"
+      },
+      {
+        "text": "I'm getting off at the next stop.",
+        "pron": "áim guétin óf ét dâ nékst stóp",
+        "pt": "Desço na próxima."
+      }
+    ]
+  },
+  "metro": {
+    "title": "Metrô",
+    "it": [
+      {
+        "text": "Quale direzione per …?",
+        "pron": "cuále diretsiône per …?",
+        "pt": "Qual sentido para …?"
+      },
+      {
+        "text": "Dove si cambia per la linea B?",
+        "pron": "dôve si cámbia per la línea bi?",
+        "pt": "Onde se troca para a linha B?"
+      },
+      {
+        "text": "Posso pagare con la carta?",
+        "pron": "pósso pagáre con la cárta?",
+        "pt": "Posso pagar com cartão?"
+      },
+      {
+        "text": "Qual è l'uscita per …?",
+        "pron": "cuál é luchíta per …?",
+        "pt": "Qual é a saída para …?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Which direction for …?",
+        "pron": "uítch dairékchân for …?",
+        "pt": "Qual sentido para …?"
+      },
+      {
+        "text": "Where do I change for line B?",
+        "pron": "uér du ai tchêindj for láin bí?",
+        "pt": "Onde se troca para a linha B?"
+      },
+      {
+        "text": "Can I pay by card?",
+        "pron": "ken ai pêi bai kárd?",
+        "pt": "Posso pagar com cartão?"
+      },
+      {
+        "text": "Which exit for …?",
+        "pron": "uítch égzit for …?",
+        "pt": "Qual é a saída para …?"
+      }
+    ]
+  },
+  "hotel": {
+    "title": "No hotel",
+    "it": [
+      {
+        "text": "Buongiorno, ho una prenotazione a nome Silveira.",
+        "pron": "buondjórno, ó úna prenotatsiône a nôme silvêira",
+        "pt": "Bom dia, tenho uma reserva no nome Silveira."
+      },
+      {
+        "text": "Posso lasciare le valigie qui fino al check-in?",
+        "pron": "pósso lacháre le valídje cuí fíno al tchek-in?",
+        "pt": "Posso deixar as malas aqui até o check-in?"
+      },
+      {
+        "text": "A che ora posso entrare in camera?",
+        "pron": "a ke ôra pósso entráre in cámera?",
+        "pt": "Que horas posso entrar no quarto?"
+      },
+      {
+        "text": "Qual è la password del wi-fi?",
+        "pron": "cuál é la pássuord del uái-fai?",
+        "pt": "Qual é a senha do wi-fi?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Hi, I have a reservation under Silveira.",
+        "pron": "hai, ai hév a rezervêichân ânder silvêira",
+        "pt": "Olá, tenho uma reserva no nome Silveira."
+      },
+      {
+        "text": "Can I leave my luggage here until check-in?",
+        "pron": "ken ai lív mai lâguidj hír ântil tchék-in?",
+        "pt": "Posso deixar as malas aqui até o check-in?"
+      },
+      {
+        "text": "What time can I get into the room?",
+        "pron": "uót táim ken ai guét íntu dâ rúm?",
+        "pt": "Que horas posso entrar no quarto?"
+      },
+      {
+        "text": "What's the wi-fi password?",
+        "pron": "uóts dâ uái-fai pássuord?",
+        "pt": "Qual é a senha do wi-fi?"
+      }
+    ]
+  },
+  "checkout": {
+    "title": "Check-out",
+    "it": [
+      {
+        "text": "Vorrei fare il check-out.",
+        "pron": "vorréi fáre il tchek-áut",
+        "pt": "Queria fazer o check-out."
+      },
+      {
+        "text": "Devo pagare la tassa di soggiorno?",
+        "pron": "dêvo pagáre la tássa di sodjórno?",
+        "pt": "Preciso pagar a taxa de turismo?"
+      },
+      {
+        "text": "Posso lasciare le valigie per qualche ora?",
+        "pron": "pósso lacháre le valídje per cuálke ôra?",
+        "pt": "Posso deixar as malas por algumas horas?"
+      }
+    ],
+    "en": [
+      {
+        "text": "I'd like to check out.",
+        "pron": "áid láik tu tchék áut",
+        "pt": "Queria fazer o check-out."
+      },
+      {
+        "text": "Do I need to pay the city tax?",
+        "pron": "du ai níd tu pêi dâ síti téks?",
+        "pt": "Preciso pagar a taxa de turismo?"
+      },
+      {
+        "text": "Can I leave my luggage for a few hours?",
+        "pron": "ken ai lív mai lâguidj for a fiú áuarz?",
+        "pt": "Posso deixar as malas por algumas horas?"
+      }
+    ]
+  },
+  "caffe": {
+    "title": "No café",
+    "it": [
+      {
+        "text": "Un cappuccino e un cornetto, per favore.",
+        "pron": "un capputchíno e un cornêtto, per favôre",
+        "pt": "Um cappuccino e um croissant, por favor."
+      },
+      {
+        "text": "Un caffè, per favore.",
+        "pron": "un caffé, per favôre",
+        "pt": "Um espresso, por favor."
+      },
+      {
+        "text": "Pago prima alla cassa?",
+        "pron": "págo príma ála cássa?",
+        "pt": "Pago antes no caixa?"
+      },
+      {
+        "text": "Quanto le devo?",
+        "pron": "cuánto le dêvo?",
+        "pt": "Quanto lhe devo?"
+      }
+    ],
+    "en": [
+      {
+        "text": "A cappuccino and a croissant, please.",
+        "pron": "a kaputchíno énd a kruassán, plíz",
+        "pt": "Um cappuccino e um croissant, por favor."
+      },
+      {
+        "text": "An espresso, please.",
+        "pron": "én esprésso, plíz",
+        "pt": "Um espresso, por favor."
+      },
+      {
+        "text": "Do I pay at the till first?",
+        "pron": "du ai pêi ét dâ tíl fârst?",
+        "pt": "Pago antes no caixa?"
+      },
+      {
+        "text": "How much is it?",
+        "pron": "hau mâtch iz it?",
+        "pt": "Quanto é?"
+      }
+    ]
+  },
+  "negozio": {
+    "title": "Na loja",
+    "it": [
+      {
+        "text": "Posso provare questa?",
+        "pron": "pósso prováre cuésta?",
+        "pt": "Posso experimentar esta?"
+      },
+      {
+        "text": "Dove sono i camerini?",
+        "pron": "dôve sôno i cameríni?",
+        "pt": "Onde ficam os provadores?"
+      },
+      {
+        "text": "Avete una taglia più grande? Più piccola?",
+        "pron": "avête úna tálha piú grande? piú píccola?",
+        "pt": "Vocês têm um tamanho maior? Menor?"
+      },
+      {
+        "text": "Posso pagare con la carta?",
+        "pron": "pósso pagáre con la cárta?",
+        "pt": "Posso pagar com cartão?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Can I try this on?",
+        "pron": "ken ai trái dís ón?",
+        "pt": "Posso experimentar esta?"
+      },
+      {
+        "text": "Where are the fitting rooms?",
+        "pron": "uér ár dâ fítin rúmz?",
+        "pt": "Onde ficam os provadores?"
+      },
+      {
+        "text": "Do you have a bigger size? A smaller one?",
+        "pron": "du iú hév a bíguer sáiz? a smóler uân?",
+        "pt": "Vocês têm um tamanho maior? Menor?"
+      },
+      {
+        "text": "Can I pay by card?",
+        "pron": "ken ai pêi bai kárd?",
+        "pt": "Posso pagar com cartão?"
+      }
+    ]
+  },
+  "monumenti": {
+    "title": "Passeando",
+    "it": [
+      {
+        "text": "Scusi, per andare al Pantheon?",
+        "pron": "skúzi, per andáre al pánteon?",
+        "pt": "Com licença, como chego ao Pantheon?"
+      },
+      {
+        "text": "Mi può fare una foto, per favore?",
+        "pron": "mi pó fáre úna fóto, per favôre?",
+        "pt": "Pode tirar uma foto minha, por favor?"
+      },
+      {
+        "text": "Quanto costa l'ingresso?",
+        "pron": "cuánto cósta lingrésso?",
+        "pt": "Quanto custa a entrada?"
+      },
+      {
+        "text": "Dove si fa la fila?",
+        "pron": "dôve si fá la fíla?",
+        "pt": "Onde é a fila?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Excuse me, how do I get to the Pantheon?",
+        "pron": "ekskiúz mi, hau du ai guét tu dâ pântion?",
+        "pt": "Com licença, como chego ao Pantheon?"
+      },
+      {
+        "text": "Could you take a photo of me, please?",
+        "pron": "kud iú têik a fôutou óv mi, plíz?",
+        "pt": "Pode tirar uma foto minha, por favor?"
+      },
+      {
+        "text": "How much is the ticket?",
+        "pron": "hau mâtch iz dâ tíkit?",
+        "pt": "Quanto custa a entrada?"
+      },
+      {
+        "text": "Where is the line?",
+        "pron": "uér iz dâ láin?",
+        "pt": "Onde é a fila?"
+      }
+    ]
+  },
+  "pizza": {
+    "title": "Pizza al taglio e lanches",
+    "it": [
+      {
+        "text": "Un pezzo di questa, per favore.",
+        "pron": "un pétso di cuésta, per favôre",
+        "pt": "Um pedaço desta, por favor."
+      },
+      {
+        "text": "Un po' più piccolo, grazie.",
+        "pron": "un pó piú píccolo, gráttsie",
+        "pt": "Um pouco menor, obrigado."
+      },
+      {
+        "text": "Due supplì, per favore.",
+        "pron": "dúe suplí, per favôre",
+        "pt": "Dois supplì, por favor."
+      },
+      {
+        "text": "Mangio qui. / Da portare via.",
+        "pron": "mándjo cuí / da portáre vía",
+        "pt": "Como aqui. / Para levar."
+      },
+      {
+        "text": "Basta così, grazie.",
+        "pron": "básta cozí, gráttsie",
+        "pt": "Está bom assim, obrigado."
+      }
+    ],
+    "en": [
+      {
+        "text": "A slice of this one, please.",
+        "pron": "a sláis óv dís uân, plíz",
+        "pt": "Um pedaço desta, por favor."
+      },
+      {
+        "text": "A bit smaller, thanks.",
+        "pron": "a bít smóler, fênks",
+        "pt": "Um pouco menor, obrigado."
+      },
+      {
+        "text": "Two supplì, please.",
+        "pron": "tú suplí, plíz",
+        "pt": "Dois supplì, por favor."
+      },
+      {
+        "text": "To eat here. / To take away.",
+        "pron": "tu ít hír / tu têik euêi",
+        "pt": "Para comer aqui. / Para levar."
+      },
+      {
+        "text": "That's all, thanks.",
+        "pron": "déts ól, fênks",
+        "pt": "Só isso, obrigado."
+      }
+    ]
+  },
+  "ristorante": {
+    "title": "No restaurante",
+    "it": [
+      {
+        "text": "Un tavolo per tre, per favore.",
+        "pron": "un távolo per trê, per favôre",
+        "pt": "Uma mesa para três, por favor."
+      },
+      {
+        "text": "Cosa mi consiglia?",
+        "pron": "cóza mi consílha?",
+        "pt": "O que o senhor recomenda?"
+      },
+      {
+        "text": "Un'acqua naturale, per favore.",
+        "pron": "unácua naturále, per favôre",
+        "pt": "Uma água sem gás, por favor."
+      },
+      {
+        "text": "Il conto, per favore.",
+        "pron": "il cônto, per favôre",
+        "pt": "A conta, por favor."
+      },
+      {
+        "text": "Possiamo pagare separati?",
+        "pron": "possiámo pagáre separáti?",
+        "pt": "Podemos pagar separado?"
+      }
+    ],
+    "en": [
+      {
+        "text": "A table for three, please.",
+        "pron": "a têibol for frí, plíz",
+        "pt": "Uma mesa para três, por favor."
+      },
+      {
+        "text": "What do you recommend?",
+        "pron": "uót du iú rékomend?",
+        "pt": "O que o senhor recomenda?"
+      },
+      {
+        "text": "Still water, please.",
+        "pron": "stíl uóter, plíz",
+        "pt": "Água sem gás, por favor."
+      },
+      {
+        "text": "The bill, please.",
+        "pron": "dâ bíl, plíz",
+        "pt": "A conta, por favor."
+      },
+      {
+        "text": "Can we pay separately?",
+        "pron": "ken uí pêi séparatli?",
+        "pt": "Podemos pagar separado?"
+      }
+    ]
+  },
+  "chiesa": {
+    "title": "Na basílica",
+    "it": [
+      {
+        "text": "Dov'è l'entrata?",
+        "pron": "dovê lentráta?",
+        "pt": "Onde é a entrada?"
+      },
+      {
+        "text": "A che ora c'è la messa?",
+        "pron": "a ke ôra tché la méssa?",
+        "pt": "Que horas tem missa?"
+      },
+      {
+        "text": "Si può entrare adesso?",
+        "pron": "si pó entráre adésso?",
+        "pt": "Pode entrar agora?"
+      },
+      {
+        "text": "Dove sono i bagni?",
+        "pron": "dôve sôno i bánhi?",
+        "pt": "Onde ficam os banheiros?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Where is the entrance?",
+        "pron": "uér iz dí éntrans?",
+        "pt": "Onde é a entrada?"
+      },
+      {
+        "text": "What time is Mass?",
+        "pron": "uót táim iz més?",
+        "pt": "Que horas tem missa?"
+      },
+      {
+        "text": "Can we go in now?",
+        "pron": "ken uí gôu in náu?",
+        "pt": "Pode entrar agora?"
+      },
+      {
+        "text": "Where are the toilets?",
+        "pron": "uér ár dâ tóilets?",
+        "pt": "Onde ficam os banheiros?"
+      }
+    ]
+  },
+  "sanpietro": {
+    "title": "São Pedro: missa e confissão",
+    "it": [
+      {
+        "text": "Vado alla messa delle otto.",
+        "pron": "vádo ála méssa déle ótto",
+        "pt": "Vou à missa das oito."
+      },
+      {
+        "text": "Vorrei confessarmi.",
+        "pron": "vorréi confessármi",
+        "pt": "Queria me confessar."
+      },
+      {
+        "text": "C'è un sacerdote che parla portoghese?",
+        "pron": "tché un satcherdôte ke párla portoghêze?",
+        "pt": "Tem um padre que fala português?"
+      },
+      {
+        "text": "Dov'è l'altare di San Giuseppe?",
+        "pron": "dovê laltáre di san djuzéppe?",
+        "pt": "Onde fica o altar de São José?"
+      },
+      {
+        "text": "Da dove si sale alla cupola?",
+        "pron": "da dôve si sále ála cúpola?",
+        "pt": "Por onde se sobe à cúpula?"
+      }
+    ],
+    "en": [
+      {
+        "text": "I'm going to the eight o'clock Mass.",
+        "pron": "áim gôuin tu dí êit oklók més",
+        "pt": "Vou à missa das oito."
+      },
+      {
+        "text": "I would like to go to confession.",
+        "pron": "ai uúd láik tu gôu tu konféchân",
+        "pt": "Queria me confessar."
+      },
+      {
+        "text": "Is there a priest who speaks Portuguese?",
+        "pron": "iz dér a príst hu spíks portchuguíz?",
+        "pt": "Tem um padre que fala português?"
+      },
+      {
+        "text": "Where is the altar of Saint Joseph?",
+        "pron": "uér iz dí óltar óv sêint djôusef?",
+        "pt": "Onde fica o altar de São José?"
+      },
+      {
+        "text": "Where do I go up to the dome?",
+        "pron": "uér du ai gôu âp tu dâ dôum?",
+        "pt": "Por onde se sobe à cúpula?"
+      }
+    ]
+  },
+  "cupola": {
+    "title": "Cúpula de São Pedro",
+    "it": [
+      {
+        "text": "Dove si compra il biglietto per la cupola?",
+        "pron": "dôve si cômpra il bilhêtto per la cúpola?",
+        "pt": "Onde se compra o ingresso da cúpula?"
+      },
+      {
+        "text": "Quanto costa con l'ascensore?",
+        "pron": "cuánto cósta con lachenssôre?",
+        "pt": "Quanto custa com o elevador?"
+      },
+      {
+        "text": "Quanti gradini ci sono?",
+        "pron": "cuánti gradíni tchi sôno?",
+        "pt": "Quantos degraus são?"
+      },
+      {
+        "text": "A che ora chiude?",
+        "pron": "a ke ôra kiúde?",
+        "pt": "Que horas fecha?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Where do I buy the ticket for the dome?",
+        "pron": "uér du ai bái dâ tíkit for dâ dôum?",
+        "pt": "Onde se compra o ingresso da cúpula?"
+      },
+      {
+        "text": "How much is it with the lift?",
+        "pron": "hau mâtch iz it uíd dâ líft?",
+        "pt": "Quanto custa com o elevador?"
+      },
+      {
+        "text": "How many steps are there?",
+        "pron": "hau méni stéps ár dér?",
+        "pt": "Quantos degraus são?"
+      },
+      {
+        "text": "What time does it close?",
+        "pron": "uót táim dâz it klôuz?",
+        "pt": "Que horas fecha?"
+      }
+    ]
+  },
+  "catacombe": {
+    "title": "Nas catacumbas",
+    "it": [
+      {
+        "text": "Un biglietto per la visita guidata, per favore.",
+        "pron": "un bilhêtto per la vízita guidáta, per favôre",
+        "pt": "Um ingresso para a visita guiada, por favor."
+      },
+      {
+        "text": "C'è una visita in portoghese o in spagnolo?",
+        "pron": "tché úna vízita in portoghêze o in spanhólo?",
+        "pt": "Tem visita em português ou espanhol?"
+      },
+      {
+        "text": "A che ora parte la prossima visita?",
+        "pron": "a ke ôra párte la próssima vízita?",
+        "pt": "Que horas sai a próxima visita?"
+      },
+      {
+        "text": "Dov'è la fermata del 218 per tornare?",
+        "pron": "dovê la fermáta del duetchentoditchótto per tornáre?",
+        "pt": "Onde é o ponto do 218 para voltar?"
+      }
+    ],
+    "en": [
+      {
+        "text": "One ticket for the guided tour, please.",
+        "pron": "uân tíkit for dâ gáidid túr, plíz",
+        "pt": "Um ingresso para a visita guiada, por favor."
+      },
+      {
+        "text": "Is there a tour in Portuguese or Spanish?",
+        "pron": "iz dér a túr in portchuguíz ór spénich?",
+        "pt": "Tem visita em português ou espanhol?"
+      },
+      {
+        "text": "What time is the next tour?",
+        "pron": "uót táim iz dâ nékst túr?",
+        "pt": "Que horas sai a próxima visita?"
+      },
+      {
+        "text": "Where is the stop for bus 218 back?",
+        "pron": "uér iz dâ stóp for bâs tú uân êit bék?",
+        "pt": "Onde é o ponto do 218 para voltar?"
+      }
+    ]
+  },
+  "volontario": {
+    "title": "Servindo no evento",
+    "it": [
+      {
+        "text": "Buongiorno, sono un volontario della Comunità Shalom.",
+        "pron": "buondjórno, sôno un volontário déla comunitá shálom",
+        "pt": "Bom dia, sou voluntário da Comunidade Shalom."
+      },
+      {
+        "text": "Dov'è l'ingresso per i volontari?",
+        "pron": "dovê lingrésso per i volontári?",
+        "pt": "Onde é a entrada dos voluntários?"
+      },
+      {
+        "text": "Ecco il mio passaporto.",
+        "pron": "écco il mío passapórto",
+        "pt": "Aqui está meu passaporte."
+      },
+      {
+        "text": "Posso aiutarla?",
+        "pron": "pósso aiutárla?",
+        "pt": "Posso ajudar o senhor / a senhora?"
+      },
+      {
+        "text": "Prego, da questa parte.",
+        "pron": "prégo, da cuésta párte",
+        "pt": "Por favor, por aqui."
+      }
+    ],
+    "en": [
+      {
+        "text": "Good morning, I'm a volunteer with the Shalom Community.",
+        "pron": "gud mórnin, áim a volantír uíd dâ chálom komiúniti",
+        "pt": "Bom dia, sou voluntário da Comunidade Shalom."
+      },
+      {
+        "text": "Where is the volunteers' entrance?",
+        "pron": "uér iz dâ volantírz éntrans?",
+        "pt": "Onde é a entrada dos voluntários?"
+      },
+      {
+        "text": "Here is my passport.",
+        "pron": "hír iz mai pésport",
+        "pt": "Aqui está meu passaporte."
+      },
+      {
+        "text": "Can I help you?",
+        "pron": "ken ai hélp iú?",
+        "pt": "Posso ajudar?"
+      },
+      {
+        "text": "This way, please.",
+        "pron": "dís uêi, plíz",
+        "pt": "Por aqui, por favor."
+      }
+    ]
+  },
+  "accredito": {
+    "title": "Credenciamento",
+    "it": [
+      {
+        "text": "Buongiorno, sono qui per l'evento Shalom.",
+        "pron": "buondjórno, sôno cuí per levênto shálom",
+        "pt": "Bom dia, estou aqui para o evento Shalom."
+      },
+      {
+        "text": "Dove si fa l'accredito?",
+        "pron": "dôve si fá laccrêdito?",
+        "pt": "Onde se faz o credenciamento?"
+      },
+      {
+        "text": "Ecco il mio passaporto.",
+        "pron": "écco il mío passapórto",
+        "pt": "Aqui está meu passaporte."
+      },
+      {
+        "text": "Parla portoghese o inglese?",
+        "pron": "párla portoghêze o inglêze?",
+        "pt": "O senhor fala português ou inglês?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Hi, I'm here for the Shalom event.",
+        "pron": "hai, áim hír for dâ chálom ivént",
+        "pt": "Olá, estou aqui para o evento Shalom."
+      },
+      {
+        "text": "Where is the registration?",
+        "pron": "uér iz dâ redjistrêichân?",
+        "pt": "Onde é o credenciamento?"
+      },
+      {
+        "text": "Here is my passport.",
+        "pron": "hír iz mai pésport",
+        "pt": "Aqui está meu passaporte."
+      },
+      {
+        "text": "Do you speak Portuguese?",
+        "pron": "du iú spík portchuguíz?",
+        "pt": "O senhor fala português?"
+      }
+    ]
+  },
+  "evento": {
+    "title": "No evento",
+    "it": [
+      {
+        "text": "Dov'è l'ingresso per l'evento Shalom?",
+        "pron": "dovê lingrésso per levênto shálom?",
+        "pt": "Onde é a entrada para o evento Shalom?"
+      },
+      {
+        "text": "Questi posti sono liberi?",
+        "pron": "cuésti pósti sôno líberi?",
+        "pt": "Estes lugares estão livres?"
+      },
+      {
+        "text": "Dove sono i bagni?",
+        "pron": "dôve sôno i bánhi?",
+        "pt": "Onde ficam os banheiros?"
+      },
+      {
+        "text": "Siamo brasiliani!",
+        "pron": "siámo braziliáni!",
+        "pt": "Somos brasileiros!"
+      }
+    ],
+    "en": [
+      {
+        "text": "Where is the entrance for the Shalom event?",
+        "pron": "uér iz dí éntrans for dâ chálom ivént?",
+        "pt": "Onde é a entrada para o evento Shalom?"
+      },
+      {
+        "text": "Are these seats free?",
+        "pron": "ár díz síts frí?",
+        "pt": "Estes lugares estão livres?"
+      },
+      {
+        "text": "Where are the toilets?",
+        "pron": "uér ár dâ tóilets?",
+        "pt": "Onde ficam os banheiros?"
+      },
+      {
+        "text": "We are from Brazil!",
+        "pron": "uí ár fróm brazíl!",
+        "pt": "Somos do Brasil!"
+      }
+    ]
+  },
+  "strada": {
+    "title": "Pedindo informação",
+    "it": [
+      {
+        "text": "Scusi, per andare a …?",
+        "pron": "skúzi, per andáre a …?",
+        "pt": "Com licença, como chego a …?"
+      },
+      {
+        "text": "È lontano a piedi?",
+        "pron": "é lontáno a piédi?",
+        "pt": "É longe a pé?"
+      },
+      {
+        "text": "Sempre dritto?",
+        "pron": "sémpre drítto?",
+        "pt": "Sempre reto?"
+      },
+      {
+        "text": "A destra o a sinistra?",
+        "pron": "a déstra o a sinístra?",
+        "pt": "À direita ou à esquerda?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Excuse me, how do I get to …?",
+        "pron": "ekskiúz mi, hau du ai guét tu …?",
+        "pt": "Com licença, como chego a …?"
+      },
+      {
+        "text": "Is it far on foot?",
+        "pron": "iz it fár ón fút?",
+        "pt": "É longe a pé?"
+      },
+      {
+        "text": "Straight ahead?",
+        "pron": "strêit ahéd?",
+        "pt": "Sempre reto?"
+      },
+      {
+        "text": "Left or right?",
+        "pron": "léft ór ráit?",
+        "pt": "Esquerda ou direita?"
+      }
+    ]
+  },
+  "museo": {
+    "title": "Museus do Vaticano",
+    "it": [
+      {
+        "text": "Ho già il biglietto online, per le tre e mezza.",
+        "pron": "ó djá il bilhêtto onláin, per le trê e méttsa",
+        "pt": "Já tenho o ingresso online, para as três e meia."
+      },
+      {
+        "text": "Dov'è l'ingresso per chi ha il biglietto?",
+        "pron": "dovê lingrésso per ki á il bilhêtto?",
+        "pt": "Onde é a entrada para quem já tem ingresso?"
+      },
+      {
+        "text": "Da che parte per la Cappella Sistina?",
+        "pron": "da ke párte per la cappélla sistína?",
+        "pt": "Para que lado fica a Capela Sistina?"
+      },
+      {
+        "text": "Si possono fare foto qui?",
+        "pron": "si póssono fáre fóto cuí?",
+        "pt": "Pode tirar foto aqui?"
+      }
+    ],
+    "en": [
+      {
+        "text": "I already have an online ticket for half past three.",
+        "pron": "ai ólrédi hév én ónláin tíkit for háf pést frí",
+        "pt": "Já tenho o ingresso online para as três e meia."
+      },
+      {
+        "text": "Where is the entrance for ticket holders?",
+        "pron": "uér iz dí éntrans for tíkit hôulderz?",
+        "pt": "Onde é a entrada para quem já tem ingresso?"
+      },
+      {
+        "text": "Which way to the Sistine Chapel?",
+        "pron": "uítch uêi tu dâ sístin tchépol?",
+        "pt": "Para que lado fica a Capela Sistina?"
+      },
+      {
+        "text": "Can I take photos here?",
+        "pron": "ken ai têik fôutouz hír?",
+        "pt": "Pode tirar foto aqui?"
+      }
+    ]
+  },
+  "colosseo": {
+    "title": "Coliseu e Fórum",
+    "it": [
+      {
+        "text": "Abbiamo il biglietto per l'una.",
+        "pron": "abbiámo il bilhêtto per lúna",
+        "pt": "Temos ingresso para a uma da tarde."
+      },
+      {
+        "text": "Il biglietto vale anche per il Foro e il Palatino?",
+        "pron": "il bilhêtto vále ánke per il fóro e il palatíno?",
+        "pt": "O ingresso vale também para o Fórum e o Palatino?"
+      },
+      {
+        "text": "Dov'è l'ingresso del Foro Romano?",
+        "pron": "dovê lingrésso del fóro románo?",
+        "pt": "Onde é a entrada do Fórum Romano?"
+      },
+      {
+        "text": "C'è una fontanella?",
+        "pron": "tché úna fontanélla?",
+        "pt": "Tem bebedouro por aqui?"
+      }
+    ],
+    "en": [
+      {
+        "text": "We have tickets for one o'clock.",
+        "pron": "uí hév tíkits for uân oklók",
+        "pt": "Temos ingresso para a uma da tarde."
+      },
+      {
+        "text": "Is the ticket also valid for the Forum and the Palatine?",
+        "pron": "iz dâ tíkit ólsou vélid for dâ fórum énd dâ pélatain?",
+        "pt": "O ingresso vale também para o Fórum e o Palatino?"
+      },
+      {
+        "text": "Where is the entrance to the Roman Forum?",
+        "pron": "uér iz dí éntrans tu dâ rôuman fórum?",
+        "pt": "Onde é a entrada do Fórum Romano?"
+      },
+      {
+        "text": "Is there a water fountain?",
+        "pron": "iz dér a uóter fáuntan?",
+        "pt": "Tem bebedouro por aqui?"
+      }
+    ]
+  },
+  "mercato": {
+    "title": "No mercado",
+    "it": [
+      {
+        "text": "Dov'è il banco di Casa Manco?",
+        "pron": "dovê il bánco di kása mánco?",
+        "pt": "Onde fica a banca da Casa Manco?"
+      },
+      {
+        "text": "Cosa mi consiglia?",
+        "pron": "cóza mi consílha?",
+        "pt": "O que o senhor recomenda?"
+      },
+      {
+        "text": "Quanto costa questo?",
+        "pron": "cuánto cósta cuésto?",
+        "pt": "Quanto custa isto?"
+      },
+      {
+        "text": "Un pezzo piccolo, per favore.",
+        "pron": "un pétso píccolo, per favôre",
+        "pt": "Um pedaço pequeno, por favor."
+      }
+    ],
+    "en": [
+      {
+        "text": "Where is the Casa Manco stall?",
+        "pron": "uér iz dâ kása mánco stól?",
+        "pt": "Onde fica a banca da Casa Manco?"
+      },
+      {
+        "text": "What do you recommend?",
+        "pron": "uót du iú rékomend?",
+        "pt": "O que o senhor recomenda?"
+      },
+      {
+        "text": "How much is this?",
+        "pron": "hau mâtch iz dís?",
+        "pt": "Quanto custa isto?"
+      },
+      {
+        "text": "A small piece, please.",
+        "pron": "a smól pís, plíz",
+        "pt": "Um pedaço pequeno, por favor."
+      }
+    ]
+  },
+  "locanda": {
+    "title": "Na Locanda",
+    "it": [
+      {
+        "text": "Buongiorno, ho una prenotazione a nome Silveira, per tre persone.",
+        "pron": "buondjórno, ó úna prenotatsiône a nôme silvêira, per trê persône",
+        "pt": "Bom dia, tenho uma reserva no nome Silveira, para três pessoas."
+      },
+      {
+        "text": "Siamo arrivati presto: possiamo lasciare le valigie?",
+        "pron": "siámo arriváti présto: possiámo lacháre le valídje?",
+        "pt": "Chegamos cedo: podemos deixar as malas?"
+      },
+      {
+        "text": "A che ora passa l'autobus per il centro?",
+        "pron": "a ke ôra pássa láutobus per il tchêntro?",
+        "pt": "Que horas passa o ônibus para o centro?"
+      },
+      {
+        "text": "A che ora è la colazione?",
+        "pron": "a ke ôra é la colatsiône?",
+        "pt": "Que horas é o café da manhã?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Hi, I have a reservation under Silveira, for three people.",
+        "pron": "hai, ai hév a rezervêichân ânder silvêira, for frí pípol",
+        "pt": "Olá, tenho uma reserva no nome Silveira, para três pessoas."
+      },
+      {
+        "text": "We arrived early. Can we leave our bags?",
+        "pron": "uí arráivd ârli. ken uí lív áuar bégz?",
+        "pt": "Chegamos cedo. Podemos deixar as malas?"
+      },
+      {
+        "text": "What time is the bus to the centre?",
+        "pron": "uót táim iz dâ bâs tu dâ sénter?",
+        "pt": "Que horas passa o ônibus para o centro?"
+      },
+      {
+        "text": "What time is breakfast?",
+        "pron": "uót táim iz brékfast?",
+        "pt": "Que horas é o café da manhã?"
+      }
+    ]
+  },
+  "taxi": {
+    "title": "Voltando à noite",
+    "it": [
+      {
+        "text": "A che ora passa l'ultimo autobus?",
+        "pron": "a ke ôra pássa lúltimo áutobus?",
+        "pt": "Que horas passa o último ônibus?"
+      },
+      {
+        "text": "Mi può chiamare un taxi, per favore?",
+        "pron": "mi pó kiamáre un táxi, per favôre?",
+        "pt": "Pode me chamar um táxi, por favor?"
+      },
+      {
+        "text": "Quanto costa fino a Santa Maria degli Angeli?",
+        "pron": "cuánto cósta fíno a sánta maría délhi ándjeli?",
+        "pt": "Quanto custa até Santa Maria degli Angeli?"
+      }
+    ],
+    "en": [
+      {
+        "text": "What time is the last bus?",
+        "pron": "uót táim iz dâ lést bâs?",
+        "pt": "Que horas passa o último ônibus?"
+      },
+      {
+        "text": "Could you call me a taxi, please?",
+        "pron": "kud iú kól mi a téksi, plíz?",
+        "pt": "Pode me chamar um táxi, por favor?"
+      },
+      {
+        "text": "How much to Santa Maria degli Angeli?",
+        "pron": "hau mâtch tu sánta maría délhi ándjeli?",
+        "pt": "Quanto custa até Santa Maria degli Angeli?"
+      }
+    ]
+  },
+  "deposito": {
+    "title": "Guarda-volumes",
+    "it": [
+      {
+        "text": "Vorrei lasciare due valigie fino alle sette.",
+        "pron": "vorréi lacháre dúe valídje fíno ále sétte",
+        "pt": "Queria deixar duas malas até as sete."
+      },
+      {
+        "text": "Quanto costa?",
+        "pron": "cuánto cósta?",
+        "pt": "Quanto custa?"
+      },
+      {
+        "text": "A che ora chiude?",
+        "pron": "a ke ôra kiúde?",
+        "pt": "Que horas fecha?"
+      }
+    ],
+    "en": [
+      {
+        "text": "I'd like to leave two bags until seven.",
+        "pron": "áid láik tu lív tú bégz ântil séven",
+        "pt": "Queria deixar duas malas até as sete."
+      },
+      {
+        "text": "How much is it?",
+        "pron": "hau mâtch iz it?",
+        "pt": "Quanto custa?"
+      },
+      {
+        "text": "What time do you close?",
+        "pron": "uót táim du iú klôuz?",
+        "pt": "Que horas fecha?"
+      }
+    ]
+  },
+  "partenza": {
+    "title": "No aeroporto (saída)",
+    "it": [
+      {
+        "text": "Dov'è il check-in di questo volo?",
+        "pron": "dovê il tchek-in di cuésto vôlo?",
+        "pt": "Onde é o check-in deste voo?"
+      },
+      {
+        "text": "Da quale terminal parte il volo?",
+        "pron": "da cuále têrminal párte il vôlo?",
+        "pt": "De qual terminal sai o voo?"
+      },
+      {
+        "text": "A che ora apre il check-in?",
+        "pron": "a ke ôra ápre il tchek-in?",
+        "pt": "Que horas abre o check-in?"
+      },
+      {
+        "text": "Dove sono i bagni?",
+        "pron": "dôve sôno i bánhi?",
+        "pt": "Onde ficam os banheiros?"
+      }
+    ],
+    "en": [
+      {
+        "text": "Where is the check-in for this flight?",
+        "pron": "uér iz dâ tchék-in for dís fláit?",
+        "pt": "Onde é o check-in deste voo?"
+      },
+      {
+        "text": "Which terminal does the flight leave from?",
+        "pron": "uítch târminal dâz dâ fláit lív fróm?",
+        "pt": "De qual terminal sai o voo?"
+      },
+      {
+        "text": "What time does check-in open?",
+        "pron": "uót táim dâz tchék-in ôupen?",
+        "pt": "Que horas abre o check-in?"
+      },
+      {
+        "text": "Where are the toilets?",
+        "pron": "uér ár dâ tóilets?",
+        "pt": "Onde ficam os banheiros?"
+      }
+    ]
+  }
+}

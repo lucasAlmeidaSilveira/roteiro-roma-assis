@@ -1,0 +1,108 @@
+{
+  "brand": "Roma e Assis",
+  "dateRange": "14–24 nov 2026",
+  "meta": {
+    "title": "Roma e Assis 2026",
+    "description": "Roteiro dia a dia de Roma e Assis, de 14 a 24 de novembro de 2026."
+  },
+  "nav": {
+    "aria": "Seções",
+    "daysAria": "Dias da viagem",
+    "days": "Dia a dia",
+    "places": "Lugares",
+    "intentions": "Intenções",
+    "infos": "Infos"
+  },
+  "theme": {
+    "aria": "Tema escuro",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "footer": "Horários e preços vêm de guias e sites consultados em novembro de 2026; confirme ingressos, trens e horários de domingo antes de sair. Os itens marcados como feitos ficam salvos só neste aparelho.",
+  "day": {
+    "eyebrow": "{weekday} · {day} de novembro",
+    "countdownOne": "A viagem começa em {n} dia. Abra esta página em Roma para ver o que está acontecendo agora.",
+    "countdownOther": "A viagem começa em {n} dias. Abra esta página em Roma para ver o que está acontecendo agora.",
+    "eventsOne": "{n} compromisso da Convenção",
+    "eventsOther": "{n} compromissos da Convenção",
+    "badge": "Convenção",
+    "paidPrefix": "Ingresso ",
+    "map": "Mapa ↗",
+    "done": "Feito",
+    "languages": "Idiomas",
+    "languagesTag": "IT · EN",
+    "sleep": "Onde dormir",
+    "chipAria": "{weekday} {day} de novembro",
+    "chipTodaySuffix": " (hoje)",
+    "detailsSummary": "Mais detalhes do roteiro"
+  },
+  "now": {
+    "label": "Hoje · {hh}h{mm} em Roma",
+    "current": "Agora: {place}",
+    "nextLabel": "Próximo:",
+    "next": "{place} às {time} (em {duration})",
+    "nothingMore": "Nada mais programado hoje."
+  },
+  "places": {
+    "eyebrow": "Resumo",
+    "title": "Todos os lugares",
+    "intro": "Dois passeios exigem ingresso comprado antes: Museus do Vaticano com a Capela Sistina (€25, sáb 14 às 15h30, já comprado) e Coliseu, Fórum e Palatino (€18, seg 23 com sua irmã). Os links abaixo são dos sites oficiais; existem sites falsos com nomes parecidos, então compre só por eles.",
+    "summaryTitle": "Resumo por dia"
+  },
+  "phrases": {
+    "defaultTitle": "Em italiano",
+    "close": "Fechar",
+    "langGroupAria": "Idioma das frases",
+    "italian": "Italiano",
+    "english": "English",
+    "always": "Sempre úteis",
+    "listen": "Ouvir",
+    "playing": "Tocando…",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "fallback": "Sem áudio neste navegador. Ouvir no Google Tradutor ↗",
+    "tip": "Sem som no iPhone? Desligue o modo silencioso (a chave na lateral) e aumente o volume. Leia a linha azul como se fosse português; a sílaba com acento é a forte. Comece com \"Buongiorno\" (até umas 16h) ou \"Buonasera\" (depois) e termine com \"Grazie\": faz muita diferença."
+  },
+  "intentions": {
+    "eyebrow": "Para rezar",
+    "title": "Intenções",
+    "lead": "As intenções que chegam pelo seu formulário aparecem aqui.",
+    "ownerOnly": "Esta aba é só para o dono do roteiro.",
+    "loginLabel": "Código de acesso",
+    "loginButton": "Entrar",
+    "loginError": "Código incorreto. Tente de novo.",
+    "logout": "Sair",
+    "listTitle": "Intenções recebidas",
+    "countOne": "{n} intenção recebida",
+    "countOther": "{n} intenções recebidas",
+    "loading": "Carregando…",
+    "updated": "Atualizado às {time}. As mais novas no topo.",
+    "refresh": "Atualizar",
+    "empty": "A planilha foi lida, mas ainda não tem nenhuma resposta. Se você já enviou uma intenção, confira no Forms, em Respostas → Ver no Planilhas, se as respostas vão para esta mesma planilha.",
+    "notConfigured": "A leitura da planilha ainda não foi configurada no servidor. Veja o passo a passo em docs/DEPLOY.md.",
+    "forbidden": "O servidor não tem acesso à planilha. Compartilhe a planilha com o e-mail da conta de serviço, como Leitor, e toque em Atualizar.",
+    "error": "Não deu para carregar agora. Toque em Atualizar. (código: {code})",
+    "messageTitle": "Mensagem para enviar",
+    "copyMessage": "Copiar mensagem",
+    "copied": "Mensagem copiada. Cole no WhatsApp.",
+    "copyFallback": "Texto selecionado: toque em Copiar.",
+    "whereTitle": "Onde levar as intenções"
+  },
+  "infos": {
+    "overviewTitle": "Visão geral e alertas",
+    "transportRoutesTitle": "Como se locomover em Roma",
+    "eventTitle": "Programação da Convenção",
+    "decisionsTitle": "Decisões em aberto",
+    "budgetDetailsTitle": "Como o orçamento foi calculado",
+    "sourcesTitle": "Fontes consultadas"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "Esse endereço não faz parte do roteiro. Escolha um dia acima ou volte para o dia de hoje.",
+    "back": "Abrir o dia de hoje"
+  },
+  "home": {
+    "opening": "Abrindo o dia de hoje…",
+    "chooseDay": "Ou escolha um dia:"
+  }
+}

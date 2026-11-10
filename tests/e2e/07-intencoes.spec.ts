@@ -1,46 +1,28 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 import { fill, plural } from '../../src/lib/format';
 
 import { fase, go, intentions, routes, ui } from './support';
 
-const PASS = 'teste-123'; // OWNER_PASSCODE do playwright.config.ts
 const message = intentions.messageTemplate.replace('{formUrl}', intentions.formUrl);
 
-async function login(page: Page, code = PASS) {
-  await go(page, routes.intentions);
-  await page.getByLabel(ui.intentions.loginLabel).fill(code);
-  await page.getByRole('button', { name: ui.intentions.loginButton }).click();
-}
-
-test.describe('Fase 7 · @novo Intenções (só para o dono)', () => {
+// Decisão do Lucas (10/11/2026, D-15): a aba é aberta a quem tem o link — sem código de acesso.
+// O servidor lê tests/fixtures/intencoes.json (INTENCOES_FIXTURE=1 no playwright.config.ts).
+test.describe('Fase 7 · @novo Intenções (lidas da planilha pelo servidor)', () => {
   fase(7);
 
-  test('visitante vê só o aviso, o acesso e "Onde levar"', async ({ page }) => {
+  test('a API responde sem sessão e nunca cacheia', async ({ request }) => {
+    const res = await request.get('/api/intencoes');
+    expect(res.status()).toBe(200);
+    expect(res.headers()['cache-control']).toContain('no-store');
+    const json = await res.json();
+    expect(json.items).toHaveLength(3);
+  });
+
+  test('mostra as intenções (mais novas primeiro), a mensagem e "Onde levar"', async ({ page }) => {
     await go(page, routes.intentions);
     const main = page.locator('main');
-    await expect(main).toContainText(ui.intentions.ownerOnly);
-    await expect(page.getByLabel(ui.intentions.loginLabel)).toBeVisible();
-    await expect(main).not.toContainText('Pela paz no mundo');
-    await expect(main).not.toContainText(ui.intentions.messageTitle);
-    await expect(main).toContainText(ui.intentions.whereTitle);
-    for (const w of intentions.where) await expect(main).toContainText(w);
-  });
-
-  test('a API recusa quem não entrou', async ({ request }) => {
-    const res = await request.get('/api/intencoes');
-    expect(res.status()).toBe(401);
-    expect(res.headers()['cache-control']).toContain('no-store');
-  });
-
-  test('código errado mostra erro; certo mostra as intenções (mais novas primeiro)', async ({
-    page,
-  }) => {
-    await login(page, 'errado');
-    await expect(page.getByText(ui.intentions.loginError)).toBeVisible();
-
-    await login(page);
-    const main = page.locator('main');
+    await expect(main).toContainText(ui.intentions.lead);
     await expect(main).toContainText(plural(3, ui.intentions.countOne, ui.intentions.countOther));
     const items = main.getByRole('listitem').filter({ hasText: /Pela|Em ação/ });
     await expect(items).toHaveCount(3);
@@ -50,12 +32,16 @@ test.describe('Fase 7 · @novo Intenções (só para o dono)', () => {
     await expect(items.nth(2)).toContainText('Maria');
     await expect(main).toContainText(/Atualizado às \d{2}:\d{2}\. As mais novas no topo\./);
     await expect(main).not.toContainText('Linha vazia');
+
+    await expect(main).toContainText(ui.intentions.messageTitle);
+    await expect(page.getByRole('textbox')).toHaveValue(message);
+    await expect(main).toContainText(ui.intentions.whereTitle);
+    for (const w of intentions.where) await expect(main).toContainText(w);
   });
 
-  test('mensagem para enviar, copiar, atualizar e sair', async ({ page, context }) => {
+  test('copiar a mensagem e atualizar', async ({ page, context }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-    await login(page);
-    await expect(page.getByRole('textbox')).toHaveValue(message);
+    await go(page, routes.intentions);
     await page.getByRole('button', { name: ui.intentions.copyMessage }).click();
     await expect(page.getByText(ui.intentions.copied)).toBeVisible();
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(message);
@@ -65,13 +51,9 @@ test.describe('Fase 7 · @novo Intenções (só para o dono)', () => {
     );
     await page.getByRole('button', { name: ui.intentions.refresh }).click();
     await api;
-
-    const json = await (await page.request.get('/api/intencoes')).json();
-    expect(json.items).toHaveLength(3);
-
-    await page.getByRole('button', { name: ui.intentions.logout }).click();
-    await expect(page.locator('main')).toContainText(ui.intentions.ownerOnly);
-    expect((await page.request.get('/api/intencoes')).status()).toBe(401);
+    await expect(page.locator('main')).toContainText(
+      plural(3, ui.intentions.countOne, ui.intentions.countOther),
+    );
   });
 
   test('a contagem usa singular/plural corretamente', () => {

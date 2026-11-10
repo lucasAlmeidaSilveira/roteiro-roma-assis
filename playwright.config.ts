@@ -27,8 +27,6 @@ export default defineConfig({
     env: {
       // Modo de teste da aba Intenções: lê tests/fixtures/intencoes.json (nunca usar na Vercel)
       INTENCOES_FIXTURE: '1',
-      OWNER_PASSCODE: 'teste-123',
-      AUTH_SECRET: 'segredo-de-teste-com-mais-de-32-caracteres-123456',
     },
   },
 });

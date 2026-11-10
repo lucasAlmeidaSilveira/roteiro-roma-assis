@@ -91,3 +91,14 @@ Pedido do Lucas em 10/11/2026: "não precisa ter esse código de acesso não, po
 `/api/sessao`, `src/server/session.ts`, `LoginForm`, `OWNER_PASSCODE` e `AUTH_SECRET`; `GET /api/intencoes`
 responde a qualquer um. Consequência assumida: quem tiver o link do site lê as intenções (com os nomes de quem
 escreveu); o site continua fora dos buscadores. A dependência `jose` ficou sem uso e foi removida.
+
+## D-16 · Planilha lida pelo export em CSV (sem Google Cloud)
+
+Pedido do Lucas em 10/11/2026: "não gostei da parte do Google Cloud… tente fazer a leitura direto na planilha".
+Como a aba já é aberta (D-15), a planilha compartilhada como "qualquer pessoa com o link" não expõe nada a mais.
+O servidor busca `https://docs.google.com/spreadsheets/d/{id}/export?format=csv` (id tirado de `sheetUrl` em
+`src/data/intentions.json`, o mesmo link que o site antigo tinha em `INTENT.sheet`) e lê o CSV com
+`src/lib/csv.ts` (RFC 4180, sem dependências). Planilha privada → o Google devolve a tela de login (HTML) →
+`forbidden`, com a mensagem explicando como compartilhar. Removidos `google-auth-library`, a conta de serviço e
+todas as variáveis obrigatórias; `INTENCOES_GID` é opcional (aba de respostas que não seja a primeira).
+Substitui o D-07 na parte da conta de serviço. Verificado em 10/11/2026: o export da planilha real já responde.

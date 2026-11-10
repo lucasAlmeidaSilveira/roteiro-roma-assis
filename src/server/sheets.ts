@@ -1,49 +1,39 @@
 import 'server-only';
 
-import { JWT } from 'google-auth-library';
-
-import type { GoogleEnv } from './env';
+import { parseCsv } from '@/lib/csv';
 
 export type SheetsResult =
-  { ok: true; values: unknown } | { ok: false; error: 'forbidden' | 'upstream'; status: 502 };
+  { ok: true; values: string[][] } | { ok: false; error: 'forbidden' | 'upstream'; status: 502 };
 
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+export type Fetcher = (url: string) => Promise<{
+  ok: boolean;
+  status: number;
+  headers: { get(name: string): string | null };
+  text(): Promise<string>;
+}>;
 
-/** Código HTTP de um erro do gaxios/google-auth-library, sem depender do tipo exato. */
-function httpStatus(err: unknown): number | undefined {
-  if (!err || typeof err !== 'object') return undefined;
-  const e = err as { status?: unknown; response?: { status?: unknown } };
-  if (typeof e.status === 'number') return e.status;
-  if (typeof e.response?.status === 'number') return e.response.status;
-  return undefined;
-}
+const defaultFetcher: Fetcher = (url) =>
+  fetch(url, { cache: 'no-store', redirect: 'follow', headers: { Accept: 'text/csv' } });
 
-export type SheetsFetcher = (env: GoogleEnv) => Promise<unknown>;
-
-/** Lê o intervalo da planilha com a conta de serviço (só leitura). */
-export const fetchSheetValues: SheetsFetcher = async (env) => {
-  const client = new JWT({
-    email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: env.GOOGLE_PRIVATE_KEY,
-    scopes: SCOPES,
-  });
-  const url =
-    `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(env.INTENCOES_SHEET_ID)}` +
-    `/values/${encodeURIComponent(env.INTENCOES_RANGE)}`;
-  const res = await client.request<{ values?: unknown }>({ url });
-  return res.data?.values ?? [];
-};
-
-/** Mapeia erros do Google para códigos estáveis, sem vazar detalhes (RF-12.3). */
-export async function readSheet(env: GoogleEnv, fetcher: SheetsFetcher = fetchSheetValues) {
+/**
+ * Lê a planilha pelo export em CSV (sem chave nem conta de serviço — D-16). Funciona quando ela está
+ * compartilhada como "qualquer pessoa com o link pode ver". Planilha privada → o Google redireciona para
+ * a tela de login (HTML) ou responde 401/403 → `forbidden`. Rede/outros → `upstream`.
+ */
+export async function readSheetCsv(
+  url: string,
+  fetcher: Fetcher = defaultFetcher,
+): Promise<SheetsResult> {
   try {
-    return { ok: true, values: await fetcher(env) } satisfies SheetsResult;
-  } catch (err) {
-    const status = httpStatus(err);
-    return {
-      ok: false,
-      error: status === 403 || status === 404 ? 'forbidden' : 'upstream',
-      status: 502,
-    } satisfies SheetsResult;
+    const res = await fetcher(url);
+    if (res.status === 401 || res.status === 403 || res.status === 404) {
+      return { ok: false, error: 'forbidden', status: 502 };
+    }
+    if (!res.ok) return { ok: false, error: 'upstream', status: 502 };
+    const type = res.headers.get('content-type') ?? '';
+    if (/text\/html/i.test(type)) return { ok: false, error: 'forbidden', status: 502 };
+    return { ok: true, values: parseCsv(await res.text()) };
+  } catch {
+    return { ok: false, error: 'upstream', status: 502 };
   }
 }

@@ -4,27 +4,27 @@
 
 ## Situação
 
-| Fase                      | Status | Data       | Commit                  |
-| ------------------------- | ------ | ---------- | ----------------------- |
-| 0 · Preparação            | ✅     | 2026-11-10 | `chore: kit inicial`    |
-| 1 · Casca                 | ✅     | 2026-11-10 | `feat(fase-1)`          |
-| 2 · Dia a dia             | ✅     | 2026-11-10 | `feat(fase-2-3)`        |
-| 3 · Agora/Próximo         | ✅     | 2026-11-10 | `feat(fase-2-3)`        |
-| 4 · Idiomas               | ✅     | 2026-11-10 | `feat(fase-4)`          |
-| 5 · Lugares               | ✅     | 2026-11-10 | `feat(fase-5-6)`        |
-| 6 · Infos                 | ✅     | 2026-11-10 | `feat(fase-5-6)`        |
-| 7 · Intenções             | ✅     | 2026-11-10 | `feat(fase-7)`          |
-| 8 · Offline/PWA           | ✅     | 2026-11-10 | `feat(fase-8-9)`        |
-| 9 · Qualidade e auditoria | ✅     | 2026-11-10 | `feat(fase-8-9)`        |
-| 10 · Publicação           | ⏳     |            | com o Lucas (DEPLOY.md) |
+| Fase                      | Status | Data       | Commit                   |
+| ------------------------- | ------ | ---------- | ------------------------ |
+| 0 · Preparação            | ✅     | 2026-11-10 | `chore: kit inicial`     |
+| 1 · Casca                 | ✅     | 2026-11-10 | `feat(fase-1)`           |
+| 2 · Dia a dia             | ✅     | 2026-11-10 | `feat(fase-2-3)`         |
+| 3 · Agora/Próximo         | ✅     | 2026-11-10 | `feat(fase-2-3)`         |
+| 4 · Idiomas               | ✅     | 2026-11-10 | `feat(fase-4)`           |
+| 5 · Lugares               | ✅     | 2026-11-10 | `feat(fase-5-6)`         |
+| 6 · Infos                 | ✅     | 2026-11-10 | `feat(fase-5-6)`         |
+| 7 · Intenções             | ✅     | 2026-11-10 | `feat(fase-7)` + D-15/16 |
+| 8 · Offline/PWA           | ✅     | 2026-11-10 | `feat(fase-8-9)`         |
+| 9 · Qualidade e auditoria | ✅     | 2026-11-10 | `feat(fase-8-9)`         |
+| 10 · Publicação           | ⏳     |            | com o Lucas (DEPLOY.md)  |
 
 Legenda: ⏳ a fazer · 🚧 em andamento · ✅ pronta (fase habilitada em `tests/fases.json` e `check:all` verde)
 
 ## Próximo passo
 
-Fase 10 — publicar seguindo `docs/DEPLOY.md` (GitHub privado → Vercel → conta de serviço do Google → variáveis →
-teste no iPhone). Pendências manuais da Fase 9 que dependem do app publicado: Lighthouse mobile (anotar os
-números aqui) e a conferência visual no iPhone.
+Fase 10 — publicar seguindo `docs/DEPLOY.md` (GitHub privado → Vercel → teste no iPhone; sem variáveis nem
+Google Cloud). Pendências manuais da Fase 9 que dependem do app publicado: Lighthouse mobile (anotar os números
+aqui) e a conferência visual no iPhone.
 
 ## Registro
 
@@ -66,6 +66,14 @@ números aqui) e a conferência visual no iPhone.
     `OWNER_PASSCODE`, `AUTH_SECRET` e a dependência `jose`; `07-intencoes.spec.ts` reescrito (aba aberta);
     DEPLOY.md, SPEC, ARCHITECTURE, `.env.example` e `.claude/rules/servidor.md` atualizados.
   - Resultado: `check:all` verde (57 unitários; e2e com as fases 1–9).
+
+- 2026-11-10 · **D-16 — planilha lida pelo export em CSV, sem Google Cloud** (pedido do Lucas: "um sistema mais
+  simples"). Novo `src/lib/csv.ts` (leitor RFC 4180 + links do export, 7 testes), `src/server/sheets.ts` reescrito
+  com `fetch` e mapeamento de erros (HTML de login → `forbidden`), `sheetUrl` acrescentado em
+  `src/data/intentions.json` (o mesmo link `INTENT.sheet` do site antigo) e textos `notConfigured`/`forbidden` de
+  `ui.json` ajustados. Removidos `google-auth-library` e todas as variáveis obrigatórias (`INTENCOES_GID` é
+  opcional). Conferido com `curl`: o export da planilha real já responde em CSV — nada a configurar na Vercel.
+  `check:all` verde (60 unitários).
 
 ## Dúvidas para o Lucas
 

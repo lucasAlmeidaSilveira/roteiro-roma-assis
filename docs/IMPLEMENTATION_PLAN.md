@@ -105,8 +105,8 @@ passando com a fase habilitada em `tests/fases.json`, `docs/PROGRESS.md` atualiz
 
 **RF:** RF-10, RF-11, RF-12. **Testes:** `07-intencoes`.
 
-1. `src/server/env.ts`, `sheets.ts` (google-auth-library), `intentions-source.ts` (fixture ou Google), todos com
-   `import 'server-only'`. (A sessão por código, `session.ts` + `/api/sessao`, foi retirada: D-15.)
+1. `src/server/env.ts`, `sheets.ts` (export em CSV da planilha, D-16), `intentions-source.ts` (fixture ou CSV),
+   todos com `import 'server-only'`; `src/lib/csv.ts` (leitor de CSV). (Sessão por código retirada: D-15.)
 2. `app/api/intencoes/route.ts` (GET), com `no-store`.
 3. `IntentionsPanel` (cliente): busca a API, estados (carregando / lista / vazio / erros), "Atualizar";
    `MessageCard` (copiar com fallback); "Onde levar".
@@ -140,6 +140,6 @@ passando com a fase habilitada em `tests/fases.json`, `docs/PROGRESS.md` atualiz
 
 ## Fase 10 · Publicação (com o Lucas)
 
-Siga `docs/DEPLOY.md`: GitHub (repositório privado), Vercel, variáveis, conta de serviço do Google, teste no
+Siga `docs/DEPLOY.md`: GitHub (repositório privado), Vercel (sem variáveis), conferência da planilha, teste no
 iPhone (tema, popup e áudio com o modo silencioso desligado, offline em modo avião, instalar na tela inicial,
 intenções aparecendo).

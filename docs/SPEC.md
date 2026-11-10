@@ -215,11 +215,14 @@ do Lucas em 10/11/2026: a aba é aberta a quem tem o link. Não há cookies no a
 ### RF-12 · API de intenções — testes `07-intencoes`
 
 1. `GET /api/intencoes`: sem autenticação (D-15).
-2. Lê `INTENCOES_RANGE` (padrão `A1:Z2000`) da planilha `INTENCOES_SHEET_ID` com a conta de serviço
-   (`GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY`, escopo `spreadsheets.readonly`, `google-auth-library`),
-   interpreta com `parseIntentionRows()` (pronto) → 200 `{ "items": [...], "fetchedAt": "ISO" }`.
-3. Erros: variáveis ausentes → 503 `{ "error": "not_configured" }`; Google 403/404 → 502
-   `{ "error": "forbidden" }`; outros → 502 `{ "error": "upstream" }`. Nunca vazar detalhes internos.
+2. Lê a planilha pelo **export em CSV** (D-16): `https://docs.google.com/spreadsheets/d/{id}/export?format=csv`,
+   com o `id` tirado de `sheetUrl` em `src/data/intentions.json` (e `&gid=` se `INTENCOES_GID` estiver definida).
+   A planilha precisa estar compartilhada como "qualquer pessoa com o link" (Leitor). O CSV é lido por
+   `parseCsv()` (`src/lib/csv.ts`) e interpretado por `parseIntentionRows()` → 200
+   `{ "items": [...], "fetchedAt": "ISO" }`. Sem chave, conta de serviço ou variável obrigatória.
+3. Erros: `sheetUrl` inválido → 503 `{ "error": "not_configured" }`; planilha privada (Google responde 401/403/404
+   ou a tela de login em HTML) → 502 `{ "error": "forbidden" }`; rede/5xx → 502 `{ "error": "upstream" }`. Nunca
+   vazar detalhes internos.
 4. Todas as respostas com `Cache-Control: private, no-store`.
 5. **Modo de teste:** com `INTENCOES_FIXTURE=1` e fora da Vercel (`VERCEL !== "1"`), lê
    `tests/fixtures/intencoes.json` (dados fictícios) em vez do Google.
@@ -304,8 +307,8 @@ do Lucas em 10/11/2026: a aba é aberta a quem tem o link. Não há cookies no a
 
 1. Rotas com caminho (`/dia/14`) em vez de hash; páginas estáticas (rápidas e indexáveis por nós, não pelos
    buscadores).
-2. Intenções com backend próprio (conta de serviço do Google lendo a planilha no servidor) em vez do conector do
-   Claude, que só funcionava dentro do app do Claude. Sem código de acesso (D-15).
+2. Intenções lidas no servidor pelo export em CSV da planilha (D-16) em vez do conector do Claude, que só
+   funcionava dentro do app do Claude. Sem código de acesso (D-15) e sem Google Cloud.
 3. Offline completo e instalável na tela inicial.
 4. Fontes self-hosted (não dependem do Google Fonts nem de internet).
 5. Conteúdo do documento dentro do app (RF-13).

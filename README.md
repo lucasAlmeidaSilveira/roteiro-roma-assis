@@ -57,6 +57,6 @@ Vitest · Playwright + axe · Vercel. Fontes OFL self-hosted (`src/fonts/LICENSE
 
 ## Privacidade
 
-Fora dos buscadores (`noindex`). Intenções lidas da planilha por uma conta de serviço somente leitura e abertas a
-quem tem o link do site (decisão D-15, sem código de acesso); nunca vão para cache, log ou para o repositório.
-Segredos só em variáveis de ambiente.
+Fora dos buscadores (`noindex`). Intenções lidas no servidor pelo export em CSV da planilha de respostas
+(compartilhada por link, decisão D-16) e abertas a quem tem o link do site (D-15, sem código de acesso); nunca vão
+para cache, log ou para o repositório. Não há segredos nem variáveis obrigatórias.

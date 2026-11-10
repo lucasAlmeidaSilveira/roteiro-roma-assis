@@ -100,6 +100,11 @@ export type Infos = z.infer<typeof infosSchema>;
 
 export const intentionsConfigSchema = z.strictObject({
   formUrl: https,
+  /** Link da planilha de respostas (…/spreadsheets/d/{id}/…), lida pelo export em CSV (D-16). */
+  sheetUrl: https.refine(
+    (u) => /\/spreadsheets\/d\/[A-Za-z0-9_-]{20,}/.test(u),
+    'link da planilha',
+  ),
   messageTemplate: text.refine(
     (t) => t.includes('{formUrl}'),
     'messageTemplate precisa de {formUrl}',

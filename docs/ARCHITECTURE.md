@@ -130,8 +130,8 @@ const json = (body: unknown, status = 200) =>
   NextResponse.json(body, { status, headers: { 'Cache-Control': 'private, no-store' } });
 ```
 
-`jose` (JWT) e `google-auth-library` (conta de serviço) compilam e rodam em Route Handlers com Turbopack
-(verificado). Use `import 'server-only'` em `src/server/*`.
+Use `import 'server-only'` em `src/server/*`. (Na versão 1.0 o handler usava `jose` e `google-auth-library`;
+ambos saíram com D-15 e D-16.)
 
 ## 4. Dados
 
@@ -146,19 +146,18 @@ const json = (body: unknown, status = 200) =>
 ## 5. Intenções: segurança e configuração
 
 ```
-celular ──GET /api/intencoes──▶ Route Handler ──JWT (conta de serviço)──▶ Google Sheets API
-        ◀── JSON {items} (no-store) ─┘             ◀── valores da planilha (só leitura)
+celular ──GET /api/intencoes──▶ Route Handler ──fetch export?format=csv──▶ Google Planilhas (link público)
+        ◀── JSON {items} (no-store) ─┘                ◀── CSV da aba de respostas
 ```
 
-- Sem sessão nem código de acesso (D-15, pedido do Lucas): a aba é aberta a quem tem o link. O único segredo é a
-  chave da conta de serviço, que fica só no servidor.
-- `src/server/env.ts`: lê e valida com Zod **sob demanda** (não no import), para o build e as páginas estáticas
-  funcionarem sem variáveis. Variáveis: `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY` (trocar `\n` literal
-  por quebra de linha), `INTENCOES_SHEET_ID`, `INTENCOES_RANGE` (opcional), `INTENCOES_FIXTURE` (só testes;
-  ignorado se `VERCEL === "1"`).
-- `src/server/sheets.ts`: `new JWT({ email, key, scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'] })`
-  → `client.request({ url: https://sheets.googleapis.com/v4/spreadsheets/{id}/values/{range} })`. Mapear 403/404 →
-  `forbidden`.
+- Sem sessão nem código de acesso (D-15) e sem Google Cloud (D-16): a aba é aberta a quem tem o link e a planilha
+  está compartilhada como "qualquer pessoa com o link". Não há segredos.
+- `src/data/intentions.json → sheetUrl`: link da planilha; `sheetIdFromUrl()` tira o id e `sheetCsvUrl()` monta
+  o export (`src/lib/csv.ts`, que também tem o leitor de CSV RFC 4180, testado).
+- `src/server/env.ts`: só opcionais, lidas sob demanda — `INTENCOES_GID` (aba de respostas que não seja a
+  primeira) e `INTENCOES_FIXTURE` (só testes; ignorado se `VERCEL === "1"`).
+- `src/server/sheets.ts`: `readSheetCsv(url)` → 401/403/404 ou resposta HTML (tela de login) → `forbidden`;
+  rede/5xx → `upstream`. `src/server/intentions-source.ts`: fixture ou CSV → `parseIntentionRows()`.
 - Nunca registrar intenções em log; nunca cachear `/api/*` (o `sw.js` já ignora).
 
 ## 6. PWA e offline

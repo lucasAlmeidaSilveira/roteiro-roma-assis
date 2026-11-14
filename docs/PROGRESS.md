@@ -116,6 +116,13 @@ aqui) e a conferência visual no iPhone.
   `scripts/parity-exceptions.json`. Os horários de chegada (~7h00) e do hotel (~7h10) são estimativas: o ticket
   não informa a chegada. Não mudaram: Lugares (mesmas 5 linhas do dia 14), ingressos, Infos.
 
+- 2026-11-14 · **Sáb 14/11: manhã sem a H&M** (pedido do Lucas). `days.json` (dia 14: título, resumo, introdução e
+  itens 14-5 a 14-9, sem renumerar: Praça de São Pedro, Via della Conciliazione, Castel Sant'Angelo, almoço em
+  Prati e volta ao hotel; saíram H&M, Piazza di Spagna e os dois metrôs de ida e volta a Spagna), `doc.json`
+  (resumo por dia, nota do orçamento e fonte da H&M: fontes 26 → 25), `tests/unit/data.test.ts`,
+  `tests/unit/places-links.test.ts` e `docs/ACCEPTANCE_CHECKLIST.md` (regenerado). Oito exceções em
+  `scripts/parity-exceptions.json`. Ids do dia 14 iguais (13 itens); Lugares segue com 5 linhas.
+
 ## Auditoria de paridade (Fase 9)
 
 - `npm run parity`: 1.507/1.507. `npm run test:e2e:legacy`: 66/66. `npm run test:e2e`: 79/79 (fases 1–9).

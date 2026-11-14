@@ -3,14 +3,14 @@
     "day": 14,
     "date": "2026-11-14",
     "weekday": "Sáb",
-    "title": "Chegada, H&M e Vaticano",
+    "title": "Chegada e Vaticano",
     "city": "Roma",
     "stay": "olympic",
-    "summary": "Ônibus Terravision das 6h10 direto ao Vaticano, malas no hotel, H&M na abertura, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.",
+    "summary": "Ônibus Terravision das 6h10 direto ao Vaticano, malas no hotel, manhã a pé por Prati, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.",
     "note": "Trevi, Pantheon e Navona estão na noite de domingo, 22/11, perto da Chiesa Nuova. Táxi descartado: €55 fixo contra €6 do ônibus Terravision.",
     "details": {
-      "heading": "Sáb 14/11 — Chegada, H&M e Museus do Vaticano",
-      "intro": "Espere no aeroporto até o ônibus da Terravision das 6h10, que vai direto ao Vaticano (desembarque na Via Crescenzio 19), deixe as malas no hotel, chegue à H&M na abertura, às 10h, descanse depois do almoço e entre nos Museus do Vaticano às 15h30.",
+      "heading": "Sáb 14/11 — Chegada e Museus do Vaticano",
+      "intro": "Espere no aeroporto até o ônibus da Terravision das 6h10, que vai direto ao Vaticano (desembarque na Via Crescenzio 19), deixe as malas no hotel, passe a manhã a pé por Prati, descanse depois do almoço e entre nos Museus do Vaticano às 15h30.",
       "tips": [
         "Alternativa na chegada: táxi com tarifa fixa de €55 dentro das muralhas, mas chegando sozinho ela não compensa: €55 contra €6 do ônibus Terravision. Depois da noite no aeroporto, descanse no hotel das 14h às 15h antes do museu; leve o comprovante do ingresso e cubra ombros e joelhos (a Capela Sistina está no mesmo ingresso). Trevi, Pantheon e Navona passaram para a noite de domingo, 22/11, perto da Chiesa Nuova."
       ]
@@ -67,39 +67,38 @@
       },
       {
         "id": "14-5",
-        "start": "09:15",
-        "label": "09h15",
-        "place": "Metrô A → Spagna",
-        "action": "Descer em Spagna e caminhar até a Via del Corso.",
-        "cost": "€1,50",
-        "mapQuery": "Metro Spagna, Roma",
-        "phrases": "metro"
+        "start": "08:30",
+        "label": "08h30",
+        "place": "Praça de São Pedro",
+        "action": "Ver a praça e a fachada da Basílica, a poucos minutos a pé do hotel, e reconhecer a entrada que você usa no domingo.",
+        "cost": "grátis",
+        "mapQuery": "Piazza San Pietro, Roma",
+        "phrases": "sanpietro"
       },
       {
         "id": "14-6",
-        "start": "10:00",
-        "label": "10h00",
-        "place": "H&M, Via del Corso 422",
-        "action": "Comprar as blusas; abre às 10h (confirmar).",
-        "cost": "compras",
-        "mapQuery": "H&M Via del Corso 422, Roma",
-        "phrases": "negozio"
+        "start": "09:30",
+        "label": "09h30",
+        "place": "Via della Conciliazione",
+        "action": "Caminhar pela avenida até a Ponte Sant'Angelo (cerca de 10 min); se estiver cansado, pule e descanse.",
+        "cost": "grátis",
+        "phrases": "strada"
       },
       {
         "id": "14-7",
-        "start": "11:30",
-        "label": "11h30",
-        "place": "Piazza di Spagna",
-        "action": "Ver a escadaria e a praça, a poucos minutos a pé da H&M.",
+        "start": "10:15",
+        "label": "10h15",
+        "place": "Castel Sant'Angelo",
+        "action": "Ver o castelo por fora, do lado da ponte.",
         "cost": "grátis",
-        "mapQuery": "Piazza di Spagna, Roma",
+        "mapQuery": "Castel Sant'Angelo, Roma",
         "phrases": "monumenti"
       },
       {
         "id": "14-8",
         "start": "12:15",
         "label": "12h15",
-        "place": "Perto da Via del Corso",
+        "place": "Perto do hotel (Prati)",
         "action": "Almoço de pizza al taglio ou panino.",
         "cost": "€6–9",
         "phrases": "pizza"
@@ -108,11 +107,11 @@
         "id": "14-9",
         "start": "13:30",
         "label": "13h30",
-        "place": "Metrô A, Spagna → Ottaviano",
+        "place": "Grand Hotel Olympic",
         "action": "Voltar ao hotel, fazer o check-in (a partir das 14h) e descansar até as 15h: depois da noite no aeroporto, esse descanso é importante.",
-        "cost": "€1,50",
-        "mapQuery": "Metro Spagna, Roma",
-        "phrases": "metro"
+        "cost": "—",
+        "mapQuery": "Grand Hotel Olympic, Via Properzio 2a, Roma",
+        "phrases": "hotel"
       },
       {
         "id": "14-10",

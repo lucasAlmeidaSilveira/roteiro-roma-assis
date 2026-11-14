@@ -38,7 +38,7 @@ describe('inventário (nada pode sumir)', () => {
     expect(infos.reminders.items).toHaveLength(4);
     expect(intentionsConfig.where).toHaveLength(6);
     expect(doc.decisions.items).toHaveLength(10);
-    expect(doc.sources.items).toHaveLength(26);
+    expect(doc.sources.items).toHaveLength(25);
     expect(doc.hotels.options).toHaveLength(5);
     expect(doc.transport.routes).toHaveLength(8);
     expect(doc.placesSummary.rows).toHaveLength(10);

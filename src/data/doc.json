@@ -31,7 +31,7 @@
     "rows": [
       {
         "day": "Sáb 14/11",
-        "places": "Aeroporto de Fiumicino; H&M da Via del Corso 422; Piazza di Spagna; Museus do Vaticano e Capela Sistina",
+        "places": "Aeroporto de Fiumicino; Praça de São Pedro; Castel Sant'Angelo (por fora); Museus do Vaticano e Capela Sistina",
         "paid": "€25 (Museus do Vaticano e Capela Sistina)"
       },
       {
@@ -195,7 +195,7 @@
         "range": "€25–55"
       }
     ],
-    "note": "São valores aproximados, calculados com as faixas das fontes consultadas; as compras na H&M ficam fora."
+    "note": "São valores aproximados, calculados com as faixas das fontes consultadas."
   },
   "decisions": {
     "intro": "Dez pontos mudam o roteiro; marque o que já estiver fechado.",
@@ -266,7 +266,6 @@
       "[São Pedro e cúpula (Art Visit Guide)](https://www.artvisitguide.com/st-peters-basilica-tickets-guide/)",
       "[Como chegar a São Paulo Fora dos Muros](https://basilicasanpaolo.org/en/contacts)",
       "[Centro São Lourenço (Vaticano)](https://www.vatican.va/roman_curia/pontifical_councils/laity/laity_en/uffici/san_lorenzo_en.htm)",
-      "[H&M Via del Corso (PromoQui)](https://www.promoqui.it/roma/negozi/hem)",
       "[Dormir no aeroporto de Fiumicino (Sleeping in Airports)](https://www.sleepinginairports.net/sleep-guide/sleeping-in-rome-fiumicino-airport.htm)",
       "[Comida barata em Roma (Table Journey)](https://tablejourney.com/italy/rome/budget-eating/)",
       "[Hotéis perto de Tiburtina (Trip.com)](https://www.trip.com/t/kLNZuxyTvO2), [B&B Hotel San Lorenzo Termini](https://hotel-bb.com/en/hotel/roma-san-lorenzo-termini), [Adesso Hotel (Expedia)](https://www.expedia.ie/Rome-Hotels-Adesso-Hotel.h88439117.Hotel-Information), [GH Hotel San Giusto (Hotels.com)](https://exp.cdn-hotels.com/ho280118/hotel-san-giusto-rome-italy), [Villa San Lorenzo Maria (Hotels.com)](https://ie.hotels.com/ho280141/hotel-villa-san-lorenzo-maria-rome-italy/), [B&B Pietralata (Expedia)](https://expedia.ie/Rome-Hotels-BB-Hotel-Roma-Pietralata.h33539078.Hotel-Information)",

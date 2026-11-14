@@ -13,17 +13,17 @@
 
 ## Dias (RF-03 a RF-06)
 
-### Sáb 14 · Chegada, H&M e Vaticano — 13 itens · Roma
+### Sáb 14 · Chegada e Vaticano — 13 itens · Roma
 - [ ] `00h05` Aeroporto de Fiumicino — Mapa · Idiomas: No aeroporto (chegada)
 - [ ] `01h30–05h40` Aeroporto de Fiumicino — grátis · Idiomas: No aeroporto (chegada)
 - [ ] `06h10` Ônibus Terravision → Vaticano — €6 · Mapa · Idiomas: Ônibus
 - [ ] `~07h00` Via Crescenzio 19 → hotel — grátis · Mapa · Idiomas: Pedindo informação
 - [ ] `~07h10` Grand Hotel Olympic — €3–4 · Mapa · Idiomas: No hotel
-- [ ] `09h15` Metrô A → Spagna — €1,50 · Mapa · Idiomas: Metrô
-- [ ] `10h00` H&M, Via del Corso 422 — compras · Mapa · Idiomas: Na loja
-- [ ] `11h30` Piazza di Spagna — grátis · Mapa · Idiomas: Passeando
-- [ ] `12h15` Perto da Via del Corso — €6–9 · Idiomas: Pizza al taglio e lanches
-- [ ] `13h30` Metrô A, Spagna → Ottaviano — €1,50 · Mapa · Idiomas: Metrô
+- [ ] `08h30` Praça de São Pedro — grátis · Mapa · Idiomas: São Pedro: missa e confissão
+- [ ] `09h30` Via della Conciliazione — grátis · Idiomas: Pedindo informação
+- [ ] `10h15` Castel Sant'Angelo — grátis · Mapa · Idiomas: Passeando
+- [ ] `12h15` Perto do hotel (Prati) — €6–9 · Idiomas: Pizza al taglio e lanches
+- [ ] `13h30` Grand Hotel Olympic — Mapa · Idiomas: No hotel
 - [ ] `15h10` Hotel → Museus do Vaticano — grátis · Mapa · Idiomas: Pedindo informação
 - [ ] `15h30` Museus do Vaticano e Capela Sistina — Ingresso €25 · Mapa · Idiomas: Museus do Vaticano
 - [ ] `19h00` Perto do hotel — €8–12 · Idiomas: No restaurante
@@ -220,7 +220,7 @@
 - [ ] Programação da Convenção (7 dias, 6 convidados)
 - [ ] Decisões em aberto (10, 2 já marcadas)
 - [ ] Como o orçamento foi calculado (6 linhas)
-- [ ] Fontes consultadas (26)
+- [ ] Fontes consultadas (25)
 
 ## Intenções (RF-10 a RF-12)
 - [ ] Aberta a quem tem o link (D-15): sem código de acesso

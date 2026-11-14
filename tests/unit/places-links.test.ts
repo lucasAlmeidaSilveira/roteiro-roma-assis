@@ -12,8 +12,8 @@ describe('Lugares', () => {
     expect(rows.map((r) => r.place)).toEqual([
       'Aeroporto de Fiumicino',
       'Grand Hotel Olympic',
-      'H&M, Via del Corso 422',
-      'Piazza di Spagna',
+      'Praça de São Pedro',
+      "Castel Sant'Angelo",
       'Museus do Vaticano e Capela Sistina',
     ]);
     const vat = rows.at(-1)!;

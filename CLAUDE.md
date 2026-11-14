@@ -57,6 +57,6 @@ publicar na Vercel. Usuário principal: iPhone 15 (Arc/Safari, WebKit), muitas v
 ## Fluxo de trabalho
 
 - Comece cada fase em plan mode (Shift+Tab) ou com `/fase N`; implemente; verifique; revise; commit.
-- Skills do projeto: `/fase N`, `/paridade`, `/status`. Subagentes: `revisor`, `auditor-paridade`.
+- Skills do projeto: `/fase N`, `/paridade`, `/status`, `/roteiro` (mudança de conteúdo publicada direto na `main`). Subagentes: `revisor`, `auditor-paridade`.
 - Mostre evidência (saída dos testes), não só "pronto".
 - Ao compactar o contexto, preserve: fase atual, arquivos alterados, testes falhando, decisões e dúvidas.

@@ -75,6 +75,13 @@ aqui) e a conferência visual no iPhone.
   opcional). Conferido com `curl`: o export da planilha real já responde em CSV — nada a configurar na Vercel.
   `check:all` verde (60 unitários).
 
+- 2026-11-14 · **D-17 — roteiro atualizado pelo Claude Code na nuvem, direto na `main`** (pedido do Lucas:
+  "atualizar o roteiro direto pelo projeto, online", em linguagem natural, sem o notebook ligado). Novo skill
+  `/roteiro` (`.claude/skills/roteiro/SKILL.md`): entender → editar `src/data` → liberar paridade → `npm run check` →
+  registrar → `feat(roteiro): …` → `git push origin HEAD:main`. Sem código novo no site. Registrado em
+  `DECISIONS.md` D-17, `DEPLOY.md` §8 e `CLAUDE.md` (lista de skills). Depende da Fase 10 (Vercel ligada ao
+  GitHub) e do app do Claude no GitHub instalado no repositório.
+
 ## Dúvidas para o Lucas
 
 - **Rótulos que não estão em `src/data`:** os cabeçalhos das tabelas do documento ("Dia · Lugares · Ingresso

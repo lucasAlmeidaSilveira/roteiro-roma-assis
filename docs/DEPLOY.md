@@ -78,3 +78,20 @@ na Vercel).
 ## 7. Domínio próprio (opcional)
 
 Vercel → **Settings → Domains → Add** e siga as instruções de DNS do seu provedor.
+
+## 8. Atualizar o roteiro pelo celular (D-17)
+
+Não existe tela de edição no site: quem edita é o Claude Code na nuvem, a seu pedido, e a Vercel publica.
+
+1. Uma vez só: em claude.ai/code, conecte o GitHub e instale o app do Claude no repositório
+   `roteiro-roma-assis` (privado). O ambiente padrão já permite `npm install` e acesso ao GitHub.
+2. No iPhone: app do Claude → aba **Código** → repositório `roteiro-roma-assis`, branch `main` → escreva o
+   pedido (ex.: "/roteiro adianta o Coliseu de seg 23/11 para as 11h"). Pode escrever sem o `/roteiro`; o
+   Claude reconhece um pedido de mudança no roteiro.
+3. O Claude edita `src/data`, roda `npm run check`, registra em `docs/PROGRESS.md`, commita e envia direto para
+   a `main`. Aprove o que ele pedir (editar `src/data` e `git push` pedem confirmação, por
+   `.claude/settings.json`).
+4. Em 1–2 min a Vercel publica. Feche e abra o app de novo (ou puxe a página) para ver a versão nova. Se o
+   Claude renumerou itens de um dia, os "Feitos" daquele dia podem ter trocado de lugar.
+
+Seu notebook não precisa estar ligado. Se o `npm run check` ficar vermelho, o Claude não publica e explica.

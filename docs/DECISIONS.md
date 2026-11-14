@@ -102,3 +102,16 @@ O servidor busca `https://docs.google.com/spreadsheets/d/{id}/export?format=csv`
 `forbidden`, com a mensagem explicando como compartilhar. Removidos `google-auth-library`, a conta de serviço e
 todas as variáveis obrigatórias; `INTENCOES_GID` é opcional (aba de respostas que não seja a primeira).
 Substitui o D-07 na parte da conta de serviço. Verificado em 10/11/2026: o export da planilha real já responde.
+
+## D-17 · Roteiro atualizado pelo Claude Code na nuvem, com push direto na `main`
+
+Pedido do Lucas em 14/11/2026: atualizar o roteiro "direto pelo projeto, online", pedindo a mudança em
+português, sem o notebook ligado. Solução: nenhuma tela de edição no site. O Lucas abre uma sessão do Claude
+Code na nuvem pela aba Código do app do Claude no iPhone (a sessão roda numa VM da Anthropic a partir do
+GitHub) e o skill `/roteiro` (`.claude/skills/roteiro/SKILL.md`, dentro do repositório, porque `~/.claude` não
+chega à nuvem) faz o fluxo inteiro: editar `src/data`, liberar a paridade, `npm run check`, registrar, commit
+`feat(roteiro): …` e `git push origin HEAD:main`. A Vercel publica a `main` em 1–2 min. Escolha do Lucas: direto
+na `main`, sem PR. **Descartados:** editor com formulário no site gravando pela API do GitHub (exige código de
+acesso, token e rota novos, e ele queria pedir em linguagem natural); chat com a API do Claude dentro do site
+(chave de API, custo por mensagem e a mesma lógica de commit por baixo); planilha ou banco como fonte do roteiro
+(duas fontes da verdade, quebra paridade e offline). Pré-requisito: Fase 10 (Vercel ligada ao GitHub).

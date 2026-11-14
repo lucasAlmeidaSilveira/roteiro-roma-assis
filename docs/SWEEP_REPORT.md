@@ -44,7 +44,7 @@ e-mails e o conteúdo das intenções. Os testes usam dados fictícios (`tests/f
 
 ## Pendências da viagem (do roteiro, ainda abertas)
 
-- Comprar online o Terravision de 14/11 e confirmar o primeiro horário (~5h35).
+- Terravision de 14/11 comprado (Fiumicino → Vaticano, 6h10, €6): guardar o ticket e estar no ponto às 5h55.
 - Comprar 2 ingressos do Coliseu, Fórum e Palatino para seg 23/11, 13h (nomes de você e da sua irmã).
 - Reservar o hotel de 22→23/11 em Tiburtina com cancelamento grátis.
 - Avisar a Locanda Giustini com 24h de antecedência (chegada ~9h15 de 20/11 e malas).

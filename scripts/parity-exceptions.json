@@ -1,4 +1,45 @@
 {
   "comentario": "Mudanças de conteúdo FEITAS DE PROPÓSITO depois da migração. Cada entrada libera uma diferença em relação ao site antigo. 'alvo' é o começo da mensagem do npm run parity (ex.: \"item 22-0: start\"). Sempre diga o motivo e a data.",
-  "excecoes": []
+  "excecoes": [
+    {
+      "alvo": "dia 14: summary",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "dia 14: note",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "item 14-1:",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "item 14-2:",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "item 14-3:",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "item 14-4:",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "pendência 0",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "documento: texto ausente \"Chegada: ônibus Terravision das",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "documento: texto ausente \"Espere no aeroporto até o ônibus da Terravision",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    },
+    {
+      "alvo": "documento: texto ausente \"Alternativa na chegada",
+      "motivo": "Sáb 14/11 passou a usar o ônibus Terravision das 6h10 direto ao Vaticano (Via Crescenzio 19; ticket de €6, Terminal 3, plataforma 18), em vez do primeiro ônibus até Termini + metrô. Pedido do Lucas em 2026-11-14."
+    }
+  ]
 }

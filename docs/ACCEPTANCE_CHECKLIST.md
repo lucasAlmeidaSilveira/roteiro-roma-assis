@@ -15,10 +15,10 @@
 
 ### Sáb 14 · Chegada, H&M e Vaticano — 13 itens · Roma
 - [ ] `00h05` Aeroporto de Fiumicino — Mapa · Idiomas: No aeroporto (chegada)
-- [ ] `01h30–05h30` Aeroporto de Fiumicino — grátis · Idiomas: No aeroporto (chegada)
-- [ ] `~05h35` Ônibus Terravision → Termini — €4–6 · Mapa · Idiomas: Ônibus
-- [ ] `~06h35` Metrô A, Termini → Ottaviano — €1,50 · Mapa · Idiomas: Metrô
-- [ ] `~07h00` Grand Hotel Olympic — €3–4 · Mapa · Idiomas: No hotel
+- [ ] `01h30–05h40` Aeroporto de Fiumicino — grátis · Idiomas: No aeroporto (chegada)
+- [ ] `06h10` Ônibus Terravision → Vaticano — €6 · Mapa · Idiomas: Ônibus
+- [ ] `~07h00` Via Crescenzio 19 → hotel — grátis · Mapa · Idiomas: Pedindo informação
+- [ ] `~07h10` Grand Hotel Olympic — €3–4 · Mapa · Idiomas: No hotel
 - [ ] `09h15` Metrô A → Spagna — €1,50 · Mapa · Idiomas: Metrô
 - [ ] `10h00` H&M, Via del Corso 422 — compras · Mapa · Idiomas: Na loja
 - [ ] `11h30` Piazza di Spagna — grátis · Mapa · Idiomas: Passeando
@@ -198,7 +198,7 @@
 - [ ] Resumo por dia (tabela do documento, 10 linhas)
 
 ## Infos (RF-09, RF-13)
-- [ ] Pendência: Comprar online o ônibus Terravision Fiumicino → Termini de 14/11 e confirmar o primeiro horário (~5h35)
+- [ ] Pendência: Ônibus Terravision comprado (Fiumicino → Vaticano, sáb 14/11, 6h10, €6): guardar o ticket no celular e estar no ponto às 5h55 (Terminal 3, plataforma 18)
 - [ ] Pendência: Ingresso dos Museus do Vaticano comprado para sáb 14/11, 15h30: guardar o comprovante no celular
 - [ ] Pendência: Comprar 2 ingressos do Coliseu, Fórum e Palatino para seg 23/11, 13h, nos nomes de você e da sua irmã (€18 cada)
 - [ ] Pendência: Trem Roma → Assis comprado (Regionale Veloce 4712, 20/11, 6h52): confirmar que o grupo está no mesmo trem e reconferir na véspera

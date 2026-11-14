@@ -101,6 +101,14 @@ aqui) e a conferência visual no iPhone.
   (que agora distingue legado × app novo). Nada em `src/data` mudou; `parity-exceptions.json` não precisou de
   entrada.
 
+- 2026-11-14 · **Sáb 14/11: chegada pelo ônibus Terravision das 6h10 direto ao Vaticano** (pedido do Lucas, com o
+  ticket TRVBUS…399: FCO → Vaticano, €6, Terminal 3, plataforma 18, estar no ponto 15 min antes). `days.json`
+  (dia 14: resumo, nota, introdução, dica, itens 14-1 a 14-4 — o metrô Termini → Ottaviano saiu; entrou a pé de
+  Via Crescenzio 19 até o hotel, ~7 min), `todo.json` (todo-0, agora "comprado"), `doc.json` (decisao-2),
+  `docs/SWEEP_REPORT.md` e `docs/ACCEPTANCE_CHECKLIST.md` (regenerado). Dez exceções em
+  `scripts/parity-exceptions.json`. Os horários de chegada (~7h00) e do hotel (~7h10) são estimativas: o ticket
+  não informa a chegada. Não mudaram: Lugares (mesmas 5 linhas do dia 14), ingressos, Infos.
+
 ## Auditoria de paridade (Fase 9)
 
 - `npm run parity`: 1.507/1.507. `npm run test:e2e:legacy`: 66/66. `npm run test:e2e`: 79/79 (fases 1–9).

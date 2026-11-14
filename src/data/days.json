@@ -6,13 +6,13 @@
     "title": "Chegada, H&M e Vaticano",
     "city": "Roma",
     "stay": "olympic",
-    "summary": "Ônibus Terravision de madrugada, malas no hotel, H&M na abertura, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.",
-    "note": "Trevi, Pantheon e Navona estão na noite de domingo, 22/11, perto da Chiesa Nuova. Táxi descartado: €55 fixo contra cerca de €6–8 de ônibus e metrô.",
+    "summary": "Ônibus Terravision das 6h10 direto ao Vaticano, malas no hotel, H&M na abertura, descanso depois do almoço e Museus do Vaticano com a Capela Sistina às 15h30.",
+    "note": "Trevi, Pantheon e Navona estão na noite de domingo, 22/11, perto da Chiesa Nuova. Táxi descartado: €55 fixo contra €6 do ônibus Terravision.",
     "details": {
       "heading": "Sáb 14/11 — Chegada, H&M e Museus do Vaticano",
-      "intro": "Espere no aeroporto até o primeiro ônibus da Terravision (por volta das 5h35), deixe as malas no hotel, chegue à H&M na abertura, às 10h, descanse depois do almoço e entre nos Museus do Vaticano às 15h30.",
+      "intro": "Espere no aeroporto até o ônibus da Terravision das 6h10, que vai direto ao Vaticano (desembarque na Via Crescenzio 19), deixe as malas no hotel, chegue à H&M na abertura, às 10h, descanse depois do almoço e entre nos Museus do Vaticano às 15h30.",
       "tips": [
-        "Alternativa na chegada: táxi com tarifa fixa de €55 dentro das muralhas, mas chegando sozinho ela não compensa: €55 contra cerca de €6–8 de ônibus Terravision e metrô. Depois da noite no aeroporto, descanse no hotel das 14h às 15h antes do museu; leve o comprovante do ingresso e cubra ombros e joelhos (a Capela Sistina está no mesmo ingresso). Trevi, Pantheon e Navona passaram para a noite de domingo, 22/11, perto da Chiesa Nuova."
+        "Alternativa na chegada: táxi com tarifa fixa de €55 dentro das muralhas, mas chegando sozinho ela não compensa: €55 contra €6 do ônibus Terravision. Depois da noite no aeroporto, descanse no hotel das 14h às 15h antes do museu; leve o comprovante do ingresso e cubra ombros e joelhos (a Capela Sistina está no mesmo ingresso). Trevi, Pantheon e Navona passaram para a noite de domingo, 22/11, perto da Chiesa Nuova."
       ]
     },
     "items": [
@@ -29,36 +29,36 @@
       {
         "id": "14-1",
         "start": "01:30",
-        "label": "01h30–05h30",
+        "label": "01h30–05h40",
         "place": "Aeroporto de Fiumicino",
-        "action": "Esperar na área pública do terminal, aberta a noite toda.",
+        "action": "Esperar na área pública do terminal, aberta a noite toda; às 5h40, ir ao ponto do ônibus.",
         "cost": "grátis",
         "phrases": "aeroporto"
       },
       {
         "id": "14-2",
-        "start": "05:35",
-        "label": "~05h35",
-        "place": "Ônibus Terravision → Termini",
-        "action": "1ª opção: primeiro ônibus (confirmar o horário), plataforma 18, direto, 45–55 min; comprar online antes (a partir de €4). 2ª opção: trem FL1 até Ostiense (~6h25, €8) ou Leonardo Express até Termini (€14).",
-        "cost": "€4–6",
-        "mapQuery": "Terravision Fiumicino Airport",
+        "start": "06:10",
+        "label": "06h10",
+        "place": "Ônibus Terravision → Vaticano",
+        "action": "Ticket comprado (€6): sair pelo Terminal 3, plataforma 18, e estar no ponto às 5h55 (15 min antes). Ônibus direto, sem baldeação, até o Vaticano (Via Crescenzio 19). 2ª opção, se perder: trem FL1 até Ostiense (€8) ou Leonardo Express até Termini (€14).",
+        "cost": "€6",
+        "mapQuery": "Via Crescenzio 19, Roma",
         "phrases": "autobus"
       },
       {
         "id": "14-3",
-        "start": "06:35",
-        "label": "~06h35",
-        "place": "Metrô A, Termini → Ottaviano",
-        "action": "Sair pelo lado leste (Via Marsala), pegar o metrô A e caminhar 8–10 min até o hotel. Se veio de FL1: ônibus 23 de Ostiense até a Piazza Risorgimento.",
-        "cost": "€1,50",
-        "mapQuery": "Metro Ottaviano, Roma",
-        "phrases": "metro"
+        "start": "07:00",
+        "label": "~07h00",
+        "place": "Via Crescenzio 19 → hotel",
+        "action": "Desembarcar no Vaticano (chegada estimada ~7h00; o ticket não informa o horário) e caminhar uns 7 min até a Via Properzio 2/a. Se veio de FL1: ônibus 23 de Ostiense até a Piazza Risorgimento.",
+        "cost": "grátis",
+        "mapQuery": "Via Crescenzio 19, Roma",
+        "phrases": "strada"
       },
       {
         "id": "14-4",
-        "start": "07:00",
-        "label": "~07h00",
+        "start": "07:10",
+        "label": "~07h10",
         "place": "Grand Hotel Olympic",
         "action": "Deixar as malas na recepção (check-in só às 14h); café com cornetto.",
         "cost": "€3–4",
